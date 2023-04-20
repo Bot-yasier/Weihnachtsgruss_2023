@@ -28,6 +28,19 @@ public class RoomNodeGraphSo : ScriptableObject
         }
 
     }
+
+    public RoomNodeSO GetRoomNode(string roomNodeTD)
+    {
+
+        if(roomNodeDictionary.TryGetValue(roomNodeTD, out RoomNodeSO roomNode))
+        {
+            return roomNode;
+
+
+        }
+        return null;
+
+    }
     #region
 #if UNITY_EDITOR
 
