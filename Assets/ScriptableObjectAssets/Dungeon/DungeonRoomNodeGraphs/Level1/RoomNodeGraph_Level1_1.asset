@@ -40,19 +40,20 @@ MonoBehaviour:
   m_Name: RoomNode
   m_EditorClassIdentifier: 
   id: c15dc2f4-de9f-46cf-9456-67f15caa25aa
-  parentRoomNodeIDList: []
+  parentRoomNodeIDList:
+  - da418e7d-6017-4737-9992-3fc57e987bef
   childRoomNodeIDList: []
   roomNodeGraph: {fileID: 11400000}
   roomNodeType: {fileID: 11400000, guid: 0098c3550f3b8fd4da2345d49cb35754, type: 2}
   roomNodeTypeList: {fileID: 11400000, guid: a2e2e8d0f71186c4493d6ac671982476, type: 2}
   rect:
     serializedVersion: 2
-    x: 713
-    y: 945
+    x: 478
+    y: 761
     width: 160
     height: 75
   isLeftClickDragging: 0
-  isSelected: 1
+  isSelected: 0
 --- !u!114 &-3230766283691072404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,6 +71,7 @@ MonoBehaviour:
   childRoomNodeIDList:
   - 4e6201b6-8661-41b9-8777-39c024f7e88d
   - 38fee90e-a1c7-4716-baa8-a4279f9ec822
+  - da418e7d-6017-4737-9992-3fc57e987bef
   roomNodeGraph: {fileID: 11400000}
   roomNodeType: {fileID: 11400000, guid: ea2b80d79bffa0742a5a61575e22d970, type: 2}
   roomNodeTypeList: {fileID: 11400000, guid: a2e2e8d0f71186c4493d6ac671982476, type: 2}
@@ -121,15 +123,17 @@ MonoBehaviour:
   m_Name: RoomNode
   m_EditorClassIdentifier: 
   id: da418e7d-6017-4737-9992-3fc57e987bef
-  parentRoomNodeIDList: []
-  childRoomNodeIDList: []
+  parentRoomNodeIDList:
+  - ed69591f-0edc-4fc5-a694-b4c3e167abfb
+  childRoomNodeIDList:
+  - c15dc2f4-de9f-46cf-9456-67f15caa25aa
   roomNodeGraph: {fileID: 11400000}
-  roomNodeType: {fileID: 11400000, guid: d5e81c08a612fc046a748b77ff06ff39, type: 2}
+  roomNodeType: {fileID: 11400000, guid: b702d48626206074087c653b5055db7c, type: 2}
   roomNodeTypeList: {fileID: 11400000, guid: a2e2e8d0f71186c4493d6ac671982476, type: 2}
   rect:
     serializedVersion: 2
-    x: 568
-    y: 604
+    x: 475
+    y: 583
     width: 160
     height: 75
   isLeftClickDragging: 0
