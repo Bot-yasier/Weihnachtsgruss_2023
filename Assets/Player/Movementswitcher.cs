@@ -12,8 +12,11 @@ public class Movementswitcher : MonoBehaviour
     public PlayerMovement playerMovement;
     public PlayerMovementMouse playerMovementMouse;
 
+
     private void Start()
     {
+      
+
         playerMovement.enabled = false;
         playerMovementMouse.enabled = false;
     }

@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 5f;
-    [SerializeField] private float dashDistance = 5f;
-    [SerializeField] private float dashDuration = 0.5f;
+    [SerializeField] private float movementSpeed = 8f;
+    [SerializeField] private float dashDistance = 2f;
+    [SerializeField] private float dashDuration = 0.1f;
     [SerializeField] private float dashCooldown = 1f;
     [SerializeField] private float directionChangeSpeed = 10f;
 
