@@ -4,24 +4,18 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int damage = 1; // amount of damage that the bullet deals
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(this.gameObject); // zerstöre das Bullet-Objekt
+            EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage); // call the TakeDamage function of the enemy script to deal damage to the enemy
+            }
+            Destroy(gameObject); // destroy the bullet object
         }
     }
-
 }

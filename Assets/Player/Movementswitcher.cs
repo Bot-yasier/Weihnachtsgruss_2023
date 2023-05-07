@@ -9,27 +9,27 @@ public class Movementswitcher : MonoBehaviour
 {
 
 
-    public PlayerMovement playerMovement;
+    public PlayerMovementKeyboard playerMovementKeyboard;
     public PlayerMovementMouse playerMovementMouse;
 
 
     private void Start()
     {
-      
 
-        playerMovement.enabled = false;
+
+        playerMovementKeyboard.enabled = false;
         playerMovementMouse.enabled = false;
     }
-    public void PlayerMovementclick()
+    public void PlayerMovementKeyboard()
     {
-        playerMovement.enabled = true;
+        playerMovementKeyboard.enabled = true;
         playerMovementMouse.enabled = false;
 
     }
 
-    public void PlayerMovementMouseclick()
+    public void PlayerMovementMouse()
     {
-        playerMovement.enabled = false;
+        playerMovementKeyboard.enabled = false;
         playerMovementMouse.enabled = true;
 
     }

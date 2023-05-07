@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovementKeyboard : MonoBehaviour
 {
     [SerializeField] private float movementSpeed = 8f;
     [SerializeField] private float dashDistance = 2f;

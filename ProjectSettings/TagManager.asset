@@ -15,6 +15,7 @@ TagManager:
   - miniMapPlayer
   - playerWeapon
   - Enemy
+  - BulletPlayer
   layers:
   - Default
   - TransparentFX

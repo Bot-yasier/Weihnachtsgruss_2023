@@ -1,13 +1,21 @@
 using UnityEngine;
 
-public class ProjectileSpawner_Keyboard : MonoBehaviour
+public class ProjectileSpawnerKeyboard : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform spawner;
-    public float shotSpeed = 20f;
+    public float bulletSpeed = 20f;
     public float cooldown = 1f;
+    public float bulletSize = 0.5f;
 
     private bool canShoot = true;
+
+    [SerializeField] private bool enableElasticWalls = false;
+    [SerializeField] private bool enablePiercingBullets = false;
+    [SerializeField] private bool enableTest = false;
+
+    [SerializeField] private int addBounce = 3;
+
 
     private void Update()
     {
@@ -34,11 +42,22 @@ public class ProjectileSpawner_Keyboard : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.velocity = shootDirection * shotSpeed;
+            rb.velocity = shootDirection * bulletSpeed;
         }
         else
         {
             Debug.LogWarning("Rigidbody2D component not found on projectile.");
+        }
+
+        // Setze die Modifier des Projektils
+        BulletPlayer bulletScript = bullet.GetComponent<BulletPlayer>();
+        if (bulletScript != null)
+        {
+            bulletScript.elasticWalls = enableElasticWalls;
+            bulletScript.PiercingBullets = enablePiercingBullets;
+            bulletScript.test = enableTest;
+
+            bulletScript.maxWallBounces += addBounce;
         }
 
         // Starte das Cooldown

@@ -1,14 +1,20 @@
 using UnityEngine;
 
-public class ProjectileSpawnerScript : MonoBehaviour
+public class ProjectileSpawnerMouse : MonoBehaviour
 {
-    public float shotSpeed = 20f;
-    public float shotSize = 0.5f;
-    public GameObject projectilePrefab;
+    public GameObject bulletPrefab;
     public GameObject spawner;
+    public float bulletSpeed = 20f;
+    public float bulletSize = 0.5f;
     public string enemyTag; // Tag, nach dem wir suchen
 
     public float maxShootDistance = 20f;
+
+    [SerializeField] private bool enableElasticWalls = false;
+    [SerializeField] private bool enablePiercingBullets = false;
+    [SerializeField] private bool enableTest = false;
+
+    [SerializeField] private int addBounce = 3;
 
     private GameObject currentEnemy; // Derzeitiges Zielobjekt
     private Transform currentEnemyTransform; // Transform des derzeitigen Zielobjekts
@@ -60,20 +66,36 @@ public class ProjectileSpawnerScript : MonoBehaviour
 
             if (distanceToEnemy <= maxShootDistance)
             {
-                GameObject projectile = Instantiate(projectilePrefab, spawner.transform.position, spawner.transform.rotation);
-                projectile.transform.localScale = new Vector3(shotSize, shotSize, shotSize);
+                // Erstelle das Projektil am Spawner
+                GameObject projectile = Instantiate(bulletPrefab, spawner.transform.position, spawner.transform.rotation);
+                projectile.transform.localScale = new Vector3(bulletSize, bulletSize, bulletSize);
 
+                // Richte das Projektil auf den Gegner aus
+                Vector2 shootDirection = (currentEnemyTransform.position - spawner.transform.position).normalized;
+                projectile.transform.right = shootDirection;
+
+                // Setze die Geschwindigkeit des Projektils
                 Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
                 if (rb != null)
                 {
-                    Vector2 shootDirection = (currentEnemyTransform.position - spawner.transform.position).normalized;
-                    rb.velocity = shootDirection * shotSpeed;
+                    rb.velocity = shootDirection * bulletSpeed;
                 }
                 else
                 {
                     Debug.LogWarning("Rigidbody2D component not found on projectile.");
                 }
+
+                // Setze die Modifier des Projektils
+                BulletPlayer bulletScript = projectile.GetComponent<BulletPlayer>();
+                if (bulletScript != null)
+                {
+                    bulletScript.elasticWalls = enableElasticWalls;
+                    bulletScript.PiercingBullets = enablePiercingBullets;
+                    bulletScript.test = enableTest;
+                    bulletScript.maxWallBounces += addBounce;
+                }
             }
         }
     }
+
 }
