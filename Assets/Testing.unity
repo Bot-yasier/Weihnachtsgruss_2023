@@ -219,9 +219,13 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8849932440090105851, guid: b514937c905c0ea44931fe0e1ab1d3d9, type: 3}
+      propertyPath: maxHealth
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849932440090105851, guid: b514937c905c0ea44931fe0e1ab1d3d9, type: 3}
       propertyPath: bulletPrefab
       value: 
-      objectReference: {fileID: 1520880642496056549, guid: b77f5e5471a809b4db84bf55505c7c94, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8849932440090105852, guid: b514937c905c0ea44931fe0e1ab1d3d9, type: 3}
       propertyPath: m_Name
       value: Enemy (2)
@@ -559,6 +563,7 @@ GameObject:
   - component: {fileID: 526802416}
   - component: {fileID: 526802418}
   - component: {fileID: 526802417}
+  - component: {fileID: 526802419}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -645,18 +650,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526802409}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c17149a4fbd524c4185869380ee2ce1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1520880642496056549, guid: 571f0a11a5b23964f915de28bc398b4f, type: 3}
-  spawner: {fileID: 311291172}
+  spawner: {fileID: 0}
   bulletSpeed: 20
   bulletSize: 0.5
   enemyTag: Enemy
+  numBullets: 1
   maxShootDistance: 20
-  enableElasticWalls: 0
+  enableElasticWalls: 1
   enablePiercingBullets: 0
   enableTest: 0
   addBounce: 0
@@ -684,7 +690,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526802409}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea273914836436d428c055219d7b4c99, type: 3}
   m_Name: 
@@ -694,10 +700,25 @@ MonoBehaviour:
   bulletSpeed: 20
   cooldown: 0.3
   bulletSize: 0.5
+  numBullets: 1
   enableElasticWalls: 0
   enablePiercingBullets: 0
   enableTest: 0
   addBounce: 0
+--- !u!114 &526802419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526802409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a538add4ec9de574285ed77e86db42e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  currentHealth: 0
 --- !u!1 &569902358
 GameObject:
   m_ObjectHideFlags: 0

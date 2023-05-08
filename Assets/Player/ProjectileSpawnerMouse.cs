@@ -7,6 +7,7 @@ public class ProjectileSpawnerMouse : MonoBehaviour
     public float bulletSpeed = 20f;
     public float bulletSize = 0.5f;
     public string enemyTag; // Tag, nach dem wir suchen
+    public int numBullets = 1;
 
     public float maxShootDistance = 20f;
 
@@ -66,36 +67,53 @@ public class ProjectileSpawnerMouse : MonoBehaviour
 
             if (distanceToEnemy <= maxShootDistance)
             {
-                // Erstelle das Projektil am Spawner
-                GameObject projectile = Instantiate(bulletPrefab, spawner.transform.position, spawner.transform.rotation);
-                projectile.transform.localScale = new Vector3(bulletSize, bulletSize, bulletSize);
-
-                // Richte das Projektil auf den Gegner aus
+                // Calculate shoot direction
                 Vector2 shootDirection = (currentEnemyTransform.position - spawner.transform.position).normalized;
-                projectile.transform.right = shootDirection;
 
-                // Setze die Geschwindigkeit des Projektils
-                Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-                if (rb != null)
+                // Calculate additional offset for even number of bullets
+                float additionalOffset = 0f;
+                if (numBullets % 2 == 0)
                 {
-                    rb.velocity = shootDirection * bulletSpeed;
-                }
-                else
-                {
-                    Debug.LogWarning("Rigidbody2D component not found on projectile.");
+                    additionalOffset = (numBullets - 1) * 10f / 2f;
                 }
 
-                // Setze die Modifier des Projektils
-                BulletPlayer bulletScript = projectile.GetComponent<BulletPlayer>();
-                if (bulletScript != null)
+                for (int i = 0; i < numBullets; i++)
                 {
-                    bulletScript.elasticWalls = enableElasticWalls;
-                    bulletScript.PiercingBullets = enablePiercingBullets;
-                    bulletScript.test = enableTest;
-                    bulletScript.maxWallBounces += addBounce;
+                    // Calculate offset angle for this bullet
+                    float offsetAngle = (i - (numBullets - 1) / 2f) * 10f + additionalOffset / 2f;
+
+                    // Calculate offset vector
+                    Vector2 offset = Quaternion.Euler(0f, 0f, offsetAngle) * shootDirection;
+
+                    // Calculate position of bullet
+                    Vector3 bulletPos = spawner.transform.position + new Vector3(offset.x, offset.y, 0f) * 0.5f;
+
+                    // Spawn bullet and set its properties
+                    GameObject bullet = Instantiate(bulletPrefab, bulletPos, Quaternion.identity);
+                    bullet.transform.right = offset;
+                    Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                    if (rb != null)
+                    {
+                        rb.velocity = offset * bulletSpeed;
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Rigidbody2D component not found on projectile.");
+                    }
+
+                    BulletPlayer bulletScript = bullet.GetComponent<BulletPlayer>();
+                    if (bulletScript != null)
+                    {
+                        bulletScript.elasticWalls = enableElasticWalls;
+                        bulletScript.PiercingBullets = enablePiercingBullets;
+                        bulletScript.test = enableTest;
+
+                        bulletScript.maxWallBounces += addBounce;
+                    }
                 }
             }
         }
     }
+
 
 }
