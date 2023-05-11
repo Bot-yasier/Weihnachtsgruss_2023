@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     public float minRange = 2f;
     public float shootDuration = 0.5f;
     public float shootCooldown = 1.5f;
+    public UpgradeHandler upgradeHandler;
 
     private Transform player;
     private Vector2 moveDirection;
@@ -100,13 +101,16 @@ public class EnemyController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            
             Die(); // if the current health is zero or less, call the Die() function
         }
+
     }
 
     void Die()
     {
         // destroy the enemy object
         Destroy(gameObject);
+
     }
 }
