@@ -16,6 +16,7 @@ TagManager:
   - playerWeapon
   - Enemy
   - BulletPlayer
+  - EnemyPath
   layers:
   - Default
   - TransparentFX

@@ -3,6 +3,17 @@ using System.Collections;
 
 public class EnemyController : MonoBehaviour
 {
+
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
+    private bool isMoving = false;
+    private bool isShooting = false;
+    private float animationDuration = 1.0f;
+    public float shootDelay = 2.0f;
+
+    public delegate void EnemyDeathEventHandler(EnemyController enemy);
+    public static event EnemyDeathEventHandler EnemyDeathEvent;
+
     public int maxHealth = 3; // maximum health of the enemy
     public float moveSpeed = 3f;
     public GameObject bulletPrefab;
@@ -15,85 +26,220 @@ public class EnemyController : MonoBehaviour
 
     private Transform player;
     private Vector2 moveDirection;
+    private Vector2 randomPosition;
     private float timeUntilNextShot;
     public int currentHealth; // current health of the enemy
+    private bool hasCollided = false;
+
+
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         moveDirection = Vector2.zero;
         timeUntilNextShot = shootCooldown;
-        currentHealth = maxHealth; // set the current health to the maximum health at the start
+        currentHealth = maxHealth;
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity *= 0.5f;
+
+        StartCoroutine(EnemyLoop()); // Start the MoveAndWait coroutine
     }
+
+
+    IEnumerator EnemyLoop()
+    {
+        while (true)
+        {
+            Debug.Log("Move");
+
+            // Start the MoveAndWait coroutine
+            yield return StartCoroutine(MoveAndWait());
+
+            // Trigger the "shoot" animation
+            isShooting = true;
+            animator.SetTrigger("shoot");
+
+            Debug.Log("Shoot");
+            int count = 0;
+            while (count < 3)
+            {
+
+                animator.SetTrigger("shoot");
+                count++;
+            }
+
+            // Wait for a certain duration before shooting
+            yield return new WaitForSeconds(shootDelay);
+            Debug.Log("shootDelay");
+            animator.SetTrigger("stopshoot");
+
+
+            yield return null; // Optional: Wait for one frame to allow the animation to start playing
+        }
+    }
+
+
+
+
 
     void Update()
     {
         if (player == null) return;
 
-        Vector2 directionToPlayer = player.position - transform.position;
-        float distanceToPlayer = directionToPlayer.magnitude;
+        // Update animation parameters
+        Vector2 playerToEnemy = player.position - transform.position;
+        animator.SetFloat("MoveX", moveDirection.x);
+        animator.SetFloat("MoveY", moveDirection.y);
+        animator.SetFloat("PlayerX", playerToEnemy.x);
+        animator.SetFloat("PlayerY", playerToEnemy.y);
+        animator.SetBool("IsMoving", isMoving);
+        animator.SetBool("IsShooting", isShooting);
 
-        if (distanceToPlayer > maxRange)
+        // Flip the sprite based on movement direction
+        if (isMoving)
         {
-            moveDirection = directionToPlayer.normalized;
+            if (moveDirection.x < 0)
+                spriteRenderer.flipX = false;
+            else if (moveDirection.x > 0)
+                spriteRenderer.flipX = true;
         }
-        else if (distanceToPlayer < minRange)
+
+        if (isShooting)
         {
-            moveDirection = Vector2.zero;
+            if (playerToEnemy.x < 0)
+                spriteRenderer.flipX = false;
+            else if (playerToEnemy.x > 0)
+                spriteRenderer.flipX = true;
         }
 
-        transform.position += (Vector3)moveDirection * moveSpeed * Time.deltaTime;
-
-        if (moveDirection == Vector2.zero)
+        if (hasReachedRandomPosition && isMoving)
         {
-            timeUntilNextShot -= Time.deltaTime;
-        }
+            // Check for collisions while moving
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.1f);
+            if (colliders.Length > 1) // Check if there are any colliders other than the enemy itself
+            {
+                // Collision detected
+                StopAllCoroutines(); // Stop the current movement
 
-        if (timeUntilNextShot <= 0)
-        {
-            StartCoroutine(ShootAndWait());
-            timeUntilNextShot = shootCooldown;
+                // Trigger a new movement by starting the MoveAndWait coroutine again
+                StartCoroutine(MoveAndWait());
+            }
         }
     }
 
-    IEnumerator ShootAndWait()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        moveDirection = Vector2.zero;
+        hasCollided = true;
+    }
 
-        for (int i = 0; i < 3; i++)
+
+
+    private bool hasReachedRandomPosition = false; // Add this variable to track the reached position
+
+    IEnumerator MoveAndWait()
+    {
+        isMoving = true;
+
+        // Find all objects with the "EnemyPath" tag
+        GameObject[] groundObjects = GameObject.FindGameObjectsWithTag("EnemyPath");
+
+        if (groundObjects.Length > 0)
         {
-            if (player == null || bulletPrefab == null) yield break;
+            // Get a random ground object
+            GameObject randomGround = groundObjects[Random.Range(0, groundObjects.Length)];
 
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            // Get the collider of the ground object
+            Collider2D groundCollider = randomGround.GetComponent<Collider2D>();
 
-            if (!bullet.TryGetComponent(out Rigidbody2D bulletRigidbody)) yield break;
+            if (groundCollider != null)
+            {
+                // Calculate a random position within the ground object's bounds
+                Vector3 randomPosition = new Vector3(
+                    Random.Range(groundCollider.bounds.min.x, groundCollider.bounds.max.x),
+                    Random.Range(groundCollider.bounds.min.y, groundCollider.bounds.max.y),
+                    transform.position.z
+                );
 
-            Vector2 directionToPlayer = player.position - transform.position;
-            float angle = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
+                // Log the random position
+                Debug.Log("Random Position: " + randomPosition);
 
-            float deviationAngle = Random.Range(-10f, 10f);
-            angle += deviationAngle;
+                // Calculate direction towards the random spot
+                moveDirection = ((Vector2)randomPosition - (Vector2)transform.position).normalized;
 
-            Vector2 bulletDirection = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
-            bulletRigidbody.velocity = bulletDirection.normalized * bulletSpeed;
+                // Move towards the random spot
+                bool reachedDestination = false;
+                while (!reachedDestination && !hasCollided)
+                {
+                    transform.position += (Vector3)moveDirection * moveSpeed * Time.deltaTime;
 
-            yield return new WaitForSecondsRealtime(shootDuration);
+                    // Clamp the position within the ground object's bounds
+                    float clampedX = Mathf.Clamp(transform.position.x, groundCollider.bounds.min.x, groundCollider.bounds.max.x);
+                    float clampedY = Mathf.Clamp(transform.position.y, groundCollider.bounds.min.y, groundCollider.bounds.max.y);
+                    transform.position = new Vector3(clampedX, clampedY, transform.position.z);
+
+                    if (Vector2.Distance(transform.position, randomPosition) <= 0.1f)
+                    {
+                        reachedDestination = true;
+                    }
+
+                    yield return null;
+                }
+
+                isMoving = false; // Update the isMoving flag after reaching the destination
+
+                if (hasCollided)
+                {
+                    hasCollided = false; // Reset the collision flag
+                    StartCoroutine(MoveAndWait()); // Start a new MoveAndWait coroutine
+                }
+            }
+            else
+            {
+                Debug.LogError("No Collider2D component found on the ground object");
+            }
+        }
+        else
+        {
+            Debug.LogError("No objects found with the 'EnemyPath' tag");
+        }
+    }
+
+
+
+    public void Shoot()
+    {
+        Debug.Log("Shoot method.");
+
+
+        if (player == null || bulletPrefab == null)
+        {
+            Debug.Log("Player or bulletPrefab is null. Cannot shoot.");
+            return;
         }
 
-        yield return new WaitForSecondsRealtime(0.2f);
+        Debug.Log("Shooting...");
 
-        Vector2 randomDirection = Random.insideUnitCircle.normalized;
-        float randomDistance = Random.Range(minRange, maxRange);
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
 
-        moveDirection = randomDirection;
-        timeUntilNextShot = shootCooldown;
+        if (!bullet.TryGetComponent(out Rigidbody2D bulletRigidbody))
+        {
+            Debug.Log("Bullet does not have Rigidbody2D component. Cannot shoot.");
+            return;
+        }
 
-        yield return new WaitForSecondsRealtime(randomDistance / moveSpeed);
+        Vector2 directionToPlayer = player.position - transform.position;
+        float angle = Mathf.Atan2(directionToPlayer.y, directionToPlayer.x) * Mathf.Rad2Deg;
 
-        moveDirection = Vector2.zero;
+        float deviationAngle = Random.Range(-10f, 10f);
+        angle += deviationAngle;
+
+        Vector2 bulletDirection = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+        bulletRigidbody.velocity = bulletDirection.normalized * bulletSpeed;
+
+        Debug.Log("Shoot complete.");
+
     }
+
 
     public void TakeDamage(int damage)
     {
@@ -101,7 +247,7 @@ public class EnemyController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            
+
             Die(); // if the current health is zero or less, call the Die() function
         }
 
@@ -109,8 +255,12 @@ public class EnemyController : MonoBehaviour
 
     void Die()
     {
-        // destroy the enemy object
-        Destroy(gameObject);
+        // Raise the enemy death event
+        if (EnemyDeathEvent != null)
+        {
+            EnemyDeathEvent(this);
+        }
 
+        Destroy(gameObject);
     }
 }
