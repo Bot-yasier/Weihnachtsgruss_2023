@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
     private Transform player;
     private Vector2 moveDirection;
     private float timeUntilNextShot;
-    private int currentHealth; // current health of the enemy
+    public int currentHealth; // current health of the enemy
 
     void Start()
     {

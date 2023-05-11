@@ -11,9 +11,9 @@ public class ProjectileSpawnerMouse : MonoBehaviour
 
     public float maxShootDistance = 20f;
 
-    [SerializeField] private bool enableElasticWalls = false;
-    [SerializeField] private bool enablePiercingBullets = false;
-    [SerializeField] private bool enableTest = false;
+    [SerializeField] public bool enableElasticWalls = false;
+    [SerializeField] public bool enablePiercingBullets = false;
+    [SerializeField] public bool enableTest = false;
 
     [SerializeField] private int addBounce = 3;
 
