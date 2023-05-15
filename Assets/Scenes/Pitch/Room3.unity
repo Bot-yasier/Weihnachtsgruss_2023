@@ -386,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5464962003782064311, guid: 7e228ed2cbc99cb4c904b7c557aec17d, type: 3}
       propertyPath: maxHealth
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5464962003782064311, guid: 7e228ed2cbc99cb4c904b7c557aec17d, type: 3}
       propertyPath: upgradeHandler
@@ -464,7 +464,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 526802409}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -12.93, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -992,11 +992,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337972199627238673, guid: 420bef5170bf46e44a8d6f1a462c2230, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.82
+      value: 4.8
       objectReference: {fileID: 0}
     - target: {fileID: 8337972199627238673, guid: 420bef5170bf46e44a8d6f1a462c2230, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.4
+      value: -5.18
       objectReference: {fileID: 0}
     - target: {fileID: 8337972199627238673, guid: 420bef5170bf46e44a8d6f1a462c2230, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1036,7 +1036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337972199627238677, guid: 420bef5170bf46e44a8d6f1a462c2230, type: 3}
       propertyPath: maxHealth
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8337972199627238677, guid: 420bef5170bf46e44a8d6f1a462c2230, type: 3}
       propertyPath: upgradeHandler
@@ -4640,7 +4640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337972199627238677, guid: 420bef5170bf46e44a8d6f1a462c2230, type: 3}
       propertyPath: maxHealth
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8337972199627238677, guid: 420bef5170bf46e44a8d6f1a462c2230, type: 3}
       propertyPath: upgradeHandler
@@ -14473,7 +14473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8337972199627238677, guid: 420bef5170bf46e44a8d6f1a462c2230, type: 3}
       propertyPath: maxHealth
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8337972199627238677, guid: 420bef5170bf46e44a8d6f1a462c2230, type: 3}
       propertyPath: upgradeHandler
