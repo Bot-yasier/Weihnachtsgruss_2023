@@ -16,6 +16,9 @@ public class BulletPlayer : MonoBehaviour
 
     Vector3 lastVelocity;
 
+    public GameObject particlePrefab; // Reference to the particle system prefab
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,7 +46,7 @@ public class BulletPlayer : MonoBehaviour
                 Destroy(gameObject); // destroy the bullet object
                 //Debug.Log("PB" + PiercingBullets);
             }
-            if(PiercingBullets == true)
+            if (PiercingBullets == true)
             {
                 EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
                 if (enemy != null)
@@ -52,7 +55,6 @@ public class BulletPlayer : MonoBehaviour
                 }
                 //Debug.Log("PB" + PiercingBullets);
             }
-            
         }
 
         if (elasticWalls == true)
@@ -71,10 +73,29 @@ public class BulletPlayer : MonoBehaviour
                 Destroy(gameObject); // destroy the bullet object if it has bounced off walls maxWallBounces times
             }
         }
-
         else
         {
             Destroy(gameObject);
         }
+
+        // Spawn particles
+        SpawnParticles(collision.contacts[0].point, collision.contacts[0].normal, collision);
     }
+
+    void SpawnParticles(Vector3 position, Vector3 normal, Collision2D collision)
+    {
+        if (particlePrefab != null)
+        {
+            Quaternion rotation = Quaternion.LookRotation(normal);
+
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                rotation = Quaternion.LookRotation(-normal);
+            }
+
+            GameObject particles = Instantiate(particlePrefab, position, rotation);
+            Destroy(particles, 2f); // Destroy particles after 2 seconds (adjust the duration as needed)
+        }
+    }
+
 }

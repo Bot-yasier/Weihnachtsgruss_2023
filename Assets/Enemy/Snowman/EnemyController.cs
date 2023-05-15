@@ -59,7 +59,6 @@ public class EnemyController : MonoBehaviour
             isShooting = true;
             animator.SetTrigger("shoot");
 
-            Debug.Log("Shoot");
             int count = 0;
             while (count < 3)
             {
@@ -84,6 +83,8 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
+
+        
         if (player == null) return;
 
         // Update animation parameters
@@ -208,7 +209,7 @@ public class EnemyController : MonoBehaviour
 
     public void Shoot()
     {
-        Debug.Log("Shoot method.");
+        Debug.Log("Shoot");
 
 
         if (player == null || bulletPrefab == null)
