@@ -3,8 +3,9 @@ using System.Collections;
 
 public class PlayerMovementMouse : MonoBehaviour
 {
-    public float speed = 5f, stopDistance = 0.1f, dashDistance = 2f, dashDuration = 0.5f, dashCooldown = 2f;
+    public float stopDistance = 0.1f, dashDistance = 2f, dashDuration = 0.5f, dashCooldown = 2f;
     private Rigidbody2D rb;
+    public int speed;
     private Vector2 targetPosition, dashDirection;
     private bool isDashing, isMoving;
     private float dashTimer, dashCooldownTimer;
