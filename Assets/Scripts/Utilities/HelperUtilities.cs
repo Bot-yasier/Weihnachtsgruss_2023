@@ -28,6 +28,11 @@ public static class HelperUtilities
         foreach (var item in enumerableObjectToCheck)
         {
 
+            if (enumerableObjectToCheck == null)
+            {
+                Debug.Log(fieldName + " is null in object " + thisObject.name.ToString());
+                return true;
+            }
 
             if (item == null)
             {

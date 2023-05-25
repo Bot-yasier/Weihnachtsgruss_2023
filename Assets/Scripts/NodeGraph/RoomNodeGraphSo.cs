@@ -28,6 +28,18 @@ public class RoomNodeGraphSo : ScriptableObject
         }
 
     }
+    public RoomNodeSO GetRoomNode(RoomNodeTypeSO roomNodeType)
+    {
+        foreach (RoomNodeSO node in roomNodeList)
+        {
+            if (node.roomNodeType == roomNodeType)
+            {
+                return node;
+            }
+        }
+        return null;
+    }
+
 
     public RoomNodeSO GetRoomNode(string roomNodeTD)
     {
@@ -40,6 +52,14 @@ public class RoomNodeGraphSo : ScriptableObject
         }
         return null;
 
+    }
+
+    public IEnumerable<RoomNodeSO> GetChildRoomNodes(RoomNodeSO parentRoomNode)
+    {
+        foreach (string childNodeID in parentRoomNode.childRoomNodeIDList)
+        {
+            yield return GetRoomNode(childNodeID);
+        }
     }
     #region
 #if UNITY_EDITOR

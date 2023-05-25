@@ -32,7 +32,7 @@ public class DungeonLevelSO : ScriptableObject
 
     #endregion Tooltip
 
-    //public List<RoomTemplateSO> roomTemplateList;
+    public List<RoomTemplateSO> roomTemplateList;
 
     #region Header ROOM NODE GRAPHS FOR LEVEL
 
@@ -43,7 +43,7 @@ public class DungeonLevelSO : ScriptableObject
 
     #region Tooltip
 
-    //[Tooltip("Populate this list with the room node grpahs which should be randomly selected from for the level.")]
+    [Tooltip("Populate this list with the room node grpahs which should be randomly selected from for the level.")]
 
     #endregion Tooltip
 
@@ -57,7 +57,7 @@ public class DungeonLevelSO : ScriptableObject
     private void OnValidate()
     {
         HelperUtilities.ValidateCheckEmptyString(this, nameof(levelName), levelName);
-        //if (HelperUtilities.ValidateCheckEnumerableValues(this, nameof(roomTemplateList), roomTemplateList))
+        if (HelperUtilities.ValidateCheckEnumerableValues(this, nameof(roomTemplateList), roomTemplateList))
             return;
         if (HelperUtilities.ValidateCheckEnumerableValues(this, nameof(roomNodeGraphList), roomNodeGraphList))
             return;
@@ -71,19 +71,20 @@ public class DungeonLevelSO : ScriptableObject
         bool isEntrance = false;
 
         // Loop through all room templates to check that this node type has been specified
-       // foreach (RoomTemplateSO roomTemplateSO in roomTemplateList)
-        ////  if (roomTemplateSO == null)
+        foreach (RoomTemplateSO roomTemplateSO in roomTemplateList)
+        {
+            if (roomTemplateSO == null)
                 return;
 
-            //if (roomTemplateSO.roomNodeType.isCorridorEW)
+            if (roomTemplateSO.roomNodeType.isCorridorEW)
                 isEWCorridor = true;
 
-            //if (roomTemplateSO.roomNodeType.isCorridorNS)
+            if (roomTemplateSO.roomNodeType.isCorridorNS)
                 isNSCorridor = true;
 
-//            if (roomTemplateSO.roomNodeType.isEntrance)
+            if (roomTemplateSO.roomNodeType.isEntrance)
                 isEntrance = true;
-      //  }
+        }
 
         if (isEWCorridor == false)
         {
@@ -121,13 +122,13 @@ public class DungeonLevelSO : ScriptableObject
                 bool isRoomNodeTypeFound = false;
 
                 // Loop through all room templates to check that this node type has been specified
-               // foreach (RoomTemplateSO roomTemplateSO in roomTemplateList)
+                foreach (RoomTemplateSO roomTemplateSO in roomTemplateList)
                 {
 
-                  //  if (roomTemplateSO == null)
+                    if (roomTemplateSO == null)
                         continue;
 
-                  //  if (roomTemplateSO.roomNodeType == roomNodeSO.roomNodeType)
+                    if (roomTemplateSO.roomNodeType == roomNodeSO.roomNodeType)
                     {
                         isRoomNodeTypeFound = true;
                         break;
