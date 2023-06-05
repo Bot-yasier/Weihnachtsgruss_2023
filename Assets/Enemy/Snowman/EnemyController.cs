@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using Pathfinding;
 
 public class EnemyController : MonoBehaviour
 {
 
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    private AIDestinationSetter aiDestinationSetter;
     private bool isMoving = false;
     private bool isShooting = false;
     private float animationDuration = 1.0f;
@@ -25,7 +27,7 @@ public class EnemyController : MonoBehaviour
     public UpgradeHandler upgradeHandler;
 
     private Transform player;
-    private Vector2 moveDirection;
+    //private Vector2 moveDirection;
     private Vector2 randomPosition;
     private float timeUntilNextShot;
     public int currentHealth; // current health of the enemy
@@ -36,45 +38,42 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
-        moveDirection = Vector2.zero;
+        //moveDirection = Vector2.zero;
         timeUntilNextShot = shootCooldown;
         currentHealth = maxHealth;
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity *= 0.5f;
+        aiDestinationSetter = GetComponent<AIDestinationSetter>();
 
-        StartCoroutine(EnemyLoop()); // Start the MoveAndWait coroutine
+
+
+        //StartCoroutine(EnemyLoop()); // Start the MoveAndWait coroutine
     }
 
 
-    IEnumerator EnemyLoop()
+    public IEnumerator EnemyLoop()
     {
-        while (true)
+
+        // Trigger the "shoot" animation
+        animator.SetTrigger("shoot");
+
+        int count = 0;
+        while (count < 3)
         {
-            Debug.Log("Move");
 
-            // Start the MoveAndWait coroutine
-            yield return StartCoroutine(MoveAndWait());
-
-            // Trigger the "shoot" animation
-            isShooting = true;
             animator.SetTrigger("shoot");
-
-            int count = 0;
-            while (count < 3)
-            {
-
-                animator.SetTrigger("shoot");
-                count++;
-            }
-
-            // Wait for a certain duration before shooting
-            yield return new WaitForSeconds(shootDelay);
-            Debug.Log("shootDelay");
-            animator.SetTrigger("stopshoot");
-
-
-            yield return null; // Optional: Wait for one frame to allow the animation to start playing
+            count++;
         }
+
+        // Wait for a certain duration before shooting
+        yield return new WaitForSeconds(shootDelay);
+        Debug.Log("shootDelay");
+        animator.SetTrigger("stopshoot");
+        isShooting = false;
+
+
+        yield return null; // Optional: Wait for one frame to allow the animation to start playing
+
     }
 
 
@@ -83,14 +82,25 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-
-        
         if (player == null) return;
+
+        // Get the AIDestinationSetter script component
+        if (aiDestinationSetter == null)
+        {
+            aiDestinationSetter = GetComponent<AIDestinationSetter>();
+        }
+
+        // Get the move direction and current target position from AIDestinationSetter
+        Vector2 moveDirection = aiDestinationSetter.MoveDirection;
+        Vector2 currentTargetPosition = aiDestinationSetter.CurrentTargetPosition;
+
+        // Check if the AI is moving
+        isMoving = moveDirection.magnitude > 0 && Vector2.Distance(transform.position, currentTargetPosition) > 0.1f;
 
         // Update animation parameters
         Vector2 playerToEnemy = player.position - transform.position;
-        animator.SetFloat("MoveX", moveDirection.x);
-        animator.SetFloat("MoveY", moveDirection.y);
+        animator.SetFloat("MoveX", currentTargetPosition.x - transform.position.x);
+        animator.SetFloat("MoveY", currentTargetPosition.y - transform.position.y);
         animator.SetFloat("PlayerX", playerToEnemy.x);
         animator.SetFloat("PlayerY", playerToEnemy.y);
         animator.SetBool("IsMoving", isMoving);
@@ -105,6 +115,7 @@ public class EnemyController : MonoBehaviour
                 spriteRenderer.flipX = true;
         }
 
+
         if (isShooting)
         {
             if (playerToEnemy.x < 0)
@@ -113,6 +124,7 @@ public class EnemyController : MonoBehaviour
                 spriteRenderer.flipX = true;
         }
 
+        /*
         if (hasReachedRandomPosition && isMoving)
         {
             // Check for collisions while moving
@@ -126,6 +138,7 @@ public class EnemyController : MonoBehaviour
                 StartCoroutine(MoveAndWait());
             }
         }
+        */
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -133,10 +146,21 @@ public class EnemyController : MonoBehaviour
         hasCollided = true;
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("EnemyMarker"))
+        {
+            StartCoroutine(EnemyLoop());
+            isMoving = false;
+            isShooting = true;
+        }
+    }
+
 
 
     private bool hasReachedRandomPosition = false; // Add this variable to track the reached position
 
+    /*
     IEnumerator MoveAndWait()
     {
         isMoving = true;
@@ -204,7 +228,7 @@ public class EnemyController : MonoBehaviour
             Debug.LogError("No objects found with the 'EnemyPath' tag");
         }
     }
-
+    */
 
 
     public void Shoot()
