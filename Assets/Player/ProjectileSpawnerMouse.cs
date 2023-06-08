@@ -27,17 +27,14 @@ public class ProjectileSpawnerMouse : MonoBehaviour
             spawner = gameObject;
         }
 
-       
+        InvokeRepeating("FindEnemies", 0f, 1f); // Methode, um Feinde zu finden
+        InvokeRepeating("Shoot", 0f, 1f);
     }
 
     public void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            InvokeRepeating("FindEnemies", 0f, 1f); // Methode, um Feinde zu finden
-            InvokeRepeating("Shoot", 0f, 1f);
-        }
+           
+        
       
 
     }
