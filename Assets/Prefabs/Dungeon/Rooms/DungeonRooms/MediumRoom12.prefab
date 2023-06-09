@@ -6102,7 +6102,7 @@ GameObject:
   - component: {fileID: 6855575059801223395}
   - component: {fileID: -7208566461732415712}
   m_Layer: 12
-  m_Name: MediumRoom4
+  m_Name: MediumRoom12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

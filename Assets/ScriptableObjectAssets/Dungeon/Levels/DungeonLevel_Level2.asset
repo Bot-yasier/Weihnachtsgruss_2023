@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98912c54b4b75447a2c05fac8595bea, type: 3}
+  m_Name: DungeonLevel_Level2
+  m_EditorClassIdentifier: 
+  levelName: Level2
+  roomTemplateList:
+  - {fileID: 11400000, guid: da974a4ec35ae4141be1db296e4299e3, type: 2}
+  - {fileID: 11400000, guid: a1e5ef9b28c2c3e429c05bcb8415132f, type: 2}
+  - {fileID: 11400000, guid: f4d8e6abb74b16b468559288564c4f46, type: 2}
+  - {fileID: 11400000, guid: 25e455fbbdbc05e4e8449d5e588bf948, type: 2}
+  - {fileID: 11400000, guid: 9cafcc409619ad5418878e6a388c10c0, type: 2}
+  - {fileID: 11400000, guid: 5faf34d4d03935f45b84b8106d870c0e, type: 2}
+  - {fileID: 11400000, guid: c08560acc924c0941bee6e93d02e8644, type: 2}
+  roomNodeGraphList:
+  - {fileID: 11400000, guid: 4b02e63e93b947248a6ab2f6b7042922, type: 2}
