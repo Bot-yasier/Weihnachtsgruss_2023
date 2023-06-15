@@ -626,7 +626,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &526802410
 Transform:
   m_ObjectHideFlags: 0
@@ -680,8 +680,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00770393, y: 0.000000059604645}
-  m_Size: {x: 0.97436625, y: 1.771839}
+  m_Offset: {x: 0.00770393, y: -0.2084338}
+  m_Size: {x: 0.97436625, y: 1.4699692}
   m_Direction: 0
 --- !u!114 &526802415
 MonoBehaviour:
@@ -699,7 +699,7 @@ MonoBehaviour:
   dashDistance: 5
   dashDuration: 0.1
   dashCooldown: 1
-  speed: 10
+  speed: 8
 --- !u!114 &526802416
 MonoBehaviour:
   m_ObjectHideFlags: 0

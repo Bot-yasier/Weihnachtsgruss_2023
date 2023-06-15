@@ -29,12 +29,9 @@ public class UpgradeHandler : MonoBehaviour
 
 
     private List<EnemyController> enemyControllers;
-
-    private void Start()
+    private void Update()
     {
-        ModiButton1.onClick.AddListener(Button1Clicked);
-        ModiButton2.onClick.AddListener(Button2Clicked);
-        ModiButton3.onClick.AddListener(Button3Clicked);
+      
 
         enemyControllers = new List<EnemyController>(FindObjectsOfType<EnemyController>());
 
@@ -42,6 +39,13 @@ public class UpgradeHandler : MonoBehaviour
         {
             EnemyController.EnemyDeathEvent += OnEnemyDeath;
         }
+    }
+
+    private void Start()
+    {
+        ModiButton1.onClick.AddListener(Button1Clicked);
+        ModiButton2.onClick.AddListener(Button2Clicked);
+        ModiButton3.onClick.AddListener(Button3Clicked);
     }
 
     private void OnDestroy()
