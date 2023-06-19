@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEditor;
 using UnityEngine;
 
-
 [CreateAssetMenu(fileName = "Room_", menuName = "Scriptable Objects/Dungeon/Room")]
 public class RoomTemplateSO : ScriptableObject
 {
@@ -11,38 +10,27 @@ public class RoomTemplateSO : ScriptableObject
 
     [Space(10)]
     [Header("ROOM PREFAB")]
-
-    [Tooltip("The gameobject prefap for the room(this will contain all the tilemaps for the room and environment game objects)")]
-
-
+    [Tooltip("The gameobject prefab for the room (this will contain all the tilemaps for the room and environment game objects)")]
     public GameObject prefab;
 
     [HideInInspector] public GameObject previousPrefab;
 
     [Space(10)]
     [Header("ROOM CONFIGURATION")]
-
-
     public RoomNodeTypeSO roomNodeType;
-
     public Vector2Int lowerBounds;
-
     public Vector2Int upperBounds;
-
     [SerializeField] public List<Doorway> doorwayList;
-
     public Vector2Int[] spawnPositionArray;
 
     public List<Doorway> GetDoorwayList()
     {
         return doorwayList;
-
     }
 
     #region Validation
 
 #if UNITY_EDITOR
-
     // Validate SO fields
     private void OnValidate()
     {
@@ -58,11 +46,8 @@ public class RoomTemplateSO : ScriptableObject
 
         // Check spawn positions populated
         HelperUtilities.ValidateCheckEnumerableValues(this, nameof(spawnPositionArray), spawnPositionArray);
+    }
 #endif
 
-        #endregion Validation
-
-
-    }
-
+    #endregion Validation
 }
