@@ -24,7 +24,7 @@ public class UpgradeHandler : MonoBehaviour
     public string Button3value;
 
     int Akktuell = 0;
-    int Plus = 5;
+    int Plus = 2;
     int Neu = 0;
 
 
