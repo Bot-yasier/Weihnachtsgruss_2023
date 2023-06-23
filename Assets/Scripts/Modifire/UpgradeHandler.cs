@@ -10,6 +10,7 @@ public class UpgradeHandler : MonoBehaviour
     public ProjectileSpawnerMouse projectileSpawnerMouse;
     public Rigidbody2D player;
     public RandomModifire randomModifire;
+    public PowerUpBar powerUpBar;
 
     public GameObject Modifire1;
     public GameObject Modifire2;
@@ -26,19 +27,37 @@ public class UpgradeHandler : MonoBehaviour
     int Akktuell = 0;
     int Plus = 2;
     int Neu = 0;
+    int i = 1;
 
 
     private List<EnemyController> enemyControllers;
     private void Update()
     {
-      
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        enemyControllers = new List<EnemyController>(FindObjectsOfType<EnemyController>());
+        if (enemies.Length == 0)
+        {
+            for (int i = 0; i < powerUpBar.levelUpCount; i++)
+            {
+                Upgrade();
+                powerUpBar.levelUpCount = 0;
+            }
+
+
+        }
+
+            enemyControllers = new List<EnemyController>(FindObjectsOfType<EnemyController>());
 
         foreach (var enemyController in enemyControllers)
         {
-            EnemyController.EnemyDeathEvent += OnEnemyDeath;
+            if (i == 1)
+            {
+                EnemyController.EnemyDeathEvent += OnEnemyDeath;
+                i++;
+            }
+         
         }
+
     }
 
     private void Start()
@@ -161,13 +180,11 @@ public class UpgradeHandler : MonoBehaviour
         Modifire1.SetActive(false);
         Modifire2.SetActive(false);
         Modifire3.SetActive(false);
-        Time.timeScale = 1f; // Resume the game
     }
 
     void OnEnemyDeath(EnemyController enemy)
-    {
-     
-        Upgrade();
+    {     
+            powerUpBar.IncreaseFillAmount();
       
     }
 
@@ -177,7 +194,6 @@ public class UpgradeHandler : MonoBehaviour
         Modifire2.SetActive(true);
         Modifire3.SetActive(true);
         randomModifire.AssignImages();
-        Time.timeScale = 0f; // Pause the game
 
 
         Image imageComponent1 = Modifire1.GetComponent<Image>();
