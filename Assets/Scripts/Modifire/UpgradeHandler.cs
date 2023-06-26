@@ -8,7 +8,7 @@ public class UpgradeHandler : MonoBehaviour
 {
     public PlayerMovementMouse playerMovementMouse;
     public ProjectileSpawnerMouse projectileSpawnerMouse;
-    public Rigidbody2D player;
+    public Rigidbody2D playerrigid;
     public RandomModifire randomModifire;
     public PowerUpBar powerUpBar;
 
@@ -180,6 +180,9 @@ public class UpgradeHandler : MonoBehaviour
         Modifire1.SetActive(false);
         Modifire2.SetActive(false);
         Modifire3.SetActive(false);
+        playerMovementMouse.enabled = true;
+        playerrigid.constraints = RigidbodyConstraints2D.None;
+        playerrigid.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     void OnEnemyDeath(EnemyController enemy)
@@ -194,7 +197,8 @@ public class UpgradeHandler : MonoBehaviour
         Modifire2.SetActive(true);
         Modifire3.SetActive(true);
         randomModifire.AssignImages();
-
+        playerMovementMouse.enabled = false;
+        playerrigid.constraints = RigidbodyConstraints2D.FreezePosition;
 
         Image imageComponent1 = Modifire1.GetComponent<Image>();
         Image imageComponent2 = Modifire2.GetComponent<Image>();

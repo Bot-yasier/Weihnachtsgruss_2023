@@ -7911,6 +7911,63 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!1 &1139117198407640273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8828824902154063995}
+  - component: {fileID: 6132467075301365390}
+  m_Layer: 0
+  m_Name: ScoreHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8828824902154063995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139117198407640273}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.9711595, y: 1.982816, z: 0.3687204}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8872600781789975841}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6132467075301365390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139117198407640273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fea2b1f3e4893fc43a936081ba24258e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  commonPackages:
+  - {fileID: 6263338384775331885, guid: 691e8ce0373dd7841a6c183b0ad28b8e, type: 3}
+  - {fileID: 8309768945972744214, guid: bd697a16b5c22cc41a0e895999acfbc2, type: 3}
+  - {fileID: 1956300410566224574, guid: 159c64a0821c6634d842923a2ebbe049, type: 3}
+  epicPackages:
+  - {fileID: 9129399359703706219, guid: 415d94cd18ee7494da3c5550f7fd3d20, type: 3}
+  legendPackages:
+  - {fileID: 8925461379317679605, guid: a55a35603c630474d86ca84b980dcc0e, type: 3}
+  spawnPoint1: {fileID: 1258147416560310647}
+  spawnPoint2: {fileID: 8957872534788477888}
+  commonSpawnChance: 0.6
+  epicSpawnChance: 0.3
+  legendSpawnChance: 0.1
 --- !u!1 &1606765973985929623
 GameObject:
   m_ObjectHideFlags: 0
@@ -9065,7 +9122,37 @@ MonoBehaviour:
   - {fileID: 2563116231195099347}
   - {fileID: 9075657346680418686}
   - {fileID: 2991523727391743901}
-  - {fileID: 2788604979856010408}
+--- !u!1 &2014215424587696407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8957872534788477888}
+  m_Layer: 0
+  m_Name: ScoreSpawn1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8957872534788477888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014215424587696407}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -6.26, y: -4.25, z: 0.10984299}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8872600781789975841}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2410373241133449284
 GameObject:
   m_ObjectHideFlags: 0
@@ -9180,6 +9267,9 @@ Transform:
   - {fileID: 2788604979856010408}
   - {fileID: 6755062306779124829}
   - {fileID: 540640350663038522}
+  - {fileID: 1258147416560310647}
+  - {fileID: 8957872534788477888}
+  - {fileID: 8828824902154063995}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15722,6 +15812,37 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!1 &8716029595644626526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1258147416560310647}
+  m_Layer: 0
+  m_Name: ScoreSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1258147416560310647
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8716029595644626526}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.59, y: 4.93, z: 0.10984299}
+  m_LocalScale: {x: 1.3625, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8872600781789975841}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8908569006161885084
 GameObject:
   m_ObjectHideFlags: 0

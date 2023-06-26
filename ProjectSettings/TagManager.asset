@@ -18,6 +18,7 @@ TagManager:
   - BulletPlayer
   - EnemyPath
   - EnemyMarker
+  - Zahl
   layers:
   - Default
   - TransparentFX
@@ -32,7 +33,7 @@ TagManager:
   - Player
   - MiniMap
   - Room
-  - Wall
+  - Package
   - PlayerAmmo
   - Enemy
   - EnemyAmmo
@@ -41,7 +42,7 @@ TagManager:
   - EnemyWeapon
   - Camera 3
   - WallCollider
-  - 
+  - Wall
   - 
   - 
   - 

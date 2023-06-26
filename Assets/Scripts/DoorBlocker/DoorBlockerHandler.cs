@@ -95,6 +95,13 @@ public class DoorBlockerHandler : MonoBehaviour
                 Debug.Log(enemies.Length);
                 OpenDoors();
 
+                GameObject[] enemyMarkers = GameObject.FindGameObjectsWithTag("EnemyMarker");
+
+                foreach (GameObject enemyMarker in enemyMarkers)
+                {
+                    Destroy(enemyMarker);
+                }
+
             }
         }
     }
