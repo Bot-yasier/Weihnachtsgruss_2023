@@ -20,6 +20,8 @@ public class ProjectileSpawnerMouse : MonoBehaviour
     private GameObject currentEnemy; // Derzeitiges Zielobjekt
     private Transform currentEnemyTransform; // Transform des derzeitigen Zielobjekts
 
+    public Animator animator; // Animator component reference
+
     private void Start()
     {
         if (spawner == null)
@@ -27,16 +29,16 @@ public class ProjectileSpawnerMouse : MonoBehaviour
             spawner = gameObject;
         }
 
+        //animator = GetComponent<Animator>(); // Get the Animator component reference
+
         InvokeRepeating("FindEnemies", 0f, 1f); // Methode, um Feinde zu finden
-        InvokeRepeating("Shoot", 0f, 1f);
+        InvokeRepeating("ThrowAnim", 0f, 1f);
     }
 
     public void Update()
     {
-           
-        
-      
-
+        //animator.SetBool("IsShooting", true);
+        //animator.SetTrigger("Shoot");
     }
 
     private void FindEnemies()
@@ -67,7 +69,24 @@ public class ProjectileSpawnerMouse : MonoBehaviour
         }
     }
 
-    private void Shoot()
+    public void ThrowAnim()
+    {
+        if (currentEnemy != null)
+        {
+            float distanceToEnemy = Vector3.Distance(spawner.transform.position, currentEnemyTransform.position);
+
+            if (distanceToEnemy <= maxShootDistance)
+            {
+                if (animator != null)
+                {
+                    //animator.SetBool("IsShooting", true); // Set "isShooting" parameter to true
+                    animator.SetTrigger("Shoot");
+                }
+            }
+        }
+    }
+
+    public void Shoot() 
     {
         if (currentEnemy != null)
         {
@@ -109,6 +128,8 @@ public class ProjectileSpawnerMouse : MonoBehaviour
                         Debug.LogWarning("Rigidbody2D component not found on projectile.");
                     }
 
+                    // Trigger "Shoot" animation
+                    
                     BulletPlayer bulletScript = bullet.GetComponent<BulletPlayer>();
                     if (bulletScript != null)
                     {
@@ -122,6 +143,4 @@ public class ProjectileSpawnerMouse : MonoBehaviour
             }
         }
     }
-
-
 }
