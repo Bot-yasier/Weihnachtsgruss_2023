@@ -68,6 +68,14 @@ public class DoorBlockerHandler : MonoBehaviour
             collider.enabled = false;
             Astar.SetActive(false);
         }
+        
+        GameObject[] enemyAmmoObjects = GameObject.FindGameObjectsWithTag("EnemyAmmo");
+
+        foreach (GameObject enemyAmmoObject in enemyAmmoObjects)
+        {
+            Destroy(enemyAmmoObject);
+        }
+
     }
 
     public void PlayerCollWithEnterence()

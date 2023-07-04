@@ -12707,9 +12707,6 @@ MonoBehaviour:
   - {fileID: 8925461379317679605, guid: a55a35603c630474d86ca84b980dcc0e, type: 3}
   spawnPoint1: {fileID: 780833481052881484}
   spawnPoint2: {fileID: 2499504684906486363}
-  commonSpawnChance: 0.6
-  epicSpawnChance: 0.3
-  legendSpawnChance: 0.1
 --- !u!1 &5010863468547186094
 GameObject:
   m_ObjectHideFlags: 0

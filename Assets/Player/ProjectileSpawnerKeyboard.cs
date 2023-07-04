@@ -9,6 +9,9 @@ public class ProjectileSpawnerKeyboard : MonoBehaviour
     public float bulletSize = 0.5f;
     public int numBullets = 1;
     public int mulitshot = 1;
+    public bool backFlip = false;
+    public float backFlipCooldown = 0.35f; // Cooldown duration in seconds
+    public float backFlipTimer = 0f; // Timer for tracking cooldown
 
     private bool canShoot = true;
 
@@ -24,11 +27,27 @@ public class ProjectileSpawnerKeyboard : MonoBehaviour
         {
             Shoot();
         }
+
+        /*if (backFlip)
+        {
+            if (backFlipTimer <= 0f)
+            {
+                // Backflip logic goes here
+                // Reset the timer after performing the backflip
+                backFlipTimer = backFlipCooldown;
+            }
+            else
+            {
+                // Countdown the timer
+                backFlipTimer -= Time.deltaTime;
+            }
+        }*/
     }
 
     private void Shoot()
     {
         canShoot = false;
+        backFlip = true;
 
         // Calculate shoot direction
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -88,5 +107,6 @@ public class ProjectileSpawnerKeyboard : MonoBehaviour
     private void ResetCanShoot()
     {
         canShoot = true;
+
     }
 }

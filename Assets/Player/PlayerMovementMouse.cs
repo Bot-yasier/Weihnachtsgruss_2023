@@ -7,9 +7,10 @@ public class PlayerMovementMouse : MonoBehaviour
     private Rigidbody2D rb;
     public int speed;
     private Vector2 targetPosition, dashDirection;
-    private bool isDashing, isMoving;
+    private bool isDashing, isMoving, isStanding;
     private float dashTimer, dashCooldownTimer;
     private Vector2 prevPosition;
+    public Animator animator;
 
     void Start() => rb = GetComponent<Rigidbody2D>();
 
@@ -17,6 +18,10 @@ public class PlayerMovementMouse : MonoBehaviour
     {
         if (!isDashing) targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0) && dashCooldownTimer <= 0f && isMoving) StartCoroutine(Dash());
+
+        // Check if the player is standing
+        isStanding = rb.velocity.magnitude <= 0f;
+        animator.SetBool("isStanding", isStanding);
     }
 
     void FixedUpdate()

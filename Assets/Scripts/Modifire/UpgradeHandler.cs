@@ -199,6 +199,12 @@ public class UpgradeHandler : MonoBehaviour
         randomModifire.AssignImages();
         playerMovementMouse.enabled = false;
         playerrigid.constraints = RigidbodyConstraints2D.FreezePosition;
+        GameObject[] enemyAmmoObjects = GameObject.FindGameObjectsWithTag("EnemyAmmo");
+
+        foreach (GameObject enemyAmmoObject in enemyAmmoObjects)
+        {
+            Destroy(enemyAmmoObject);
+        }
 
         Image imageComponent1 = Modifire1.GetComponent<Image>();
         Image imageComponent2 = Modifire2.GetComponent<Image>();

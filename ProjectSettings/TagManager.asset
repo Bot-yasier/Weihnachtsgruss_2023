@@ -19,6 +19,7 @@ TagManager:
   - EnemyPath
   - EnemyMarker
   - Zahl
+  - EnemyAmmo
   layers:
   - Default
   - TransparentFX
