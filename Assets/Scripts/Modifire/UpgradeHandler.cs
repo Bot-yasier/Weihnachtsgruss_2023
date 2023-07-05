@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class UpgradeHandler : MonoBehaviour
 {
+    private Playerstats playerStats;
+
     public PlayerMovementMouse playerMovementMouse;
     public ProjectileSpawnerMouse projectileSpawnerMouse;
     public Rigidbody2D playerrigid;
@@ -29,10 +31,20 @@ public class UpgradeHandler : MonoBehaviour
     int Neu = 0;
     int i = 1;
 
-
     private List<EnemyController> enemyControllers;
+
+    // Define the LuckUpEvent delegate and event
+    public delegate void LuckUpEvent();
+    public event LuckUpEvent OnLuckUp;
+
     private void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LuckUp();
+        }
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         if (enemies.Length == 0)
@@ -42,11 +54,9 @@ public class UpgradeHandler : MonoBehaviour
                 Upgrade();
                 powerUpBar.levelUpCount = 0;
             }
-
-
         }
 
-            enemyControllers = new List<EnemyController>(FindObjectsOfType<EnemyController>());
+        enemyControllers = new List<EnemyController>(FindObjectsOfType<EnemyController>());
 
         foreach (var enemyController in enemyControllers)
         {
@@ -55,16 +65,18 @@ public class UpgradeHandler : MonoBehaviour
                 EnemyController.EnemyDeathEvent += OnEnemyDeath;
                 i++;
             }
-         
         }
-
     }
 
     private void Start()
     {
+        playerStats = FindObjectOfType<Playerstats>();
         ModiButton1.onClick.AddListener(Button1Clicked);
         ModiButton2.onClick.AddListener(Button2Clicked);
         ModiButton3.onClick.AddListener(Button3Clicked);
+
+        // Subscribe to the LuckUpEvent and define a method to handle it
+        OnLuckUp += LuckUpEventHandler;
     }
 
     private void OnDestroy()
@@ -74,7 +86,6 @@ public class UpgradeHandler : MonoBehaviour
             EnemyController.EnemyDeathEvent -= OnEnemyDeath;
         }
     }
-
 
     public void Button1Clicked()
     {
@@ -87,17 +98,18 @@ public class UpgradeHandler : MonoBehaviour
                 Multishoot();
                 break;
             case "Faster":
-                SpeedUp();
-                break;
             case "UpgradeSpeed":
                 SpeedUp();
-
+                break;
+            case "Deer-Idle1":
+                LuckUp();
                 break;
             default:
                 Debug.Log(Button1value);
                 break;
         }
     }
+
     public void Button2Clicked()
     {
         switch (Button2value)
@@ -109,18 +121,18 @@ public class UpgradeHandler : MonoBehaviour
                 Multishoot();
                 break;
             case "Faster":
-                SpeedUp();
-                break;
             case "UpgradeSpeed":
                 SpeedUp();
-
+                break;
+            case "Deer-Idle1":
+                LuckUp();
                 break;
             default:
                 Debug.Log(Button2value);
                 break;
         }
-
     }
+
     public void Button3Clicked()
     {
         switch (Button3value)
@@ -132,20 +144,17 @@ public class UpgradeHandler : MonoBehaviour
                 Multishoot();
                 break;
             case "Faster":
-                SpeedUp();
-                break;
             case "UpgradeSpeed":
                 SpeedUp();
-
+                break;
+            case "Deer-Idle1":
+                LuckUp();
                 break;
             default:
                 Debug.Log(Button3value);
                 break;
         }
-
     }
-
-    //Ab hier sind alles Upgrades
 
     public void ElasticWalls()
     {
@@ -153,15 +162,21 @@ public class UpgradeHandler : MonoBehaviour
         DeactivateUpgrades();
     }
 
+    public void LuckUp()
+    {
+        playerStats.RoomLuck += 100;
+        Debug.Log("Luck");
+        DeactivateUpgrades();
+
+        // Raise the LuckUpEvent
+        OnLuckUp?.Invoke();
+    }
+
     public void SpeedUp()
     {
-
-        Akktuell = playerMovementMouse.speed;
-
+        Akktuell = playerStats.movementSpeed;
         Neu = Akktuell + Plus;
-
-        playerMovementMouse.speed = Neu;
-        
+        playerStats.movementSpeed = Neu;
         DeactivateUpgrades();
     }
 
@@ -170,10 +185,6 @@ public class UpgradeHandler : MonoBehaviour
         projectileSpawnerMouse.numBullets += 1;
         DeactivateUpgrades();
     }
-
-
-    //End Upgrade
-
 
     void DeactivateUpgrades()
     {
@@ -186,9 +197,8 @@ public class UpgradeHandler : MonoBehaviour
     }
 
     void OnEnemyDeath(EnemyController enemy)
-    {     
-            powerUpBar.IncreaseFillAmount();
-      
+    {
+        powerUpBar.IncreaseFillAmount();
     }
 
     void Upgrade()
@@ -213,6 +223,13 @@ public class UpgradeHandler : MonoBehaviour
         Button1value = imageComponent1.sprite.name;
         Button2value = imageComponent2.sprite.name;
         Button3value = imageComponent3.sprite.name;
+    }
 
+    // Define the method to handle the LuckUpEvent
+    private void LuckUpEventHandler()
+    {
+        // Perform actions or logic specific to the LuckUpEvent
+        // For example:
+        Debug.Log("LuckUpEvent was triggered!");
     }
 }

@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8739303890583321710}
   m_Layer: 13
   m_Name: PresentMedium
-  m_TagString: Untagged
+  m_TagString: Package
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

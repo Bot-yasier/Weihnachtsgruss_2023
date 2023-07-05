@@ -3,21 +3,26 @@ using System.Collections;
 
 public class PlayerMovementMouse : MonoBehaviour
 {
+    private Playerstats playerStats;
     public float stopDistance = 0.1f, dashDistance = 2f, dashDuration = 0.5f, dashCooldown = 2f;
     private Rigidbody2D rb;
-    public int speed;
+    //public int speed;
     private Vector2 targetPosition, dashDirection;
     private bool isDashing, isMoving, isStanding;
-    private float dashTimer, dashCooldownTimer;
+    private float dashTimer; //dashCooldownTimer;
     private Vector2 prevPosition;
     public Animator animator;
 
-    void Start() => rb = GetComponent<Rigidbody2D>();
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        playerStats = FindObjectOfType<Playerstats>();
+    }
 
     void Update()
     {
         if (!isDashing) targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButtonDown(0) && dashCooldownTimer <= 0f && isMoving) StartCoroutine(Dash());
+        if (Input.GetMouseButtonDown(0) && playerStats.dashCooldown <= 0f && isMoving) StartCoroutine(Dash());
 
         // Check if the player is standing
         isStanding = rb.velocity.magnitude <= 0f;
@@ -29,7 +34,7 @@ public class PlayerMovementMouse : MonoBehaviour
         if (!isDashing)
         {
             Vector2 movement = targetPosition - rb.position;
-            rb.velocity = movement.magnitude < stopDistance ? Vector2.zero : movement.normalized * speed;
+            rb.velocity = movement.magnitude < stopDistance ? Vector2.zero : movement.normalized * playerStats.movementSpeed;
         }
         else
         {
@@ -38,7 +43,7 @@ public class PlayerMovementMouse : MonoBehaviour
             if (dashTimer <= 0f)
             {
                 isDashing = false;
-                dashCooldownTimer = dashCooldown;
+                playerStats.dashCooldown = dashCooldown;
             }
         }
 
@@ -48,7 +53,7 @@ public class PlayerMovementMouse : MonoBehaviour
 
         rb.freezeRotation = true;
         rb.velocity *= 0.5f;
-        dashCooldownTimer -= dashCooldownTimer > 0f ? Time.deltaTime : 0f;
+        playerStats.dashCooldown -= playerStats.dashCooldown > 0f ? Time.deltaTime : 0f;
     }
 
     IEnumerator Dash()
@@ -72,6 +77,6 @@ public class PlayerMovementMouse : MonoBehaviour
 
         // Finish the dash
         isDashing = false;
-        dashCooldownTimer = dashCooldown;
+        playerStats.dashCooldown = dashCooldown;
     }
 }

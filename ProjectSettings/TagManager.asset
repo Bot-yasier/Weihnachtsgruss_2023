@@ -20,6 +20,7 @@ TagManager:
   - EnemyMarker
   - Zahl
   - EnemyAmmo
+  - Package
   layers:
   - Default
   - TransparentFX

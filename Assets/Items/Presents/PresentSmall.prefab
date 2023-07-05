@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 4603834081378432048}
   m_Layer: 13
   m_Name: PresentSmall
-  m_TagString: Untagged
+  m_TagString: Package
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

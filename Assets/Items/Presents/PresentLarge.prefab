@@ -1010,7 +1010,7 @@ GameObject:
   - component: {fileID: 772048557610078203}
   m_Layer: 13
   m_Name: PresentLarge
-  m_TagString: Untagged
+  m_TagString: Package
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

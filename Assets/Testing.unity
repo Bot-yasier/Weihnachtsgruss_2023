@@ -790,11 +790,12 @@ GameObject:
   - component: {fileID: 526802410}
   - component: {fileID: 526802412}
   - component: {fileID: 526802413}
+  - component: {fileID: 526802421}
   - component: {fileID: 526802415}
   - component: {fileID: 526802416}
+  - component: {fileID: 526802419}
   - component: {fileID: 526802418}
   - component: {fileID: 526802417}
-  - component: {fileID: 526802419}
   - component: {fileID: 526802420}
   m_Layer: 10
   m_Name: Player
@@ -873,11 +874,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aa5949fef2d83b458cb9c3ad63378f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stopDistance: 0.1
+  stopDistance: 0.68
   dashDistance: 5
   dashDuration: 0.1
   dashCooldown: 1
-  speed: 13
   animator: {fileID: 569564754}
 --- !u!114 &526802416
 MonoBehaviour:
@@ -1019,6 +1019,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &526802421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526802409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0f2ab59b80ee44689e8253ab1a0804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 13
+  dashCooldown: 0
+  RoomLuck: 0.2
 --- !u!1 &569564751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2577,6 +2592,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 57949b7671f0aea4ba38ecfea6753c2b, type: 3}
   - {fileID: 21300000, guid: 1a2d4c7e66a95f344b7d83a35cde8b75, type: 3}
   - {fileID: 21300000, guid: 5f40bb932be46644abaf81d7b6e50c0c, type: 3}
+  - {fileID: 21300000, guid: 5972bba4ddc53dd46a1d3e91a1db2c72, type: 3}
 --- !u!114 &1982190946
 MonoBehaviour:
   m_ObjectHideFlags: 0
