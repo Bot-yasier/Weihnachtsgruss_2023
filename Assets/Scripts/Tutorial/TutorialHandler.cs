@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class TutorialHandler : MonoBehaviour
@@ -15,6 +16,10 @@ public class TutorialHandler : MonoBehaviour
     public GameObject tutorialbuttong;
     public Animator animator;
     public GameObject Enemy;
+    public GameObject Enemy1;
+    public GameObject Enemy2;
+    public UpgradeHandler upgradeHandler;
+    public string nextSceneName;
 
     public GameObject door1;
     public GameObject Herzen;
@@ -29,6 +34,7 @@ public class TutorialHandler : MonoBehaviour
     int clickcounter = 0;
     bool klicker = false;
     bool enemysd = false;
+    bool packaged = false;
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +72,21 @@ public class TutorialHandler : MonoBehaviour
             }
             enemysd = false;
 
+        }
+        if (packaged == true)
+        {
+            GameObject[] packages = GameObject.FindGameObjectsWithTag("Package");
+            if (packages.Length == 0)
+            {
+                counter++;
+            }
+            packaged = false;
+
+        }
+        if (upgradeHandler.tutorialbool == true)
+        {
+            counter++;
+            upgradeHandler.tutorialbool = false;
         }
       
 
@@ -115,8 +136,32 @@ public class TutorialHandler : MonoBehaviour
             case 13:
                 dreizehn();
                 break;
+            case 14:
+                vierzehn();
+                break;
+            case 15:
+                fünfzehn();
+                break;
+            case 16:
+                sechszehn();
+                break;
+            case 17:
+                siebzehn();
+                break;
+            case 18:
+                achtzehn();
+                break;
+            case 19:
+                neunzehn();
+                break;
+            case 20:
+                zwanzig();
+                break;
+            case 21:
+                SceneManager.LoadScene(nextSceneName);
+                break;
             default:
-                Debug.Log("Nicht gut");
+               
                 break;
         }
     }
@@ -149,7 +194,7 @@ public class TutorialHandler : MonoBehaviour
     }
 
     void eins()
-    { tutorialText.text = "Beginnen wir mit der Steuerung. Der Spieler läuft immer dort hin wo sich die maus befindent."; }
+    { tutorialText.text = "Beginnen wir mit der Steuerung an. Du bewegst dich immer zur Position deines Mauszeigers."; }
 
     void zwei()
     { tutorialText.text = "Jetzt bist du dran, versuche die Geschenke einzusammeln! "; Paket1.SetActive(true);  }
@@ -200,7 +245,7 @@ public class TutorialHandler : MonoBehaviour
     }
     void neun()
     {
-        tutorialText.text = "Oben Rechts siehst du nun deine Herzen. Immer wenn du von einem Schneeman getroffen wirst wird dir ein halbes Herz abgezogen."; Herzen.SetActive(true);
+        tutorialText.text = "Oben Links siehst du nun deine Herzen. Immer wenn du von einem Schneeman getroffen wirst wird dir ein halbes Herz abgezogen."; Herzen.SetActive(true);
     }
     void zehn()
     {
@@ -223,4 +268,53 @@ public class TutorialHandler : MonoBehaviour
     }
     void dreizehn()
     { tutorialText.text = "Gehe nun in den nächsten Raum, dort warten weitere Schneemänner"; }
+
+    void vierzehn()
+    {
+        tutorialbuttong.SetActive(false);
+        tutorialTextg.SetActive(false); unfreezplayer(); Enemy1.SetActive(true); Enemy2.SetActive(true);
+    }
+    void fünfzehn()
+    {
+      
+        tutorialTextg.SetActive(true);
+        tutorialText.text = "Super du hast ein Level UP :). Wähle eine der drei Fähigkeiten aus, diese verbessern dein Spieler";
+        freezplayer();
+    }
+    void sechszehn()
+    {
+        freezplayer();
+        tutorialbuttong.SetActive(true);
+        tutorialText.text = "Gehe nun in den Nächsten Raum, dort warten Geschenke auf dich!";
+    }
+    void siebzehn()
+    {
+        tutorialbuttong.SetActive(false);
+        tutorialTextg.SetActive(false); unfreezplayer();
+    }
+
+    void achtzehn()
+    {
+        tutorialbuttong.SetActive(true);
+        tutorialTextg.SetActive(true);
+        tutorialText.text = "Schau oben Rechts, dort sind deine Punkte. Jedes Mal wenn du ein Geschenk einsammelst werden deine Punkte erhöht.";
+        Score.SetActive(true);
+
+
+        freezplayer();
+    }
+    void neunzehn()
+    {
+        tutorialbuttong.SetActive(false);
+        tutorialTextg.SetActive(false); unfreezplayer();
+        packaged = true;
+    }
+    void zwanzig()
+    {
+        tutorialbuttong.SetActive(true);
+        tutorialTextg.SetActive(true);
+        tutorialText.text = "Jetzt bist du bereit für die richtige Welt :)";
+        freezplayer();
+    }
+
 }

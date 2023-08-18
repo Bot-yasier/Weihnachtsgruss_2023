@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class UpgradeHandler : MonoBehaviour
 {
     private Playerstats playerStats;
-
+    public bool tutorialbool = false;
     public PlayerMovementMouse playerMovementMouse;
     public ProjectileSpawnerMouse projectileSpawnerMouse;
     public Rigidbody2D playerrigid;
@@ -188,6 +188,7 @@ public class UpgradeHandler : MonoBehaviour
 
     void DeactivateUpgrades()
     {
+        tutorialbool = true;
         Modifire1.SetActive(false);
         Modifire2.SetActive(false);
         Modifire3.SetActive(false);
@@ -203,6 +204,7 @@ public class UpgradeHandler : MonoBehaviour
 
     void Upgrade()
     {
+        tutorialbool = true;
         Modifire1.SetActive(true);
         Modifire2.SetActive(true);
         Modifire3.SetActive(true);
