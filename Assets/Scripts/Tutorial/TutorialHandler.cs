@@ -36,6 +36,9 @@ public class TutorialHandler : MonoBehaviour
     bool enemysd = false;
     bool packaged = false;
 
+    public GameObject Door3;
+    public GameObject Door4;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -194,10 +197,10 @@ public class TutorialHandler : MonoBehaviour
     }
 
     void eins()
-    { tutorialText.text = "Beginnen wir mit der Steuerung an. Du bewegst dich immer zur Position deines Mauszeigers."; }
+    { tutorialText.text = "Lassen Sie uns mit der Steuerung beginnen. Der Spieler bewegt sich stets zur Position des Mauszeigers."; }
 
     void zwei()
-    { tutorialText.text = "Jetzt bist du dran, versuche die Geschenke einzusammeln! "; Paket1.SetActive(true);  }
+    { tutorialText.text = "Jetzt bist du an der Reihe – versuche die Geschenke einzusammeln!"; Paket1.SetActive(true);  }
 
     void drei()
     {
@@ -210,7 +213,7 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Super gemacht! Tipp: Mit eine klick kannst du eine Rolle ausführen, dies hilft dir in schwierigen Situationen besser auszuweichen. Versuche das einmal!";
+        tutorialText.text = "Super gemacht! Hier ist ein Tipp: Mit einem Klick kannst du eine Rolle ausführen. Das hilft dir, in schwierigen Situationen besser auszuweichen. Probier es doch gleich mal aus!";
         freezplayer();
 
     }
@@ -238,18 +241,18 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Achtung ein Schneeman! Nimm dich immer vor Schneemänner in Acht, die wollen dir nichts gutes.";
+        tutorialText.text = "Vorsicht, ein Schneemann! Sei stets auf der Hut vor ihnen, denn Schneemänner haben selten Gutes im Sinn.";
         Enemy.SetActive(true);
         freezplayer();
 
     }
     void neun()
     {
-        tutorialText.text = "Oben Links siehst du nun deine Herzen. Immer wenn du von einem Schneeman getroffen wirst wird dir ein halbes Herz abgezogen."; Herzen.SetActive(true);
+        tutorialText.text = "Du findest nun oben links deine Herz-Anzeige. Jedes Mal, wenn dich ein Schneemann erwischt, verlierst du ein halbes Herz."; Herzen.SetActive(true);
     }
     void zehn()
     {
-        tutorialText.text = "Dein Spieler wird den Schneeman austomatisch mit schneebällen bewerfen. Bist du bereit?";
+        tutorialText.text = "Dein Charakter wird automatisch Schneebälle auf den Schneemann werfen. Bist du bereit?";
     }
     void elf()
     {
@@ -262,12 +265,13 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Perfekt! Darf ich vorstellen deine Powerup Bar. Jedes mal wenn du ein Schneeman besiegst steigt dein Level. ";
+        tutorialText.text = "Perfekt! Erlaube mir, deine Powerup-Leiste vorzustellen. Jedes Mal, wenn du einen Schneemann besiegst, steigt dein Level an.";
         Powerbar.SetActive(true);
         freezplayer();
+        Door3.SetActive(false);
     }
     void dreizehn()
-    { tutorialText.text = "Gehe nun in den nächsten Raum, dort warten weitere Schneemänner"; }
+    { tutorialText.text = "Begib dich nun in den nächsten Raum, wo weitere Schneemänner auf dich warten."; }
 
     void vierzehn()
     {
@@ -278,14 +282,15 @@ public class TutorialHandler : MonoBehaviour
     {
       
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Super du hast ein Level UP :). Wähle eine der drei Fähigkeiten aus, diese verbessern dein Spieler";
+        tutorialText.text = "Großartig, du hast ein Level-Up erreicht! Wähle eine von drei Fähigkeiten aus, um deinen Charakter zu verbessern.";
         freezplayer();
+        Door4.SetActive(false);
     }
     void sechszehn()
     {
         freezplayer();
         tutorialbuttong.SetActive(true);
-        tutorialText.text = "Gehe nun in den Nächsten Raum, dort warten Geschenke auf dich!";
+        tutorialText.text = "Mache dich nun auf den Weg in den nächsten Raum, wo Geschenke auf dich warten!";
     }
     void siebzehn()
     {
@@ -297,7 +302,7 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Schau oben Rechts, dort sind deine Punkte. Jedes Mal wenn du ein Geschenk einsammelst werden deine Punkte erhöht.";
+        tutorialText.text = "Richte deinen Blick nach oben rechts, dort findest du deine Punkte-Anzeige. Jedes Mal, wenn du ein Geschenk einsammelst, steigt dein Punktestand.";
         Score.SetActive(true);
 
 
@@ -313,7 +318,7 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Jetzt bist du bereit für die richtige Welt :)";
+        tutorialText.text = "Nun bist du für die eigentliche Herausforderung bereit – die reale Welt erwartet dich! :)";
         freezplayer();
     }
 
