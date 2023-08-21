@@ -197,7 +197,7 @@ public class TutorialHandler : MonoBehaviour
     }
 
     void eins()
-    { tutorialText.text = "Lassen Sie uns mit der Steuerung beginnen. Der Spieler bewegt sich stets zur Position des Mauszeigers."; }
+    { tutorialText.text = "Lassen uns mit der Steuerung beginnen. Der Spieler bewegt sich stets zur Position des Mauszeigers."; }
 
     void zwei()
     { tutorialText.text = "Jetzt bist du an der Reihe – versuche die Geschenke einzusammeln!"; Paket1.SetActive(true);  }
@@ -271,7 +271,9 @@ public class TutorialHandler : MonoBehaviour
         Door3.SetActive(false);
     }
     void dreizehn()
-    { tutorialText.text = "Begib dich nun in den nächsten Raum, wo weitere Schneemänner auf dich warten."; }
+    {
+        tutorialText.text = "Begib dich nun in den nächsten Raum, wo weitere Schneemänner auf dich warten. Achtung: Die Schneemänner werden auch Schneebälle zurück werfen, diese sind rot eingefärbt.";
+    }
 
     void vierzehn()
     {
@@ -318,7 +320,7 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Nun bist du für die eigentliche Herausforderung bereit – die reale Welt erwartet dich! :)";
+        tutorialText.text = "Nun bist du für die eigentliche Herausforderung bereit – die reale Welt erwartet dich :)";
         freezplayer();
     }
 
