@@ -43,7 +43,7 @@ public class TutorialHandler : MonoBehaviour
     void Start()
     {
         tutorialbutton.onClick.AddListener(tutorialbuttonclicked);
-        tutorialText.text = "Hallo Hauptling, bereit für ein Abenteuer!";
+        tutorialText.text = "Hallo. Bereit für ein Abenteuer? Unter Renntieren duzen wir uns. Wir hoffen, das ist OK.";
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
         freezplayer();
@@ -197,7 +197,7 @@ public class TutorialHandler : MonoBehaviour
     }
 
     void eins()
-    { tutorialText.text = "Lassen uns mit der Steuerung beginnen. Der Spieler bewegt sich stets zur Position des Mauszeigers."; }
+    { tutorialText.text = "Lass uns mit der Steuerung beginnen: Der Spieler bewegt sich stets zur Position des Mauszeigers."; }
 
     void zwei()
     { tutorialText.text = "Jetzt bist du an der Reihe – versuche die Geschenke einzusammeln!"; Paket1.SetActive(true);  }
@@ -213,7 +213,7 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Super gemacht! Hier ist ein Tipp: Mit einem Klick kannst du eine Rolle ausführen. Das hilft dir, in schwierigen Situationen besser auszuweichen. Probier es doch gleich mal aus!";
+        tutorialText.text = "Super gemacht! Hier ist ein Tipp: Mit einem Klick kannst du einen Hüpfer ausführen. Das hilft dir, in schwierigen Situationen besser auszuweichen. Probier es doch gleich mal aus!";
         freezplayer();
 
     }
@@ -227,7 +227,7 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Du hast es drauf ;) Gehen nun in den nächsten Raum dort wartet eine Überraschung auf dich!";
+        tutorialText.text = "Du hast es drauf ;) Geh nun in den nächsten Raum. Dort wartet eine Überraschung auf dich!";
         freezplayer();
 
 
@@ -248,11 +248,11 @@ public class TutorialHandler : MonoBehaviour
     }
     void neun()
     {
-        tutorialText.text = "Du findest nun oben links deine Herz-Anzeige. Jedes Mal, wenn dich ein Schneemann erwischt, verlierst du ein halbes Herz."; Herzen.SetActive(true);
+        tutorialText.text = "Oben links ist deine Herz-Anzeige. Jedes Mal, wenn dich ein Schneemann erwischt, verlierst du ein halbes Herz."; Herzen.SetActive(true);
     }
     void zehn()
     {
-        tutorialText.text = "Dein Charakter wird automatisch Schneebälle auf den Schneemann werfen. Bist du bereit?";
+        tutorialText.text = "Dein Renntier wird automatisch Schneebälle auf den Schneemann werfen. Bist du bereit?";
     }
     void elf()
     {
@@ -284,7 +284,7 @@ public class TutorialHandler : MonoBehaviour
     {
       
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Großartig, du hast ein Level-Up erreicht! Wähle eine von drei Fähigkeiten aus, um deinen Charakter zu verbessern.";
+        tutorialText.text = "Großartig, du hast ein Level-Up erreicht! Wähle eine von drei Fähigkeiten aus, um deine Spielstärke zu verbessern.";
         freezplayer();
         Door4.SetActive(false);
     }
@@ -304,7 +304,7 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Richte deinen Blick nach oben rechts, dort findest du deine Punkte-Anzeige. Jedes Mal, wenn du ein Geschenk einsammelst, steigt dein Punktestand.";
+        tutorialText.text = "Oben rechts findest du deine Punkte-Anzeige. Jedes Mal, wenn du ein Geschenk einsammelst, steigt dein Punktestand.";
         Score.SetActive(true);
 
 
@@ -320,7 +320,7 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Nun bist du für die eigentliche Herausforderung bereit – die reale Welt erwartet dich :)";
+        tutorialText.text = "Nun bist du für die eigentliche Herausforderung bereit – das Spiel erwartet dich. Du hast fünf Versuche. Der beste Durchgang zählt. Viel Glück";
         freezplayer();
     }
 

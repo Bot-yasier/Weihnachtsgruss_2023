@@ -1307,7 +1307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -655.54, y: 12.4}
+  m_AnchoredPosition: {x: -4.539856, y: 12.399994}
   m_SizeDelta: {x: 414.87, y: 202.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &768063372
@@ -1552,7 +1552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -658, y: -11.000008}
+  m_AnchoredPosition: {x: -7.000061, y: -11}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &871463925
@@ -1578,7 +1578,7 @@ MonoBehaviour:
   Enemy1: {fileID: 126703853}
   Enemy2: {fileID: 885100617}
   upgradeHandler: {fileID: 971885964}
-  nextSceneName: Testing
+  nextSceneName: MainGameScene
   door1: {fileID: 185439322}
   Herzen: {fileID: 174861370}
   Powerbar: {fileID: 1567904851}
@@ -1940,7 +1940,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -655.48, y: -10.993}
+  m_AnchoredPosition: {x: -4.4800415, y: -10.992996}
   m_SizeDelta: {x: 414.89, y: 156.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &996978153
@@ -2687,9 +2687,9 @@ RectTransform:
   m_Father: {fileID: 1443570765}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 217}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 309, y: 217}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1346374430

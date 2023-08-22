@@ -5,27 +5,60 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     public string sceneName; // Der Name der Ziel-Szene oder "Exit", um das Spiel zu schlieﬂen.
+    public bool Play = false;
+    public static bool T = false;
+    public Variables variables;
 
-    private void Start()
+    public Image playbutton;
+
+
+    void Start()
     {
         Button button = GetComponent<Button>(); // Hole die Button-Komponente vom selben GameObject.
 
         // F¸ge einen Listener hinzu, der auf den Button-Klick reagiert.
         button.onClick.AddListener(ChangeScene);
+
+        if (T == true)
+        {
+            variables.playbutton = true;
+
+        }
+
+    }
+    private void Update()
+    {
     }
 
     // Methode, die aufgerufen wird, wenn der Button geklickt wird.
     private void ChangeScene()
     {
-        if (sceneName == "Exit")
+        if (Play == true)
         {
-            // Schlieﬂe das Spiel.
-            Application.Quit();
+            T = true;
+            variables.playbutton = true;
         }
-        else
+
+        if (variables.playbutton == true)
         {
-            // Lade die angegebene Szene.
-            SceneManager.LoadScene(sceneName);
+            if (sceneName == "Exit")
+            {
+                // Schlieﬂe das Spiel.
+                Application.Quit();
+
+            }
+            else
+            {
+                Color col = playbutton.color;
+                col.a = 100;
+                playbutton.color = col;
+
+                // Lade die angegebene Szene.
+                SceneManager.LoadScene(sceneName);
+            }
+
+
         }
+     
     }
 }
