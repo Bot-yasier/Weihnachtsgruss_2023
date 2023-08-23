@@ -18,17 +18,22 @@ public class PlayerHealthController : MonoBehaviour
     {
         currentHealth = startingHealth;
     }
+    private void Update()
+    {
+        if (currentHealth == 6) { hard1.SetActive(true);  hard2.SetActive(true); hard3.SetActive(true); hard4.SetActive(true); hard5.SetActive(true); hard6.SetActive(true); }
+        if (currentHealth == 5) { hard6.SetActive(false); hard1.SetActive(true); hard2.SetActive(true); hard3.SetActive(true); hard4.SetActive(true); hard5.SetActive(true); }
+        if (currentHealth == 4) { hard5.SetActive(false); hard6.SetActive(false); hard1.SetActive(true); hard2.SetActive(true); hard3.SetActive(true); hard4.SetActive(true); }
+        if (currentHealth == 3) { hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); hard1.SetActive(true); hard2.SetActive(true); hard3.SetActive(true); }
+        if (currentHealth == 2) { hard3.SetActive(false); hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); hard1.SetActive(true); hard2.SetActive(true); }
+        if (currentHealth == 1) { hard2.SetActive(false); hard3.SetActive(false); hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); hard1.SetActive(true); }
+        if (currentHealth == 0) { hard1.SetActive(false); hard2.SetActive(false); hard3.SetActive(false); hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); Destroy(Player); }
+    }
 
     public void TakeDamage(int damageAmount)
     {
 
         currentHealth -= damageAmount;
-        if (currentHealth == 5) {hard6.SetActive(false); }
-        if(currentHealth == 4) {hard5.SetActive(false); }
-        if (currentHealth == 3) { hard4.SetActive(false); }
-        if (currentHealth == 2) { hard3.SetActive(false); }
-        if (currentHealth == 1) { hard2.SetActive(false); }
-        if (currentHealth == 0) { hard1.SetActive(false); Destroy(Player); }
+      
 
     }
 

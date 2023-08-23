@@ -797,6 +797,7 @@ GameObject:
   - component: {fileID: 526802418}
   - component: {fileID: 526802417}
   - component: {fileID: 526802420}
+  - component: {fileID: 526802422}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -1034,6 +1035,21 @@ MonoBehaviour:
   movementSpeed: 13
   dashCooldown: 0
   RoomLuck: 0.2
+--- !u!114 &526802422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526802409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76487cf81681b1c448ae177647053ca1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxEnemys: 0
+  minEnemys: 0
+  doorcount: 0
 --- !u!1 &569564751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,11 +2577,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb7cbfdbb06e4d4bb1c28135103eeb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialbool: 0
   playerMovementMouse: {fileID: 526802415}
   projectileSpawnerMouse: {fileID: 526802416}
   playerrigid: {fileID: 526802412}
   randomModifire: {fileID: 1982190945}
   powerUpBar: {fileID: 1982190946}
+  playerHealthController: {fileID: 526802419}
   Modifire1: {fileID: 690264874}
   Modifire2: {fileID: 2072858305}
   Modifire3: {fileID: 620898572}

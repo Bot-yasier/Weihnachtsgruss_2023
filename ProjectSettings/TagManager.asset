@@ -21,6 +21,7 @@ TagManager:
   - Zahl
   - EnemyAmmo
   - Package
+  - Enterence
   layers:
   - Default
   - TransparentFX

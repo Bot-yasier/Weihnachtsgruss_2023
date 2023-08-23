@@ -5,14 +5,23 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPrefab;  // Referenz auf das Enemy-Prefab
     public Transform[] spawnPoints; // Array der Spawnpoints
 
-    public static int minEnemies = 1;  // Minimale Anzahl der zu spawnenden Gegner
-    public static int maxEnemies = 5;  // Maximale Anzahl der zu spawnenden Gegner
+    public CollisionCounter collisionCounter;
+
+    public static int minEnemies;  // Minimale Anzahl der zu spawnenden Gegner
+    public static int maxEnemies;  // Maximale Anzahl der zu spawnenden Gegner
 
     private bool[] spawnPointOccupied; // Array zur Überprüfung, ob ein Spawnpoint belegt ist
 
     private void Start()
     {
         spawnPointOccupied = new bool[spawnPoints.Length]; // Initialisierung des Arrays
+        collisionCounter = FindObjectOfType<CollisionCounter>();
+    }
+    private void Update()
+    {
+        Debug.Log(maxEnemies);
+        maxEnemies = collisionCounter.maxEnemys;
+        minEnemies = collisionCounter.minEnemys;
     }
 
     public void SpawnEnemies()

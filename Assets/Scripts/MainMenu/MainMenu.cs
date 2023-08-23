@@ -22,7 +22,9 @@ public class MainMenu : MonoBehaviour
         if (T == true)
         {
             variables.playbutton = true;
-
+            Color col = playbutton.color;
+            col.a = 100;
+            playbutton.color = col;
         }
 
     }

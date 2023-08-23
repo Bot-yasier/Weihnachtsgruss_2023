@@ -13,6 +13,7 @@ public class UpgradeHandler : MonoBehaviour
     public Rigidbody2D playerrigid;
     public RandomModifire randomModifire;
     public PowerUpBar powerUpBar;
+    public PlayerHealthController playerHealthController;
 
     public GameObject Modifire1;
     public GameObject Modifire2;
@@ -30,6 +31,10 @@ public class UpgradeHandler : MonoBehaviour
     int Plus = 2;
     int Neu = 0;
     int i = 1;
+
+    int health;
+    int zwei = 2;
+    int eins = 1;
 
     private List<EnemyController> enemyControllers;
 
@@ -98,6 +103,8 @@ public class UpgradeHandler : MonoBehaviour
                 Multishoot();
                 break;
             case "Faster":
+                Heal();
+                break;
             case "UpgradeSpeed":
                 SpeedUp();
                 break;
@@ -121,6 +128,8 @@ public class UpgradeHandler : MonoBehaviour
                 Multishoot();
                 break;
             case "Faster":
+                Heal();
+                break;
             case "UpgradeSpeed":
                 SpeedUp();
                 break;
@@ -144,6 +153,8 @@ public class UpgradeHandler : MonoBehaviour
                 Multishoot();
                 break;
             case "Faster":
+                Heal();
+                break;
             case "UpgradeSpeed":
                 SpeedUp();
                 break;
@@ -233,5 +244,23 @@ public class UpgradeHandler : MonoBehaviour
         // Perform actions or logic specific to the LuckUpEvent
         // For example:
         Debug.Log("LuckUpEvent was triggered!");
+    }
+   public void Heal()
+   {
+        health = playerHealthController.currentHealth;
+        if (health == 6)
+        {
+
+
+        }
+        if (health == 5)
+        {
+            playerHealthController.currentHealth = health + eins;
+        }
+        else
+        {
+            playerHealthController.currentHealth = health + zwei;
+        }
+        DeactivateUpgrades();
     }
 }

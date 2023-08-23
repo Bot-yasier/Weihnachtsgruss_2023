@@ -13318,7 +13318,7 @@ GameObject:
   - component: {fileID: 5530373470109961440}
   m_Layer: 0
   m_Name: Enterence2
-  m_TagString: Untagged
+  m_TagString: Enterence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20410,7 +20410,6 @@ MonoBehaviour:
   minPackageCount: 0
   maxPackageCount: 10
   doorBlockerHandler: {fileID: 6204368977430798418}
-  luckValue: 0.5
 --- !u!1 &5757022121644020095
 GameObject:
   m_ObjectHideFlags: 0
@@ -20763,7 +20762,7 @@ GameObject:
   - component: {fileID: 3842946988061590124}
   m_Layer: 0
   m_Name: Enterence
-  m_TagString: Untagged
+  m_TagString: Enterence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22201,7 +22200,7 @@ GameObject:
   - component: {fileID: 1155527388560579163}
   m_Layer: 0
   m_Name: Enterence3
-  m_TagString: Untagged
+  m_TagString: Enterence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
