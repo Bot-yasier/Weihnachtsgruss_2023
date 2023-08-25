@@ -16,22 +16,22 @@ public class CollisionCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(doorcount <= 2)
+        if(doorcount <= 3)
         {
             maxEnemys = 1;
             minEnemys = 1;
         }
-        if (doorcount <= 5 && doorcount > 2)
+        if (doorcount <= 7 && doorcount > 3)
         {
             maxEnemys = 2;
             minEnemys = 1;
         }
-        if (doorcount <= 10 && doorcount > 5)
+        if (doorcount <= 10 && doorcount > 7)
         {
             maxEnemys = 3;
             minEnemys = 1;
         }
-        if (doorcount >= 10)
+        if (doorcount >= 15)
         {
             maxEnemys = 5;
             minEnemys = 1;

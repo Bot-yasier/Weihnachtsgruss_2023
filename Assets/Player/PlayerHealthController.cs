@@ -7,6 +7,7 @@ public class PlayerHealthController : MonoBehaviour
     public int startingHealth = 6;
     public int currentHealth;
     public GameObject Player;
+    public GameObject Menu;
 
     public GameObject hard1;
     public GameObject hard2;
@@ -26,7 +27,7 @@ public class PlayerHealthController : MonoBehaviour
         if (currentHealth == 3) { hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); hard1.SetActive(true); hard2.SetActive(true); hard3.SetActive(true); }
         if (currentHealth == 2) { hard3.SetActive(false); hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); hard1.SetActive(true); hard2.SetActive(true); }
         if (currentHealth == 1) { hard2.SetActive(false); hard3.SetActive(false); hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); hard1.SetActive(true); }
-        if (currentHealth == 0) { hard1.SetActive(false); hard2.SetActive(false); hard3.SetActive(false); hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); Destroy(Player); }
+        if (currentHealth == 0) { hard1.SetActive(false); hard2.SetActive(false); hard3.SetActive(false); hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); Menu.SetActive(true); Destroy(Player); }
     }
 
     public void TakeDamage(int damageAmount)
