@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletPlayer : MonoBehaviour
 {
+    public Playerstats playerStats;
     public int damage = 1; // amount of damage that the bullet deals
     public int maxWallBounces = 3;
 
@@ -22,7 +23,9 @@ public class BulletPlayer : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<Playerstats>();
     }
+
 
     private void Update()
     {
@@ -41,7 +44,7 @@ public class BulletPlayer : MonoBehaviour
                 EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
                 if (enemy != null)
                 {
-                    enemy.TakeDamage(damage); // call the TakeDamage function of the enemy script to deal damage to the enemy
+                    enemy.TakeDamage(playerStats.bulletDamage); // call the TakeDamage function of the enemy script to deal damage to the enemy
                 }
                 Destroy(gameObject); // destroy the bullet object
                 //Debug.Log("PB" + PiercingBullets);
@@ -51,7 +54,7 @@ public class BulletPlayer : MonoBehaviour
                 EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
                 if (enemy != null)
                 {
-                    enemy.TakeDamage(damage); // call the TakeDamage function of the enemy script to deal damage to the enemy
+                    enemy.TakeDamage(playerStats.bulletDamage); // call the TakeDamage function of the enemy script to deal damage to the enemy
                 }
                 //Debug.Log("PB" + PiercingBullets);
             }

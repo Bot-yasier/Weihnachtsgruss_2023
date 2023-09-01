@@ -1251,9 +1251,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0f2ab59b80ee44689e8253ab1a0804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletDamage: 0
   movementSpeed: 13
   dashCooldown: 0
   RoomLuck: 0.2
+  tackle: 1
+  tackleDamage: 1
 --- !u!114 &526802422
 MonoBehaviour:
   m_ObjectHideFlags: 0

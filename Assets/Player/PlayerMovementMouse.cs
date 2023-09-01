@@ -12,6 +12,7 @@ public class PlayerMovementMouse : MonoBehaviour
     private float dashTimer; //dashCooldownTimer;
     private Vector2 prevPosition;
     public Animator animator;
+    private bool tackling = false;
 
     void Start()
     {
@@ -22,11 +23,31 @@ public class PlayerMovementMouse : MonoBehaviour
     void Update()
     {
         if (!isDashing) targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButtonDown(0) && playerStats.dashCooldown <= 0f && isMoving) StartCoroutine(Dash());
-
+        if (Input.GetMouseButtonDown(0) && playerStats.dashCooldown <= 0f && isMoving)
+        {
+            StartCoroutine(Dash());
+            animator.SetTrigger("Roll"); // Set the animation trigger here
+        }
         // Check if the player is standing
         isStanding = rb.velocity.magnitude <= 0f;
         animator.SetBool("isStanding", isStanding);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
+            if (tackling == true && playerStats.tackle == true)
+            {
+                enemy.TakeDamage(playerStats.tackleDamage);
+            }
+            else
+            {
+
+            }
+            
+        }
     }
 
     void FixedUpdate()
@@ -56,10 +77,13 @@ public class PlayerMovementMouse : MonoBehaviour
         playerStats.dashCooldown -= playerStats.dashCooldown > 0f ? Time.deltaTime : 0f;
     }
 
+
+
     IEnumerator Dash()
     {
         // Start the dash
         isDashing = true;
+        tackling = true;
         dashTimer = dashDuration;
         dashDirection = rb.velocity.normalized;
 
@@ -67,6 +91,11 @@ public class PlayerMovementMouse : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
         rb.collisionDetectionMode = CollisionDetectionMode2D.Discrete;
+
+        if (playerStats.tackle == true)
+        {
+
+        }
 
         // Wait for the dash to finish
         yield return new WaitForSeconds(dashDuration);
@@ -76,6 +105,7 @@ public class PlayerMovementMouse : MonoBehaviour
         rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
         // Finish the dash
+        tackling = false;
         isDashing = false;
         playerStats.dashCooldown = dashCooldown;
     }

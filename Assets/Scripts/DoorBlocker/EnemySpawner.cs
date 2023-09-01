@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(maxEnemies);
+        //Debug.Log(maxEnemies);
         maxEnemies = collisionCounter.maxEnemys;
         minEnemies = collisionCounter.minEnemys;
     }
