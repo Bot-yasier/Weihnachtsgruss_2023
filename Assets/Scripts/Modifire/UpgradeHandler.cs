@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UpgradeHandler : MonoBehaviour
 {
     private Playerstats playerStats;
+    public GameObject Modifireall;
     public bool tutorialbool = false;
     public PlayerMovementMouse playerMovementMouse;
     public ProjectileSpawnerMouse projectileSpawnerMouse;
@@ -96,19 +97,19 @@ public class UpgradeHandler : MonoBehaviour
     {
         switch (Button1value)
         {
-            case "Bounce":
+            case "PowerupIcons-Sheet_2":
                 ElasticWalls();
                 break;
-            case "Double":
+            case "PowerupIcons-Sheet_1":
                 Multishoot();
                 break;
-            case "Faster":
+            case "PowerupIcons-Sheet_4":
                 Heal();
                 break;
-            case "UpgradeSpeed":
+            case "PowerupIcons-Sheet_5":
                 SpeedUp();
                 break;
-            case "Deer-Idle1":
+            case "PowerupIcons-Sheet_0":
                 LuckUp();
                 break;
             default:
@@ -121,19 +122,19 @@ public class UpgradeHandler : MonoBehaviour
     {
         switch (Button2value)
         {
-            case "Bounce":
+            case "PowerupIcons-Sheet_2":
                 ElasticWalls();
                 break;
-            case "Double":
+            case "PowerupIcons-Sheet_1":
                 Multishoot();
                 break;
-            case "Faster":
+            case "PowerupIcons-Sheet_4":
                 Heal();
                 break;
-            case "UpgradeSpeed":
+            case "PowerupIcons-Sheet_5":
                 SpeedUp();
                 break;
-            case "Deer-Idle1":
+            case "PowerupIcons-Sheet_0":
                 LuckUp();
                 break;
             default:
@@ -146,19 +147,19 @@ public class UpgradeHandler : MonoBehaviour
     {
         switch (Button3value)
         {
-            case "Bounce":
+            case "PowerupIcons-Sheet_2":
                 ElasticWalls();
                 break;
-            case "Double":
+            case "PowerupIcons-Sheet_1":
                 Multishoot();
                 break;
-            case "Faster":
+            case "PowerupIcons-Sheet_4":
                 Heal();
                 break;
-            case "UpgradeSpeed":
+            case "PowerupIcons-Sheet_5":
                 SpeedUp();
                 break;
-            case "Deer-Idle1":
+            case "PowerupIcons-Sheet_0":
                 LuckUp();
                 break;
             default:
@@ -175,7 +176,7 @@ public class UpgradeHandler : MonoBehaviour
 
     public void LuckUp()
     {
-        playerStats.RoomLuck += 100;
+        playerStats.RoomLuck += 1;
         Debug.Log("Luck");
         DeactivateUpgrades();
 
@@ -203,6 +204,7 @@ public class UpgradeHandler : MonoBehaviour
         Modifire1.SetActive(false);
         Modifire2.SetActive(false);
         Modifire3.SetActive(false);
+        Modifireall.SetActive(false);
         playerMovementMouse.enabled = true;
         playerrigid.constraints = RigidbodyConstraints2D.None;
         playerrigid.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -219,6 +221,7 @@ public class UpgradeHandler : MonoBehaviour
         Modifire1.SetActive(true);
         Modifire2.SetActive(true);
         Modifire3.SetActive(true);
+        Modifireall.SetActive(true);
         randomModifire.AssignImages();
         playerMovementMouse.enabled = false;
         playerrigid.constraints = RigidbodyConstraints2D.FreezePosition;
