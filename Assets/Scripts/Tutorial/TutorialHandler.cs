@@ -278,7 +278,8 @@ public class TutorialHandler : MonoBehaviour
     void vierzehn()
     {
         tutorialbuttong.SetActive(false);
-        tutorialTextg.SetActive(false); unfreezplayer(); Enemy1.SetActive(true); Enemy2.SetActive(true);
+        tutorialTextg.SetActive(false); unfreezplayer(); //Enemy1.SetActive(true);
+                                                         Enemy2.SetActive(true);
     }
     void fünfzehn()
     {

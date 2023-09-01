@@ -45,7 +45,7 @@ public class UpgradeHandler : MonoBehaviour
 
     private void Update()
     {
-
+        
         if (Input.GetKeyDown(KeyCode.L))
         {
             LuckUp();
@@ -212,7 +212,11 @@ public class UpgradeHandler : MonoBehaviour
 
     void OnEnemyDeath(EnemyController enemy)
     {
-        powerUpBar.IncreaseFillAmount();
+        if (powerUpBar != null)
+        {
+            // Hier kannst du auf das PowerUpBar-Objekt sicher zugreifen
+            powerUpBar.IncreaseFillAmount();
+        }
     }
 
     void Upgrade()
