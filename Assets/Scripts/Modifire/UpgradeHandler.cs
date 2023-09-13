@@ -16,9 +16,13 @@ public class UpgradeHandler : MonoBehaviour
     public PowerUpBar powerUpBar;
     public PlayerHealthController playerHealthController;
 
+
     public GameObject Modifire1;
     public GameObject Modifire2;
     public GameObject Modifire3;
+    public GameObject q1;
+    public GameObject q2;
+    public GameObject q3;
 
     public Button ModiButton1;
     public Button ModiButton2;
@@ -205,6 +209,9 @@ public class UpgradeHandler : MonoBehaviour
         Modifire2.SetActive(false);
         Modifire3.SetActive(false);
         Modifireall.SetActive(false);
+        q1.SetActive(false);
+        q2.SetActive(false);
+        q3.SetActive(false);
         playerMovementMouse.enabled = true;
         playerrigid.constraints = RigidbodyConstraints2D.None;
         playerrigid.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -226,6 +233,9 @@ public class UpgradeHandler : MonoBehaviour
         Modifire2.SetActive(true);
         Modifire3.SetActive(true);
         Modifireall.SetActive(true);
+        q1.SetActive(true);
+        q2.SetActive(true);
+        q3.SetActive(true);
         randomModifire.AssignImages();
         playerMovementMouse.enabled = false;
         playerrigid.constraints = RigidbodyConstraints2D.FreezePosition;

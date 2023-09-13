@@ -19,6 +19,7 @@ public class DoorBlockerHandler : MonoBehaviour
     private float newy;
     private float newz;
     private GridGraph gg;
+    public GameObject unique;
 
     public bool hasEnteredRoom = false; // New variable to track if the player has entered the room
 
@@ -89,6 +90,7 @@ public class DoorBlockerHandler : MonoBehaviour
             }
 
             hasEnteredRoom = true; // Set the flag to true indicating the player has entered the room
+            unique.SetActive(false);
             StartCoroutine(wait());
             StartCoroutine(enemyspawn());
         }

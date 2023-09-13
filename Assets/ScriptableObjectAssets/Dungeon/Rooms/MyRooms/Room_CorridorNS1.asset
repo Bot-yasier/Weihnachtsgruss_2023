@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab066c84346e4e4c9bd35d1b4203baf, type: 3}
   m_Name: Room_CorridorNS1
   m_EditorClassIdentifier: 
-  guid: 7f32a1694c02bff4fad912c3abf5903f
-  prefab: {fileID: 3180518623854310052, guid: b6a229e2404923c4fbb6da051c5a762e, type: 3}
-  previousPrefab: {fileID: 3180518623854310052, guid: b6a229e2404923c4fbb6da051c5a762e, type: 3}
+  guid: fb0c9bb37d8fc0e40967729d830df607
+  prefab: {fileID: 3180518623854310052, guid: 1ffdee4e1c6a3b84c87dd1c546f340b2, type: 3}
+  previousPrefab: {fileID: 3180518623854310052, guid: 1ffdee4e1c6a3b84c87dd1c546f340b2, type: 3}
   roomNodeType: {fileID: 11400000, guid: ae9cd23f2d4252c46915a7bcbcf32380, type: 2}
   lowerBounds: {x: -4, y: -4}
   upperBounds: {x: 6, y: 9}
