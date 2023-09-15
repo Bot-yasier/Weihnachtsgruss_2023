@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class UpgradeHandler : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class UpgradeHandler : MonoBehaviour
     public RandomModifire randomModifire;
     public PowerUpBar powerUpBar;
     public PlayerHealthController playerHealthController;
+    public TextMeshProUGUI qtext1;
+    public TextMeshProUGUI qtext2;
+    public TextMeshProUGUI qtext3;
 
 
     public GameObject Modifire1;
@@ -23,10 +27,12 @@ public class UpgradeHandler : MonoBehaviour
     public GameObject q1;
     public GameObject q2;
     public GameObject q3;
-
     public Button ModiButton1;
     public Button ModiButton2;
     public Button ModiButton3;
+    public Button qModiButton1;
+    public Button qModiButton2;
+    public Button qModiButton3;
 
     public string Button1value;
     public string Button2value;
@@ -84,9 +90,94 @@ public class UpgradeHandler : MonoBehaviour
         ModiButton1.onClick.AddListener(Button1Clicked);
         ModiButton2.onClick.AddListener(Button2Clicked);
         ModiButton3.onClick.AddListener(Button3Clicked);
+        qModiButton1.onClick.AddListener(qModiButton1v);
+        qModiButton2.onClick.AddListener(qModiButton2v);
+        qModiButton3.onClick.AddListener(qModiButton3v);
 
         // Subscribe to the LuckUpEvent and define a method to handle it
         OnLuckUp += LuckUpEventHandler;
+    }
+
+    void qModiButton1v()
+    {
+
+        switch (Button1value)
+        {
+            case "PowerupIcons-Sheet_2":
+                qtext1.text = "Elastische Mauern: Verwandelt die Wände in federnde Barrieren, die Schneebälle abprallen lassen und taktische Vorteile bieten.";
+                break;
+            case "PowerupIcons-Sheet_1":
+                qtext1.text = "Mehrfachschuss: Erlaubt dem Spieler, mehrere Schneebälle gleichzeitig abzufeuern, um seine Feuerkraft zu erhöhen.";
+                break;
+            case "PowerupIcons-Sheet_4":
+                qtext1.text = "Heilung: Gewährt dem Spieler eine zusätzliches Herz, um seine Überlebensfähigkeit zu stärken.";
+                break;
+            case "PowerupIcons-Sheet_5":
+                qtext1.text = "Geschwindigkeit: Erhöht die Bewegungsgeschwindigkeit des Spielers ";
+                break;
+            case "PowerupIcons-Sheet_0":
+                qtext1.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen";
+                LuckUp();
+                break;
+            default:
+                Debug.Log(Button1value);
+                break;
+        }
+
+    }
+
+    void qModiButton2v()
+    {
+        switch (Button2value)
+        {
+            case "PowerupIcons-Sheet_2":
+                qtext2.text = "Elastische Mauern: Verwandelt die Wände in federnde Barrieren, die Schneebälle abprallen lassen und taktische Vorteile bieten.";
+                break;
+            case "PowerupIcons-Sheet_1":
+                qtext2.text = "Mehrfachschuss: Erlaubt dem Spieler, mehrere Schneebälle gleichzeitig abzufeuern, um seine Feuerkraft zu erhöhen.";
+                break;
+            case "PowerupIcons-Sheet_4":
+                qtext2.text = "Heilung: Gewährt dem Spieler eine zusätzliches Herz, um seine Überlebensfähigkeit zu stärken.";
+                break;
+            case "PowerupIcons-Sheet_5":
+                qtext2.text = "Geschwindigkeit: Erhöht die Bewegungsgeschwindigkeit des Spielers ";
+                break;
+            case "PowerupIcons-Sheet_0":
+                qtext2.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen";
+                LuckUp();
+                break;
+            default:
+                Debug.Log(Button2value);
+                break;
+        }
+
+    }
+
+    void qModiButton3v()
+    {
+
+        switch (Button3value)
+        {
+            case "PowerupIcons-Sheet_2":
+                qtext3.text = "Elastische Mauern: Verwandelt die Wände in federnde Barrieren, die Schneebälle abprallen lassen und taktische Vorteile bieten.";
+                break;
+            case "PowerupIcons-Sheet_1":
+                qtext3.text = "Mehrfachschuss: Erlaubt dem Spieler, mehrere Schneebälle gleichzeitig abzufeuern, um seine Feuerkraft zu erhöhen.";
+                break;
+            case "PowerupIcons-Sheet_4":
+                qtext3.text = "Heilung: Gewährt dem Spieler eine zusätzliches Herz, um seine Überlebensfähigkeit zu stärken.";
+                break;
+            case "PowerupIcons-Sheet_5":
+                qtext3.text = "Geschwindigkeit: Erhöht die Bewegungsgeschwindigkeit des Spielers ";
+                break;
+            case "PowerupIcons-Sheet_0":
+                qtext3.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen";
+                LuckUp();
+                break;
+            default:
+                Debug.Log(Button3value);
+                break;
+        }
     }
 
     private void OnDestroy()
@@ -233,9 +324,6 @@ public class UpgradeHandler : MonoBehaviour
         Modifire2.SetActive(true);
         Modifire3.SetActive(true);
         Modifireall.SetActive(true);
-        q1.SetActive(true);
-        q2.SetActive(true);
-        q3.SetActive(true);
         randomModifire.AssignImages();
         playerMovementMouse.enabled = false;
         playerrigid.constraints = RigidbodyConstraints2D.FreezePosition;

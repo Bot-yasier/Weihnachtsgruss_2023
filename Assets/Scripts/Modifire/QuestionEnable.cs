@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class QuestionEnable : MonoBehaviour
 {
     public Button QuestButton1;
@@ -13,6 +14,9 @@ public class QuestionEnable : MonoBehaviour
     public GameObject questtext1;
     public GameObject questtext2;
     public GameObject questtext3;
+    bool quest1 = false;
+    bool quest2 = false;
+    bool quest3 = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,18 +32,47 @@ public class QuestionEnable : MonoBehaviour
     }
     void Quest1()
     {
-        questtext1.SetActive(true);
+        if(quest1 == false)
+        {
+            questtext1.SetActive(true);
+            quest1 = true;
+        }
+        else
+        {
+            questtext1.SetActive(false);
+            quest1 = false;
+        }
+   
 
     }
     void Quest2()
     {
-        questtext2.SetActive(true);
+        if (quest2 == false)
+        {
+            quest2 = true;
+            questtext2.SetActive(true);
+        }
+        else
+        {
+            quest2 = false;
+            questtext2.SetActive(false);
+        }
+      
 
     }
     void Quest3()
     {
-
-        questtext3.SetActive(true);
+        if (quest3 == false)
+        {
+            quest3 = true;
+            questtext3.SetActive(true);
+        }
+        else
+        {
+            quest3 = false;
+            questtext3.SetActive(false);
+        }
+       
     }
 
 }
