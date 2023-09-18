@@ -29,24 +29,30 @@ public class GameManager : SingletonMonobehaviour<GameManager>
 
     [SerializeField] private int currentDungeonLevelListIndex = 0;
     [HideInInspector] public GameState gameState;
+    [HideInInspector] public Levelanzeige levelanzeige;
+
+    public bool newDungeon = false;
     // Start is called before the first frame update
     private void Start()
     {
+        levelanzeige = FindObjectOfType<Levelanzeige>();
         gameState = GameState.gameStarted;
     }
 
     // Update is called once per frame
     void Update()
     {
-        HandleGameState();
-
-        if (Input.GetKeyDown(KeyCode.P))
+      
+        if(newDungeon == true)
         {
             gameState = GameState.gameStarted;
+            newDungeon = false;
+            levelanzeige.Visibel();
         }
+        HandleGameState();
     }
 
-    private void HandleGameState()
+    public void HandleGameState()
     {
         switch(gameState)
         {

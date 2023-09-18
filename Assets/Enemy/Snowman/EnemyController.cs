@@ -12,11 +12,12 @@ public class EnemyController : MonoBehaviour
     private bool isShooting = false;
     private float animationDuration = 1.0f;
     public float shootDelay = 2.0f;
+    public LevelCounter levelCounter;
 
     public delegate void EnemyDeathEventHandler(EnemyController enemy);
     public static event EnemyDeathEventHandler EnemyDeathEvent;
 
-    public int maxHealth = 3; // maximum health of the enemy
+    public int maxHealth;
     public float moveSpeed = 3f;
     public GameObject bulletPrefab;
     public float bulletSpeed = 10f;
@@ -37,6 +38,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        levelCounter = FindObjectOfType<LevelCounter>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         //moveDirection = Vector2.zero;
         timeUntilNextShot = shootCooldown;
@@ -48,6 +50,26 @@ public class EnemyController : MonoBehaviour
 
 
         //StartCoroutine(EnemyLoop()); // Start the MoveAndWait coroutine
+        if(levelCounter.Levelint == 1)
+        {
+            maxHealth = 5;
+        }
+        if (levelCounter.Levelint == 2)
+        {
+            maxHealth = 6;
+        }
+        if (levelCounter.Levelint == 3)
+        {
+            maxHealth = 8;
+        }
+        if (levelCounter.Levelint == 4)
+        {
+            maxHealth = 10;
+        }
+        if (levelCounter.Levelint == 5)
+        {
+            maxHealth = 13;
+        }
     }
 
 

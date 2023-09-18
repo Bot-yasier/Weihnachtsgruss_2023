@@ -5,11 +5,12 @@ using UnityEngine.UI;
 public class ChangeScene : MonoBehaviour
 {
     public string sceneName;
-  
-   
+    [HideInInspector] public LevelLoader levelLoader;
+
     // Start is called before the first frame update
     void Start()
     {
+        levelLoader = FindObjectOfType<LevelLoader>();
         Button button = GetComponent<Button>();
         button.onClick.AddListener(ChangeScenes);
     }
@@ -21,6 +22,7 @@ public class ChangeScene : MonoBehaviour
     }
     private void ChangeScenes()
     {
+        levelLoader.LoadNextLevel();
         SceneManager.LoadScene(sceneName);
     }
 }

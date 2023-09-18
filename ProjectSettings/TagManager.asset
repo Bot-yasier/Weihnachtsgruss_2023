@@ -22,6 +22,7 @@ TagManager:
   - EnemyAmmo
   - Package
   - Enterence
+  - DungeonRoomBuilder
   layers:
   - Default
   - TransparentFX

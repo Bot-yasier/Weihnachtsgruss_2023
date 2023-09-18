@@ -117,7 +117,6 @@ public class UpgradeHandler : MonoBehaviour
                 break;
             case "PowerupIcons-Sheet_0":
                 qtext1.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen";
-                LuckUp();
                 break;
             default:
                 Debug.Log(Button1value);
@@ -144,7 +143,6 @@ public class UpgradeHandler : MonoBehaviour
                 break;
             case "PowerupIcons-Sheet_0":
                 qtext2.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen";
-                LuckUp();
                 break;
             default:
                 Debug.Log(Button2value);
@@ -172,7 +170,6 @@ public class UpgradeHandler : MonoBehaviour
                 break;
             case "PowerupIcons-Sheet_0":
                 qtext3.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen";
-                LuckUp();
                 break;
             default:
                 Debug.Log(Button3value);

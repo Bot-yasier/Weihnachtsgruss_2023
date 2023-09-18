@@ -23,7 +23,12 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
 
     }
 
-    private void LoadRoomNodeTypeList()
+    private void Start()
+    {
+
+    }
+
+    public void LoadRoomNodeTypeList()
     {
         roomNodeTypeList = GameResources.Instance.roomNodeTypeList;
     }
@@ -588,7 +593,7 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         }
     }
 
-    private void ClearDungeon()
+    public void ClearDungeon()
     {
         // Destroy instantiated dungeon gameobjects and clear dungeon manager room dictionary
         if (dungeonBuilderRoomDictionary.Count > 0)

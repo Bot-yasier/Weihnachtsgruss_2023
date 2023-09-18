@@ -8,12 +8,14 @@ public class MainMenu : MonoBehaviour
     public bool Play = false;
     public static bool T = false;
     public Variables variables;
+    [HideInInspector] public LevelLoader levelLoader;
 
     public Image playbutton;
 
 
     void Start()
     {
+        levelLoader = FindObjectOfType<LevelLoader>();
         Button button = GetComponent<Button>(); // Hole die Button-Komponente vom selben GameObject.
 
         // Füge einen Listener hinzu, der auf den Button-Klick reagiert.
@@ -54,6 +56,7 @@ public class MainMenu : MonoBehaviour
                 Color col = playbutton.color;
                 col.a = 100;
                 playbutton.color = col;
+                levelLoader.LoadNextLevel();
 
                 // Lade die angegebene Szene.
                 SceneManager.LoadScene(sceneName);

@@ -19,6 +19,8 @@ public class PlayerHealthController : MonoBehaviour
     public GameObject hard4;
     public GameObject hard5;
     public GameObject hard6;
+
+    public SimpleFlash simpleFlash;
     void Start()
     {
         currentHealth = startingHealth;
@@ -31,7 +33,7 @@ public class PlayerHealthController : MonoBehaviour
         if (currentHealth == 3) { hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); hard1.SetActive(true); hard2.SetActive(true); hard3.SetActive(true); }
         if (currentHealth == 2) { hard3.SetActive(false); hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); hard1.SetActive(true); hard2.SetActive(true); }
         if (currentHealth == 1) { hard2.SetActive(false); hard3.SetActive(false); hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); hard1.SetActive(true); }
-        if (currentHealth == 0) { hard1.SetActive(false); hard2.SetActive(false); hard3.SetActive(false); hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); Menu.SetActive(true);
+        if (currentHealth == 0) { hard1.SetActive(false); hard2.SetActive(false); hard3.SetActive(false); hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); Menu.SetActive(true); 
 
             animator.enabled = false;
             playerMovementMouse.enabled = false;
@@ -51,7 +53,8 @@ public class PlayerHealthController : MonoBehaviour
     {
 
         currentHealth -= damageAmount;
-      
+        simpleFlash.Flash();
+
 
     }
 
