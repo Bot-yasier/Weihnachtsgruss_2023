@@ -23,7 +23,16 @@ public class Levelanzeige : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        zahl.text = levelCounter.Levelint.ToString();
+        if(levelCounter.Levelint == 1)
+        {
+            zahl.text = levelCounter.Levelint.ToString();
+        }
+        else
+        {
+            int level = levelCounter.Levelint - 1;
+            zahl.text = level.ToString();
+        }
+    
     }
 
     public void Visibel()

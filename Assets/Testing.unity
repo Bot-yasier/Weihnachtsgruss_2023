@@ -1700,7 +1700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: aeb3f123dc26a4643a857b84b916e2ac, type: 2}
-  duration: 0.2
+  duration: 0.15
 --- !u!1 &569902358
 GameObject:
   m_ObjectHideFlags: 0
@@ -2014,6 +2014,7 @@ GameObject:
   - component: {fileID: 652139212}
   - component: {fileID: 652139211}
   - component: {fileID: 652139213}
+  - component: {fileID: 652139214}
   m_Layer: 5
   m_Name: LevelB
   m_TagString: Untagged
@@ -2090,9 +2091,30 @@ CanvasGroup:
   m_GameObject: {fileID: 652139209}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!95 &652139214
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652139209}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8cd9dfc6c1f3cfc44afb1e5abfaf7492, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &676060473
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,7 +2365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6684320503471936390, guid: 975488069d41a3d45b13e5785277841d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7831276722478961250, guid: 975488069d41a3d45b13e5785277841d, type: 3}
       propertyPath: m_RootOrder
@@ -5260,7 +5282,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1943299825}
   - component: {fileID: 1943299826}
-  - component: {fileID: 1943299827}
   m_Layer: 5
   m_Name: LevelAnzeige
   m_TagString: Untagged
@@ -5307,18 +5328,6 @@ MonoBehaviour:
   playerMovementMouse: {fileID: 526802415}
   playerrigid: {fileID: 526802412}
   animator: {fileID: 569564754}
---- !u!225 &1943299827
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943299824}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1982190942
 GameObject:
   m_ObjectHideFlags: 0
