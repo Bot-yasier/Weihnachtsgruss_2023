@@ -20,6 +20,9 @@ public class DoorBlockerHandler : MonoBehaviour
     private float newz;
     private GridGraph gg;
     public GameObject unique;
+    public bool Bossroom;
+    public GameObject ExtraEnemy1;
+    public GameObject ExtraEnemy2;
 
     public bool hasEnteredRoom = false; // New variable to track if the player has entered the room
 
@@ -42,7 +45,12 @@ public class DoorBlockerHandler : MonoBehaviour
     private IEnumerator enemyspawn()
     {
         yield return new WaitForSeconds(3f);
-
+        if(Bossroom == true)
+        {
+            ExtraEnemy1.SetActive(true);
+            ExtraEnemy2.SetActive(true);
+            Bossroom = false;
+        }
         enemySpawner.SpawnEnemies();
         Astar.SetActive(true);
         gg = AstarPath.active.data.gridGraph;

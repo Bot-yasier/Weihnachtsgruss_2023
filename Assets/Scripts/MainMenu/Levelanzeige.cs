@@ -29,7 +29,7 @@ public class Levelanzeige : MonoBehaviour
         }
         else
         {
-            int level = levelCounter.Levelint - 1;
+            int level = levelCounter.Levelint;
             zahl.text = level.ToString();
         }
     

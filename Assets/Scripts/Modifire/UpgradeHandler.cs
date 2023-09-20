@@ -350,12 +350,12 @@ public class UpgradeHandler : MonoBehaviour
    public void Heal()
    {
         health = playerHealthController.currentHealth;
-        if (health == 6)
+        if (health == 10)
         {
 
 
         }
-        if (health == 5)
+        if(health == 9)
         {
             playerHealthController.currentHealth = health + eins;
         }

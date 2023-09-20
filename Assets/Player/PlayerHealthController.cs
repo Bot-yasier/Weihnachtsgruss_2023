@@ -19,6 +19,10 @@ public class PlayerHealthController : MonoBehaviour
     public GameObject hard4;
     public GameObject hard5;
     public GameObject hard6;
+    public GameObject hard7;
+    public GameObject hard8;
+    public GameObject hard9;
+    public GameObject hard10;
 
     public SimpleFlash simpleFlash;
     void Start()
@@ -27,7 +31,11 @@ public class PlayerHealthController : MonoBehaviour
     }
     private void Update()
     {
-        if (currentHealth == 6) { hard1.SetActive(true);  hard2.SetActive(true); hard3.SetActive(true); hard4.SetActive(true); hard5.SetActive(true); hard6.SetActive(true); }
+        if (currentHealth == 10) { hard1.SetActive(true); hard2.SetActive(true); hard3.SetActive(true); hard4.SetActive(true); hard5.SetActive(true); hard6.SetActive(true); hard7.SetActive(true); hard8.SetActive(true); hard9.SetActive(true); hard10.SetActive(true); }
+        if (currentHealth == 9) { hard1.SetActive(true); hard2.SetActive(true); hard3.SetActive(true); hard4.SetActive(true); hard5.SetActive(true); hard6.SetActive(true); hard7.SetActive(true); hard8.SetActive(true); hard9.SetActive(true); hard10.SetActive(false); }
+        if (currentHealth == 8) { hard1.SetActive(true); hard2.SetActive(true); hard3.SetActive(true); hard4.SetActive(true); hard5.SetActive(true); hard6.SetActive(true); hard7.SetActive(true); hard8.SetActive(true); hard9.SetActive(false); hard10.SetActive(false); }
+        if (currentHealth == 7) { hard1.SetActive(true); hard2.SetActive(true); hard3.SetActive(true); hard4.SetActive(true); hard5.SetActive(true); hard6.SetActive(true); hard7.SetActive(true); hard8.SetActive(false); hard9.SetActive(false); hard10.SetActive(false); }
+        if (currentHealth == 6) { hard1.SetActive(true);  hard2.SetActive(true); hard3.SetActive(true); hard4.SetActive(true); hard5.SetActive(true); hard6.SetActive(true); hard7.SetActive(false); hard8.SetActive(false); hard9.SetActive(false); hard10.SetActive(false); }
         if (currentHealth == 5) { hard6.SetActive(false); hard1.SetActive(true); hard2.SetActive(true); hard3.SetActive(true); hard4.SetActive(true); hard5.SetActive(true); }
         if (currentHealth == 4) { hard5.SetActive(false); hard6.SetActive(false); hard1.SetActive(true); hard2.SetActive(true); hard3.SetActive(true); hard4.SetActive(true); }
         if (currentHealth == 3) { hard4.SetActive(false); hard5.SetActive(false); hard6.SetActive(false); hard1.SetActive(true); hard2.SetActive(true); hard3.SetActive(true); }
