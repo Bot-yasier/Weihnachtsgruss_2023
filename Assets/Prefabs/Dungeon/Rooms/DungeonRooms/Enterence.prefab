@@ -16053,7 +16053,7 @@ GameObject:
   - component: {fileID: 1920629568201150394}
   - component: {fileID: 629793410458244980}
   - component: {fileID: 84377877286492859}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Tilemap5_Collision
   m_TagString: collisionTilemap
   m_Icon: {fileID: 0}

@@ -41,6 +41,20 @@ public class Bossroom : MonoBehaviour
                 if (playerObject != null)
                 {
                     levelCounter.Levelint++;
+
+
+
+                    // Finde alle GameObjects mit "Present" im Namen
+                    GameObject[] objectsToDelete = GameObject.FindGameObjectsWithTag("Package");
+
+                    // Lösche jedes gefundene GameObject
+                    foreach (GameObject obj in objectsToDelete)
+                    {
+                        Destroy(obj);
+                    }
+
+
+
                     // Access the Transform component of the "Player" GameObject
                     Transform playerTransform = playerObject.transform;
 

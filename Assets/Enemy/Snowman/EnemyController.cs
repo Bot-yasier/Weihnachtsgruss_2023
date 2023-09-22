@@ -42,15 +42,12 @@ public class EnemyController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         //moveDirection = Vector2.zero;
         timeUntilNextShot = shootCooldown;
-        currentHealth = maxHealth;
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.velocity *= 0.5f;
         aiDestinationSetter = GetComponent<AIDestinationSetter>();
 
-
-
         //StartCoroutine(EnemyLoop()); // Start the MoveAndWait coroutine
-        if(levelCounter.Levelint == 1)
+        if (levelCounter.Levelint == 1)
         {
             maxHealth = 5;
         }
@@ -70,6 +67,11 @@ public class EnemyController : MonoBehaviour
         {
             maxHealth = 13;
         }
+
+        currentHealth = maxHealth;
+
+
+
     }
 
 

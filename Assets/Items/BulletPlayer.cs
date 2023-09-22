@@ -25,6 +25,10 @@ public class BulletPlayer : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<Playerstats>();
     }
+    private void Start()
+    {
+        Invoke("DestroyObject", 10f);
+    }
 
 
     private void Update()
@@ -99,6 +103,12 @@ public class BulletPlayer : MonoBehaviour
             GameObject particles = Instantiate(particlePrefab, position, rotation);
             Destroy(particles, 2f); // Destroy particles after 2 seconds (adjust the duration as needed)
         }
+    }
+
+    void DestroyObject()
+    {
+        // Zerstöre dieses GameObject
+        Destroy(gameObject);
     }
 
 }
