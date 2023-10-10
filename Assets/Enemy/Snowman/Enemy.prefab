@@ -93,6 +93,10 @@ MonoBehaviour:
   animator: {fileID: 4328129375821362940}
   spriteRenderer: {fileID: 4328129375821362937}
   shootDelay: 2
+  levelCounter: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: 6583cc739f33e1a4c89181e51d0e9cf9, type: 3}
+  - {fileID: 8300000, guid: d704daeb24ae3774cbafbb0a5ef8a335, type: 3}
   maxHealth: 5
   moveSpeed: 3
   bulletPrefab: {fileID: 1520880642496056549, guid: b77f5e5471a809b4db84bf55505c7c94, type: 3}

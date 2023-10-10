@@ -7,6 +7,8 @@ using TMPro;
 
 public class UpgradeHandler : MonoBehaviour
 {
+    public List<AudioClip> audioClips; // Die Liste der AudioClips
+    private AudioSource audioSource;
     private Playerstats playerStats;
     public GameObject Modifireall;
     public bool tutorialbool = false;
@@ -86,6 +88,7 @@ public class UpgradeHandler : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         playerStats = FindObjectOfType<Playerstats>();
         ModiButton1.onClick.AddListener(Button1Clicked);
         ModiButton2.onClick.AddListener(Button2Clicked);
@@ -187,6 +190,14 @@ public class UpgradeHandler : MonoBehaviour
 
     public void Button1Clicked()
     {
+        if (audioClips.Count > 0)
+        {
+            int randomIndex = Random.Range(0, audioClips.Count);
+            AudioClip randomClip = audioClips[randomIndex];
+
+            // Spiele den zufälligen AudioClip ab
+            audioSource.PlayOneShot(randomClip);
+        }
         switch (Button1value)
         {
             case "PowerupIcons-Sheet_2":
@@ -212,6 +223,14 @@ public class UpgradeHandler : MonoBehaviour
 
     public void Button2Clicked()
     {
+        if (audioClips.Count > 0)
+        {
+            int randomIndex = Random.Range(0, audioClips.Count);
+            AudioClip randomClip = audioClips[randomIndex];
+
+            // Spiele den zufälligen AudioClip ab
+            audioSource.PlayOneShot(randomClip);
+        }
         switch (Button2value)
         {
             case "PowerupIcons-Sheet_2":
@@ -237,6 +256,14 @@ public class UpgradeHandler : MonoBehaviour
 
     public void Button3Clicked()
     {
+        if (audioClips.Count > 0)
+        {
+            int randomIndex = Random.Range(0, audioClips.Count);
+            AudioClip randomClip = audioClips[randomIndex];
+
+            // Spiele den zufälligen AudioClip ab
+            audioSource.PlayOneShot(randomClip);
+        }
         switch (Button3value)
         {
             case "PowerupIcons-Sheet_2":
@@ -316,6 +343,7 @@ public class UpgradeHandler : MonoBehaviour
 
     void Upgrade()
     {
+      
         tutorialbool = true;
         Modifire1.SetActive(true);
         Modifire2.SetActive(true);

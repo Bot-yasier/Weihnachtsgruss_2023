@@ -8,7 +8,8 @@ public class ProjectileSpawnerMouse : MonoBehaviour
     public float bulletSize = 0.5f;
     public string enemyTag; // Tag, nach dem wir suchen
     public int numBullets = 1;
-
+    public AudioClip soundEffect;
+    private AudioSource audioSource;
     public float maxShootDistance = 20f;
 
     [SerializeField] public bool enableElasticWalls = false;
@@ -24,6 +25,7 @@ public class ProjectileSpawnerMouse : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         if (spawner == null)
         {
             spawner = gameObject;
@@ -81,6 +83,7 @@ public class ProjectileSpawnerMouse : MonoBehaviour
                 {
                     //animator.SetBool("IsShooting", true); // Set "isShooting" parameter to true
                     animator.SetTrigger("Shoot");
+                    audioSource.PlayOneShot(soundEffect);
                 }
             }
         }
@@ -94,6 +97,7 @@ public class ProjectileSpawnerMouse : MonoBehaviour
 
             if (distanceToEnemy <= maxShootDistance)
             {
+               
                 // Calculate shoot direction
                 Vector2 shootDirection = (currentEnemyTransform.position - spawner.transform.position).normalized;
 

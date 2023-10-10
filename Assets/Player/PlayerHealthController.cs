@@ -12,6 +12,8 @@ public class PlayerHealthController : MonoBehaviour
     public int currentHealth;
     public GameObject Player;
     public GameObject Menu;
+    public List<AudioClip> audioClips; // Die Liste der AudioClips
+    private AudioSource audioSource;
 
     public GameObject hard1;
     public GameObject hard2;
@@ -27,6 +29,7 @@ public class PlayerHealthController : MonoBehaviour
     public SimpleFlash simpleFlash;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         currentHealth = startingHealth;
     }
     private void Update()
@@ -59,7 +62,14 @@ public class PlayerHealthController : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
+        if (audioClips.Count > 0)
+        {
+            int randomIndex = Random.Range(0, audioClips.Count);
+            AudioClip randomClip = audioClips[randomIndex];
 
+            // Spiele den zufälligen AudioClip ab
+            audioSource.PlayOneShot(randomClip);
+        }
         currentHealth -= damageAmount;
         simpleFlash.Flash();
 
