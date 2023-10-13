@@ -83,7 +83,7 @@ public class ProjectileSpawnerMouse : MonoBehaviour
                 {
                     //animator.SetBool("IsShooting", true); // Set "isShooting" parameter to true
                     animator.SetTrigger("Shoot");
-                    audioSource.PlayOneShot(soundEffect);
+                   
                 }
             }
         }
@@ -121,6 +121,7 @@ public class ProjectileSpawnerMouse : MonoBehaviour
 
                     // Spawn bullet and set its properties
                     GameObject bullet = Instantiate(bulletPrefab, bulletPos, Quaternion.identity);
+                    audioSource.PlayOneShot(soundEffect);
                     bullet.transform.right = offset;
                     Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
                     if (rb != null)

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 using TMPro;
 
 public class Package : MonoBehaviour
@@ -12,6 +13,11 @@ public class Package : MonoBehaviour
     public int epicPoints = 100;
     public int legendPoints = 200;
 
+
+    private void Start()
+    {
+       
+    }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
