@@ -5,6 +5,7 @@ public class DatabaseScore : MonoBehaviour
 {
     public PlayerHealthController playerHealth;
     public string score; // Hier wird der Score gespeichert
+    public int scoreint;
 
     private TextMeshProUGUI scoreTextMesh; // Hier wird das TextMeshProUGUI-Objekt gespeichert
 
@@ -22,6 +23,7 @@ public class DatabaseScore : MonoBehaviour
             Debug.Log("Hallo");
 
             score = scoreTextMesh.text;
+            scoreint = int.Parse(score);
 
         }
     }

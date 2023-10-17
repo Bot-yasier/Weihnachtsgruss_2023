@@ -1340,6 +1340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 526802419}
   score: 
+  scoreint: 0
 --- !u!1 &465272431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,6 +1543,7 @@ GameObject:
   - component: {fileID: 526802422}
   - component: {fileID: 526802424}
   - component: {fileID: 526802425}
+  - component: {fileID: 526802426}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -1947,6 +1949,21 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2ce96aea18a97fd4a986aaf49db44d9b, type: 3}
   - {fileID: 8300000, guid: c65f5a518606c184cb59a8426079f1cd, type: 3}
   - {fileID: 8300000, guid: 6408bd4b7d4db3b4684680bb8318aaf8, type: 3}
+--- !u!114 &526802426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526802409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba15b3ba61356243a23b81bd27397b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  databasescore: {fileID: 459132259}
+  score: 0
+  playerName: John
 --- !u!1 &569564751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2749,6 +2766,10 @@ PrefabInstance:
     - target: {fileID: 6684320503471936390, guid: 975488069d41a3d45b13e5785277841d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706162431535792584, guid: 975488069d41a3d45b13e5785277841d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7831276722478961250, guid: 975488069d41a3d45b13e5785277841d, type: 3}
       propertyPath: m_RootOrder
