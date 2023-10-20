@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 
 public class ScoreSender : MonoBehaviour
 {
-    private const string backendUrl = "http://localhost:9001/score/HandlePostRequest"; // Replace with your actual backend URL
+    private const string backendUrl = "/api/score/HandlePostRequest"; // Replace with your actual backend URL
     public DatabaseScore databasescore;
 
     public int score; // You can edit this value in the Unity Inspector
@@ -15,10 +15,15 @@ public class ScoreSender : MonoBehaviour
     void Update()
     {
         score = databasescore.scoreint;
-        //score = int.Parse(databasescore.score);
+
         // Check if the "P" key is pressed
         if (Input.GetKeyDown(KeyCode.P))
         {
+            // Log the data being sent
+            Debug.Log($"Sending Score: {score}");
+            Debug.Log($"Player Name: {playerName}");
+            Debug.Log($"Email Address: {emailAddress}");
+
             // Trigger the SendScore method when "P" is pressed
             SendScore();
         }
@@ -45,16 +50,21 @@ public class ScoreSender : MonoBehaviour
         www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
         www.SetRequestHeader("Content-Type", "application/json");
 
+        // Log where the request is being sent
+        Debug.Log($"Sending POST request to: {backendUrl}");
+
         // Send the request
         yield return www.SendWebRequest();
 
         // Check for errors
         if (www.result != UnityWebRequest.Result.Success)
         {
+            // Log the error if the request fails
             Debug.LogError($"POST request failed: {www.error}");
         }
         else
         {
+            // Log the success message and server response if the request is successful
             Debug.Log("POST request successful!");
             Debug.Log($"Server response: {www.downloadHandler.text}");
         }

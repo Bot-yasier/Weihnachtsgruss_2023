@@ -1963,7 +1963,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   databasescore: {fileID: 459132259}
   score: 0
-  playerName: John
+  playerName: test1
+  emailAddress: example@example.com
 --- !u!1 &569564751
 GameObject:
   m_ObjectHideFlags: 0
