@@ -4,13 +4,12 @@ using UnityEngine.Networking;
 
 public class ScoreSender : MonoBehaviour
 {
-    private const string backendUrl = "https://localhost:32784/score/HandlePostRequest"; // Replace with your actual backend URL
+    private const string backendUrl = "http://localhost:9001/score/HandlePostRequest"; // Replace with your actual backend URL
     public DatabaseScore databasescore;
 
     public int score; // You can edit this value in the Unity Inspector
     public string playerName = "John"; // You can edit this value in the Unity Inspector
-
-
+    public string emailAddress = "example@example.com"; // You can edit this value in the Unity Inspector
 
     // Update is called once per frame
     void Update()
@@ -32,11 +31,12 @@ public class ScoreSender : MonoBehaviour
 
     private IEnumerator PostScore()
     {
-        // Escape double quotes in the playerName value
+        // Escape double quotes in the playerName and emailAddress values
         string escapedPlayerName = playerName.Replace("\"", "\\\"");
+        string escapedEmailAddress = emailAddress.Replace("\"", "\\\"");
 
-        // Create a JSON string with the score and escaped playerName
-        string jsonPayload = $"{{ \"Score\": {score}, \"PlayerName\": \"{escapedPlayerName}\" }}";
+        // Create a JSON string with the score, escaped playerName, and escaped emailAddress
+        string jsonPayload = $"{{ \"Score\": {score}, \"PlayerName\": \"{escapedPlayerName}\", \"Email\": \"{escapedEmailAddress}\" }}";
 
         // Create a UnityWebRequest to send the POST request
         UnityWebRequest www = new UnityWebRequest(backendUrl, "POST");
