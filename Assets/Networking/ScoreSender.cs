@@ -1,32 +1,45 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
+using TMPro;
+using UnityEngine.UI;
 
 public class ScoreSender : MonoBehaviour
 {
     private const string backendUrl = "/api/score/HandlePostRequest"; // Replace with your actual backend URL
     public DatabaseScore databasescore;
 
+    public Button SendScoretoD;
+
     public int score; // You can edit this value in the Unity Inspector
-    public string playerName = "John"; // You can edit this value in the Unity Inspector
-    public string emailAddress = "example@example.com"; // You can edit this value in the Unity Inspector
+    public string playerName; // You can edit this value in the Unity Inspector
+    public string emailAddress; // You can edit this value in the Unity Inspector
+
+    public TMP_InputField Email;
+
+    public TMP_InputField Player;
 
     // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        score = databasescore.scoreint;
-
-        // Check if the "P" key is pressed
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            // Log the data being sent
+        SendScoretoD.onClick.AddListener(SendScoretoDatabase);
+    }
+    void SendScoretoDatabase()
+    {
+            score = databasescore.scoreint;
             Debug.Log($"Sending Score: {score}");
             Debug.Log($"Player Name: {playerName}");
             Debug.Log($"Email Address: {emailAddress}");
-
-            // Trigger the SendScore method when "P" is pressed
+            playerName = Player.text;
+            emailAddress = Email.text;
             SendScore();
-        }
+        
+
+    }
+    private void Update()
+    {
+        playerName = Player.text;
+        emailAddress = Email.text;
     }
 
     public void SendScore()

@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd75ff660720ce448d54a1e89d850cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Haufen: {fileID: 0}
   doorBlockerHandler: {fileID: 596966207483019321}
 --- !u!1 &205592465676687336
 GameObject:
@@ -15968,6 +15969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd75ff660720ce448d54a1e89d850cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Haufen: {fileID: 0}
   doorBlockerHandler: {fileID: 596966207483019321}
 --- !u!1 &2758904895685745291
 GameObject:
@@ -27541,6 +27543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd75ff660720ce448d54a1e89d850cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Haufen: {fileID: 0}
   doorBlockerHandler: {fileID: 596966207483019321}
 --- !u!1 &6996874889854363978
 GameObject:

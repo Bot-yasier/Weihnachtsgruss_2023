@@ -7,6 +7,8 @@ public class DatabaseScore : MonoBehaviour
     public string score; // Hier wird der Score gespeichert
     public int scoreint;
 
+    public TextMeshProUGUI finalscore;
+
     private TextMeshProUGUI scoreTextMesh; // Hier wird das TextMeshProUGUI-Objekt gespeichert
 
     private void Start()
@@ -24,6 +26,8 @@ public class DatabaseScore : MonoBehaviour
 
             score = scoreTextMesh.text;
             scoreint = int.Parse(score);
+
+            finalscore.text = score;
 
         }
     }
