@@ -828,7 +828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -236.34003, y: 123.600006}
+  m_AnchoredPosition: {x: -236.34003, y: 138.6}
   m_SizeDelta: {x: 380.02, y: 212.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &995223297
@@ -865,9 +865,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Letztes Jahr gingen an den Festtagen bei einer rasanten Schlittenfahrt
-    viele Geschenke verloren.\r\nWer am meisten Geschenke wieder einsammelt, gewinnt
-    eine von 10 Flaschen XYZ. \r\n\r\nAber Achtung: die Geschenke werden von Schneem\xE4nnern
-    bewacht!\r\n"
+    viele Geschenke verloren. \r\nWer sammelt am meisten ein?\r\n\r\nAber Achtung:
+    die Geschenke werden von Schneem\xE4nnern bewacht!\r\n"
 --- !u!222 &995223298
 CanvasRenderer:
   m_ObjectHideFlags: 0

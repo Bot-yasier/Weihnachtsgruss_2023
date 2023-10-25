@@ -26,6 +26,9 @@ public class TutorialHandler : MonoBehaviour
     public GameObject Powerbar;
     public GameObject Score;
 
+    bool freezebool = false;
+    bool unfreezebool = false;
+
     public GameObject Paket1;
     public GameObject Paket2;
     public GameObject Paket3;
@@ -176,23 +179,36 @@ public class TutorialHandler : MonoBehaviour
 
     void unfreezplayer()
     {
-        playerMovementMouse.enabled = true;
-        playerrigid.constraints = RigidbodyConstraints2D.None;
-        playerrigid.constraints = RigidbodyConstraints2D.FreezeRotation;
-        animator.enabled = true;
+        if(unfreezebool == false)
+        {
+            playerMovementMouse.enabled = true;
+            playerrigid.constraints = RigidbodyConstraints2D.None;
+            playerrigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+            animator.enabled = true;
+            unfreezebool = true;
+            freezebool = false;
+        }
+
     }
     void freezplayer()
     {
-        animator.enabled = false;
-        playerMovementMouse.enabled = false;
-        playerrigid.constraints = RigidbodyConstraints2D.FreezePosition;
-        playerrigid.constraints = RigidbodyConstraints2D.FreezeRotation;
-        GameObject[] enemyAmmoObjects = GameObject.FindGameObjectsWithTag("EnemyAmmo");
-
-        foreach (GameObject enemyAmmoObject in enemyAmmoObjects)
+        if (freezebool == false)
         {
-            Destroy(enemyAmmoObject);
+            animator.enabled = false;
+            playerMovementMouse.enabled = false;
+            playerrigid.constraints = RigidbodyConstraints2D.FreezePosition;
+            playerrigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+            GameObject[] enemyAmmoObjects = GameObject.FindGameObjectsWithTag("EnemyAmmo");
+
+            foreach (GameObject enemyAmmoObject in enemyAmmoObjects)
+            {
+                Destroy(enemyAmmoObject);
+            }
+            unfreezebool = false;
+            freezebool = true;
+
         }
+
 
     }
 
@@ -291,6 +307,7 @@ public class TutorialHandler : MonoBehaviour
     }
     void sechszehn()
     {
+        unfreezplayer();
         freezplayer();
         tutorialbuttong.SetActive(true);
         tutorialText.text = "Mache dich nun auf den Weg in den nächsten Raum, wo Geschenke auf dich warten!";

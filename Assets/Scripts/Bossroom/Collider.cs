@@ -24,4 +24,5 @@ public class Collider : MonoBehaviour
             Portal.SetActive(false);
         }
     }
+
 }
