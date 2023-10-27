@@ -8,6 +8,7 @@ public class EnterenceCollision : MonoBehaviour
     bool Minimapsymbol = false;
     public GameObject Symbol;
     public DoorBlockerHandler doorBlockerHandler;
+    public GameObject Haufen;
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
@@ -24,7 +25,19 @@ public class EnterenceCollision : MonoBehaviour
 
     private void Update()
     {
-        if(finalroom == true)
+        if(doorBlockerHandler.HaufenSpawn == true)
+        {
+            Haufen.SetActive(true);
+
+        }
+
+        GameObject[] enemies1 = GameObject.FindGameObjectsWithTag("Enemy");
+        if (enemies1.Length == 0)
+        {
+            Haufen.SetActive(false);
+        }
+
+        if (finalroom == true)
         {
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             if (enemies.Length == 0 && Minimapsymbol)

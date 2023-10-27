@@ -24,6 +24,8 @@ public class DoorBlockerHandler : MonoBehaviour
     public GameObject ExtraEnemy1;
     public GameObject ExtraEnemy2;
 
+    public bool HaufenSpawn;
+
     public bool hasEnteredRoom = false; // New variable to track if the player has entered the room
 
     public void Start()
@@ -40,6 +42,7 @@ public class DoorBlockerHandler : MonoBehaviour
         {
             collider.enabled = true;
         }
+        HaufenSpawn = true;
     }
 
     private IEnumerator enemyspawn()
@@ -75,6 +78,7 @@ public class DoorBlockerHandler : MonoBehaviour
         {
             collider.enabled = false;
             Astar.SetActive(false);
+            HaufenSpawn = false;
         }
 
         GameObject[] enemyAmmoObjects = GameObject.FindGameObjectsWithTag("EnemyAmmo");
@@ -95,6 +99,7 @@ public class DoorBlockerHandler : MonoBehaviour
             foreach (Collider2D collider in colliders)
             {
                 collider.enabled = false;
+                HaufenSpawn = false;
             }
 
             hasEnteredRoom = true; // Set the flag to true indicating the player has entered the room
