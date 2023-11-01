@@ -57,11 +57,6 @@ public class UpgradeHandler : MonoBehaviour
 
     private void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            LuckUp();
-        }
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -295,7 +290,7 @@ public class UpgradeHandler : MonoBehaviour
 
     public void LuckUp()
     {
-        playerStats.RoomLuck += 1;
+        playerStats.RoomLuck =+ 0.3f;
         Debug.Log("Luck");
         DeactivateUpgrades();
 

@@ -35,11 +35,11 @@ MonoBehaviour:
     doorwayCopyTileHeight: 7
     isConnected: 0
     isUnavailable: 0
-  - position: {x: 10, y: 1}
+  - position: {x: 11, y: 1}
     orientation: 1
     doorPrefab: {fileID: 0}
     doorwayStartCopyPosition: {x: 7, y: 6}
-    doorwayCopyTileWidth: 4
+    doorwayCopyTileWidth: 5
     doorwayCopyTileHeight: 7
     isConnected: 0
     isUnavailable: 0

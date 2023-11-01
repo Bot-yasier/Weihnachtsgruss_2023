@@ -2862,7 +2862,7 @@ MonoBehaviour:
   bulletDamage: 1
   movementSpeed: 13
   dashCooldown: 0
-  RoomLuck: 0.1
+  RoomLuck: 0.2
   tackle: 1
   tackleDamage: 1
 --- !u!114 &526802422

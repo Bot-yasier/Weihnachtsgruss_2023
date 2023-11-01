@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5414587, g: 0.7647059, b: 0.31372553, a: 0.23529412}
+  m_Color: {r: 0.5414587, g: 0.7647059, b: 0.31372553, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Testing
-  Play: 0
+  Play: 1
   variables: {fileID: 687273566}
   levelLoader: {fileID: 0}
   playbutton: {fileID: 40217751}
@@ -1257,7 +1257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5411765, g: 0.7647059, b: 0.3135903, a: 1}
+  m_Color: {r: 0.5411765, g: 0.7647059, b: 0.3135903, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
