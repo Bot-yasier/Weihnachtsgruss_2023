@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4258165507596645421}
   - component: {fileID: 4258165507596645420}
-  - component: {fileID: 4258165507596645419}
+  - component: {fileID: 5342161831482877303}
   m_Layer: 0
-  m_Name: Haufen
+  m_Name: HaufenSN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 2002717741
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1561001094, guid: b610a7ec107faed4682eafe5369290d7, type: 3}
+  m_Sprite: {fileID: -178215226, guid: 403c10eebfe4fb74aa275ede563b20bc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4258165507596645419
+--- !u!95 &5342161831482877303
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 4258165507596645418}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1beffb933897ff3498ef3e90f8b67e25, type: 2}
+  m_Controller: {fileID: 9100000, guid: e982b760126f1594e8a49aba14cd84be, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
