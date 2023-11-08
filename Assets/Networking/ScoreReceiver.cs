@@ -6,7 +6,10 @@ using TMPro;
 public class ScoreReceiver : MonoBehaviour
 {
     // Testing
-    private const string backendUrl = "http://localhost:9001/score/HandleGetRequest";
+    //private const string backendUrl = "http://localhost:9001/score/HandleGetRequest";
+
+    //Docker
+    private const string backendUrl = "/api/score/HandleGetRequest";
 
     public TMP_Text textBox1;
     public TMP_Text textBox2;
