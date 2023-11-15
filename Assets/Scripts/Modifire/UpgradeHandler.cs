@@ -39,6 +39,7 @@ public class UpgradeHandler : MonoBehaviour
     public string Button1value;
     public string Button2value;
     public string Button3value;
+    int FrenchInt;
 
     int Akktuell = 0;
     int Plus = 2;
@@ -83,6 +84,7 @@ public class UpgradeHandler : MonoBehaviour
 
     private void Start()
     {
+        FrenchInt = PlayerPrefs.GetInt("French");
         audioSource = GetComponent<AudioSource>();
         playerStats = FindObjectOfType<Playerstats>();
         ModiButton1.onClick.AddListener(Button1Clicked);
@@ -98,23 +100,47 @@ public class UpgradeHandler : MonoBehaviour
 
     void qModiButton1v()
     {
-
         switch (Button1value)
         {
             case "PowerupIcons-Sheet_2":
-                qtext1.text = "Elastische Mauern: Verwandelt die Wände in federnde Barrieren, die Schneebälle abprallen lassen und taktische Vorteile bieten.";
+                if (FrenchInt == 1)
+                {
+                    qtext1.text = "Murs élastiques: les parois deviennent des barrières flexibles, sur lesquelles les boules de neige rebondissent, ce qui t’apporte des avantages tactiques.";
+                }
+                else { qtext1.text = "Elastische Mauern: Verwandelt die Wände in federnde Barrieren, die Schneebälle abprallen lassen und taktische Vorteile bieten."; }
+                
                 break;
             case "PowerupIcons-Sheet_1":
-                qtext1.text = "Mehrfachschuss: Erlaubt dem Spieler, mehrere Schneebälle gleichzeitig abzufeuern, um seine Feuerkraft zu erhöhen.";
+                if (FrenchInt == 1)
+                {
+                    qtext1.text = "Tir multiple: cela permet au joueur de lancer plusieurs boules de neige en même temps, et d’augmenter ainsi sa puissance de feu.";
+                }
+                else { qtext1.text = "Mehrfachschuss: Erlaubt dem Spieler, mehrere Schneebälle gleichzeitig abzufeuern, um seine Feuerkraft zu erhöhen."; }
+                
                 break;
             case "PowerupIcons-Sheet_4":
-                qtext1.text = "Heilung: Gewährt dem Spieler eine zusätzliches Herz, um seine Überlebensfähigkeit zu stärken.";
+                if (FrenchInt == 1)
+                {
+                    qtext1.text = "Guérison: le joueur obtient un cœur supplémentaire pour renforcer sa capacité de survie.";
+                }
+                else { qtext1.text = "Heilung: Gewährt dem Spieler eine zusätzliches Herz, um seine Überlebensfähigkeit zu stärken."; }
+              
                 break;
             case "PowerupIcons-Sheet_5":
-                qtext1.text = "Geschwindigkeit: Erhöht die Bewegungsgeschwindigkeit des Spielers ";
+                if (FrenchInt == 1)
+                {
+                    qtext1.text = "Rapidité: la vitesse de déplacement du joueur est accrue.";
+                }
+                else { qtext1.text = "Geschwindigkeit: Erhöht die Bewegungsgeschwindigkeit des Spielers "; }
+                
                 break;
             case "PowerupIcons-Sheet_0":
-                qtext1.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen";
+                if (FrenchInt == 1)
+                {
+                    qtext1.text = "Chance: le joueur est plus chanceux dans sa quête de paquets. ";
+                }
+                else { qtext1.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen"; }
+               
                 break;
             default:
                 Debug.Log(Button1value);
@@ -128,19 +154,44 @@ public class UpgradeHandler : MonoBehaviour
         switch (Button2value)
         {
             case "PowerupIcons-Sheet_2":
-                qtext2.text = "Elastische Mauern: Verwandelt die Wände in federnde Barrieren, die Schneebälle abprallen lassen und taktische Vorteile bieten.";
+                if (FrenchInt == 1)
+                {
+                    qtext2.text = "Murs élastiques: les parois deviennent des barrières flexibles, sur lesquelles les boules de neige rebondissent, ce qui t’apporte des avantages tactiques.";
+                }
+                else { qtext2.text = "Elastische Mauern: Verwandelt die Wände in federnde Barrieren, die Schneebälle abprallen lassen und taktische Vorteile bieten."; }
+
                 break;
             case "PowerupIcons-Sheet_1":
-                qtext2.text = "Mehrfachschuss: Erlaubt dem Spieler, mehrere Schneebälle gleichzeitig abzufeuern, um seine Feuerkraft zu erhöhen.";
+                if (FrenchInt == 1)
+                {
+                    qtext2.text = "Tir multiple: cela permet au joueur de lancer plusieurs boules de neige en même temps, et d’augmenter ainsi sa puissance de feu.";
+                }
+                else { qtext2.text = "Mehrfachschuss: Erlaubt dem Spieler, mehrere Schneebälle gleichzeitig abzufeuern, um seine Feuerkraft zu erhöhen."; }
+
                 break;
             case "PowerupIcons-Sheet_4":
-                qtext2.text = "Heilung: Gewährt dem Spieler eine zusätzliches Herz, um seine Überlebensfähigkeit zu stärken.";
+                if (FrenchInt == 1)
+                {
+                    qtext2.text = "Guérison: le joueur obtient un cœur supplémentaire pour renforcer sa capacité de survie.";
+                }
+                else { qtext2.text = "Heilung: Gewährt dem Spieler eine zusätzliches Herz, um seine Überlebensfähigkeit zu stärken."; }
+
                 break;
             case "PowerupIcons-Sheet_5":
-                qtext2.text = "Geschwindigkeit: Erhöht die Bewegungsgeschwindigkeit des Spielers ";
+                if (FrenchInt == 1)
+                {
+                    qtext2.text = "Rapidité: la vitesse de déplacement du joueur est accrue.";
+                }
+                else { qtext2.text = "Geschwindigkeit: Erhöht die Bewegungsgeschwindigkeit des Spielers "; }
+
                 break;
             case "PowerupIcons-Sheet_0":
-                qtext2.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen";
+                if (FrenchInt == 1)
+                {
+                    qtext2.text = "Chance: le joueur est plus chanceux dans sa quête de paquets. ";
+                }
+                else { qtext2.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen"; }
+
                 break;
             default:
                 Debug.Log(Button2value);
@@ -155,22 +206,47 @@ public class UpgradeHandler : MonoBehaviour
         switch (Button3value)
         {
             case "PowerupIcons-Sheet_2":
-                qtext3.text = "Elastische Mauern: Verwandelt die Wände in federnde Barrieren, die Schneebälle abprallen lassen und taktische Vorteile bieten.";
+                if (FrenchInt == 1)
+                {
+                    qtext3.text = "Murs élastiques: les parois deviennent des barrières flexibles, sur lesquelles les boules de neige rebondissent, ce qui t’apporte des avantages tactiques.";
+                }
+                else { qtext3.text = "Elastische Mauern: Verwandelt die Wände in federnde Barrieren, die Schneebälle abprallen lassen und taktische Vorteile bieten."; }
+
                 break;
             case "PowerupIcons-Sheet_1":
-                qtext3.text = "Mehrfachschuss: Erlaubt dem Spieler, mehrere Schneebälle gleichzeitig abzufeuern, um seine Feuerkraft zu erhöhen.";
+                if (FrenchInt == 1)
+                {
+                    qtext3.text = "Tir multiple: cela permet au joueur de lancer plusieurs boules de neige en même temps, et d’augmenter ainsi sa puissance de feu.";
+                }
+                else { qtext3.text = "Mehrfachschuss: Erlaubt dem Spieler, mehrere Schneebälle gleichzeitig abzufeuern, um seine Feuerkraft zu erhöhen."; }
+
                 break;
             case "PowerupIcons-Sheet_4":
-                qtext3.text = "Heilung: Gewährt dem Spieler eine zusätzliches Herz, um seine Überlebensfähigkeit zu stärken.";
+                if (FrenchInt == 1)
+                {
+                    qtext3.text = "Guérison: le joueur obtient un cœur supplémentaire pour renforcer sa capacité de survie.";
+                }
+                else { qtext3.text = "Heilung: Gewährt dem Spieler eine zusätzliches Herz, um seine Überlebensfähigkeit zu stärken."; }
+
                 break;
             case "PowerupIcons-Sheet_5":
-                qtext3.text = "Geschwindigkeit: Erhöht die Bewegungsgeschwindigkeit des Spielers ";
+                if (FrenchInt == 1)
+                {
+                    qtext3.text = "Rapidité: la vitesse de déplacement du joueur est accrue.";
+                }
+                else { qtext3.text = "Geschwindigkeit: Erhöht die Bewegungsgeschwindigkeit des Spielers "; }
+
                 break;
             case "PowerupIcons-Sheet_0":
-                qtext3.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen";
+                if (FrenchInt == 1)
+                {
+                    qtext3.text = "Chance: le joueur est plus chanceux dans sa quête de paquets. ";
+                }
+                else { qtext3.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen"; }
+
                 break;
             default:
-                Debug.Log(Button3value);
+                Debug.Log(Button2value);
                 break;
         }
     }

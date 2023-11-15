@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 105978900}
   - component: {fileID: 105978902}
   - component: {fileID: 105978901}
+  - component: {fileID: 105978903}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -462,6 +463,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105978899}
   m_CullTransparentMesh: 1
+--- !u!114 &105978903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105978899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ed416a51894a44ca8561c1a38fbde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TMPButton: {fileID: 105978901}
+  NButton: {fileID: 0}
+  German: "Men\xFC"
+  French: Menu
+  TMP: 1
+  Normal: 0
 --- !u!1 &111217631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,6 +1401,7 @@ GameObject:
   - component: {fileID: 334073864}
   - component: {fileID: 334073866}
   - component: {fileID: 334073865}
+  - component: {fileID: 334073867}
   m_Layer: 5
   m_Name: Final Score (1)
   m_TagString: Untagged
@@ -1506,6 +1526,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334073863}
   m_CullTransparentMesh: 1
+--- !u!114 &334073867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334073863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ed416a51894a44ca8561c1a38fbde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TMPButton: {fileID: 334073865}
+  NButton: {fileID: 0}
+  German: oder
+  French: ou
+  TMP: 1
+  Normal: 0
 --- !u!1 &335593018
 GameObject:
   m_ObjectHideFlags: 0
@@ -2276,6 +2314,7 @@ GameObject:
   - component: {fileID: 465272432}
   - component: {fileID: 465272434}
   - component: {fileID: 465272433}
+  - component: {fileID: 465272435}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -2400,6 +2439,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465272431}
   m_CullTransparentMesh: 1
+--- !u!114 &465272435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465272431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ed416a51894a44ca8561c1a38fbde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TMPButton: {fileID: 465272433}
+  NButton: {fileID: 0}
+  German: 'Punkte:'
+  French: 'Points:'
+  TMP: 1
+  Normal: 0
 --- !u!1 &473814878
 GameObject:
   m_ObjectHideFlags: 0
@@ -3914,6 +3971,7 @@ GameObject:
   - component: {fileID: 741634630}
   - component: {fileID: 741634632}
   - component: {fileID: 741634631}
+  - component: {fileID: 741634633}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -3938,7 +3996,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -126, y: 84}
+  m_AnchoredPosition: {x: -133, y: 84}
   m_SizeDelta: {x: 135.58002, y: 29.51001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &741634631
@@ -4038,6 +4096,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 741634629}
   m_CullTransparentMesh: 1
+--- !u!114 &741634633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741634629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ed416a51894a44ca8561c1a38fbde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TMPButton: {fileID: 741634631}
+  NButton: {fileID: 0}
+  German: SPIEL PAUSIERT
+  French: JEU EN PAUSE
+  TMP: 1
+  Normal: 0
 --- !u!1 &777591719
 GameObject:
   m_ObjectHideFlags: 0
@@ -4463,6 +4539,7 @@ GameObject:
   - component: {fileID: 855161265}
   - component: {fileID: 855161264}
   - component: {fileID: 855161263}
+  - component: {fileID: 855161266}
   m_Layer: 5
   m_Name: Placeholder
   m_TagString: Untagged
@@ -4607,6 +4684,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855161261}
   m_CullTransparentMesh: 1
+--- !u!114 &855161266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855161261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ed416a51894a44ca8561c1a38fbde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TMPButton: {fileID: 855161264}
+  NButton: {fileID: 0}
+  German: Spielername
+  French: Nom du joueur
+  TMP: 1
+  Normal: 0
 --- !u!1 &862273453
 GameObject:
   m_ObjectHideFlags: 0
@@ -4618,6 +4713,7 @@ GameObject:
   - component: {fileID: 862273454}
   - component: {fileID: 862273456}
   - component: {fileID: 862273455}
+  - component: {fileID: 862273457}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -4742,6 +4838,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862273453}
   m_CullTransparentMesh: 1
+--- !u!114 &862273457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862273453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ed416a51894a44ca8561c1a38fbde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TMPButton: {fileID: 862273455}
+  NButton: {fileID: 0}
+  German: SPIEL VORBEI
+  French: JEU TERMINE
+  TMP: 1
+  Normal: 0
 --- !u!1 &864378401
 GameObject:
   m_ObjectHideFlags: 0
@@ -5512,6 +5626,7 @@ GameObject:
   - component: {fileID: 1095679633}
   - component: {fileID: 1095679635}
   - component: {fileID: 1095679634}
+  - component: {fileID: 1095679636}
   m_Layer: 5
   m_Name: PlayAgain
   m_TagString: Untagged
@@ -5636,6 +5751,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1095679632}
   m_CullTransparentMesh: 1
+--- !u!114 &1095679636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095679632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ed416a51894a44ca8561c1a38fbde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TMPButton: {fileID: 1095679634}
+  NButton: {fileID: 0}
+  German: Weiter
+  French: Continuer
+  TMP: 1
+  Normal: 0
 --- !u!1 &1101340115
 GameObject:
   m_ObjectHideFlags: 0
@@ -6543,6 +6676,7 @@ GameObject:
   - component: {fileID: 1493175090}
   - component: {fileID: 1493175092}
   - component: {fileID: 1493175091}
+  - component: {fileID: 1493175093}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -6617,8 +6751,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 29
+  m_fontSizeBase: 29
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6667,6 +6801,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493175089}
   m_CullTransparentMesh: 1
+--- !u!114 &1493175093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493175089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ed416a51894a44ca8561c1a38fbde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TMPButton: {fileID: 1493175091}
+  NButton: {fileID: 0}
+  German: Punkte speichern
+  French: Enregistrer des points
+  TMP: 1
+  Normal: 0
 --- !u!1 &1521683512
 GameObject:
   m_ObjectHideFlags: 0
@@ -7359,6 +7511,7 @@ GameObject:
   - component: {fileID: 1688958471}
   - component: {fileID: 1688958473}
   - component: {fileID: 1688958472}
+  - component: {fileID: 1688958474}
   m_Layer: 5
   m_Name: Final Score
   m_TagString: Untagged
@@ -7483,6 +7636,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688958470}
   m_CullTransparentMesh: 1
+--- !u!114 &1688958474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688958470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ed416a51894a44ca8561c1a38fbde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TMPButton: {fileID: 1688958472}
+  NButton: {fileID: 0}
+  German: 'Punkte:'
+  French: 'Points:'
+  TMP: 1
+  Normal: 0
 --- !u!1 &1742866834
 GameObject:
   m_ObjectHideFlags: 0
@@ -7708,6 +7879,7 @@ GameObject:
   - component: {fileID: 1792579190}
   - component: {fileID: 1792579189}
   - component: {fileID: 1792579188}
+  - component: {fileID: 1792579191}
   m_Layer: 5
   m_Name: Placeholder
   m_TagString: Untagged
@@ -7852,6 +8024,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1792579186}
   m_CullTransparentMesh: 1
+--- !u!114 &1792579191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792579186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ed416a51894a44ca8561c1a38fbde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TMPButton: {fileID: 1792579189}
+  NButton: {fileID: 0}
+  German: Email
+  French: Courriel
+  TMP: 1
+  Normal: 0
 --- !u!1 &1888614598
 GameObject:
   m_ObjectHideFlags: 0
@@ -8623,6 +8813,7 @@ GameObject:
   - component: {fileID: 2044895382}
   - component: {fileID: 2044895384}
   - component: {fileID: 2044895383}
+  - component: {fileID: 2044895385}
   m_Layer: 5
   m_Name: PlayAgain
   m_TagString: Untagged
@@ -8697,8 +8888,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 29
+  m_fontSizeBase: 29
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8747,6 +8938,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044895381}
   m_CullTransparentMesh: 1
+--- !u!114 &2044895385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2044895381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ed416a51894a44ca8561c1a38fbde6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TMPButton: {fileID: 2044895383}
+  NButton: {fileID: 0}
+  German: Erneut Spielen
+  French: "Jouer \xE0 nouveau"
+  TMP: 1
+  Normal: 0
 --- !u!1 &2059985127
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,6 +29,8 @@ public class TutorialHandler : MonoBehaviour
     bool freezebool = false;
     bool unfreezebool = false;
 
+    int FrenchInt;
+
     public GameObject Paket1;
     public GameObject Paket2;
     public GameObject Paket3;
@@ -45,8 +47,14 @@ public class TutorialHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FrenchInt = PlayerPrefs.GetInt("French");
         tutorialbutton.onClick.AddListener(tutorialbuttonclicked);
-        tutorialText.text = "Hallo. Bereit für ein Abenteuer? Unter Renntieren duzen wir uns. Wir hoffen, das ist OK.";
+        if(FrenchInt == 1)
+        {
+            tutorialText.text = "Salut ! Paré pour l’aventure ? Entre rennes, nous nous tutoyons. Nous espérons que c'est OK.";
+        }
+        else { tutorialText.text = "Hallo. Bereit für ein Abenteuer? Unter Renntieren duzen wir uns. Wir hoffen, das ist OK."; }
+      
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
         freezplayer();
@@ -213,10 +221,23 @@ public class TutorialHandler : MonoBehaviour
     }
 
     void eins()
-    { tutorialText.text = "Lass uns mit der Steuerung beginnen: Der Spieler bewegt sich stets zur Position des Mauszeigers."; }
+    {
+        if (FrenchInt == 1)
+        {
+            tutorialText.text = "Mais commençons par le système de commande: le joueur se dirige toujours vers le pointeur de la souris.";
+        }
+        else { tutorialText.text = "Lass uns mit der Steuerung beginnen: Der Spieler bewegt sich stets zur Position des Mauszeigers."; }
+    }
 
     void zwei()
-    { tutorialText.text = "Jetzt bist du an der Reihe – versuche die Geschenke einzusammeln!"; Paket1.SetActive(true);  }
+    {
+        if (FrenchInt == 1)
+        {
+            tutorialText.text = "Maintenant, c’est à toi. Essaie de retrouver les cadeaux.";
+        }
+        else { tutorialText.text = "Jetzt bist du an der Reihe – versuche die Geschenke einzusammeln!"; }
+         Paket1.SetActive(true);  
+    }
 
     void drei()
     {
@@ -229,7 +250,12 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Super gemacht! Hier ist ein Tipp: Mit einem Klick kannst du einen Hüpfer ausführen. Das hilft dir, in schwierigen Situationen besser auszuweichen. Probier es doch gleich mal aus!";
+        if (FrenchInt == 1)
+        {
+            tutorialText.text = "Super ! Voici une astuce: d’un clic de souris, tu peux exécuter un petit saut. Cela te permettra d'éviter les situations difficiles. Fais un test maintenant!";
+        }
+        else { tutorialText.text = "Super gemacht! Hier ist ein Tipp: Mit einem Klick kannst du einen Hüpfer ausführen. Das hilft dir, in schwierigen Situationen besser auszuweichen. Probier es doch gleich mal aus!"; }
+        
         freezplayer();
 
     }
@@ -243,7 +269,12 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Du hast es drauf ;) Geh nun in den nächsten Raum. Dort wartet eine Überraschung auf dich!";
+        if (FrenchInt == 1)
+        {
+            tutorialText.text = "Tu as tout compris ;) Maintenant, tu peux aller dans l’espace suivant. Une surprise t’y attend.";
+        }
+        else {tutorialText.text = "Du hast es drauf ;) Geh nun in den nächsten Raum. Dort wartet eine Überraschung auf dich!"; }
+        
         freezplayer();
 
 
@@ -257,18 +288,33 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Vorsicht, ein Schneemann! Sei stets auf der Hut vor ihnen, denn Schneemänner haben selten Gutes im Sinn.";
+        if (FrenchInt == 1)
+        {
+            tutorialText.text = "Attention! Un bonhomme de neige! Sois toujours sur tes gardes avec eux. Les bonshommes de neige sont rarement animés de bonnes intentions.";
+        }
+        else { tutorialText.text = "Vorsicht, ein Schneemann! Sei stets auf der Hut vor ihnen, denn Schneemänner haben selten Gutes im Sinn."; }
+        
         Enemy.SetActive(true);
         freezplayer();
 
     }
     void neun()
     {
-        tutorialText.text = "Oben links ist deine Herz-Anzeige. Jedes Mal, wenn dich ein Schneemann erwischt, verlierst du ein halbes Herz."; Herzen.SetActive(true);
+        if (FrenchInt == 1)
+        {
+            tutorialText.text = "En haut à gauche, il y a un cœur. Dès que tu te fais attraper par un bonhomme de neige, tu perds un demi-cœur.";
+        }
+        else { tutorialText.text = "Oben links ist deine Herz-Anzeige. Jedes Mal, wenn dich ein Schneemann erwischt, verlierst du ein halbes Herz."; }
+         Herzen.SetActive(true);
     }
     void zehn()
     {
-        tutorialText.text = "Dein Renntier wird automatisch Schneebälle auf den Schneemann werfen. Bist du bereit?";
+        if (FrenchInt == 1)
+        {
+            tutorialText.text = "Ton renne bombardera automatiquement le bonhomme de neige avec des boules de neige. Tu es prêt?";
+        }
+        else { tutorialText.text = "Dein Renntier wird automatisch Schneebälle auf den Schneemann werfen. Bist du bereit?"; }
+        
     }
     void elf()
     {
@@ -281,14 +327,24 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Perfekt! Erlaube mir, deine Powerup-Leiste vorzustellen. Jedes Mal, wenn du einen Schneemann besiegst, steigt dein Level an.";
+        if (FrenchInt == 1)
+        {
+            tutorialText.text = "Parfait. Je vais te présenter ta barre de power-up À chaque fois que tu l’emportes sur un bonhomme de neige, ton niveau augmente.";
+        }
+        else { tutorialText.text = "Perfekt! Erlaube mir, deine Powerup-Leiste vorzustellen. Jedes Mal, wenn du einen Schneemann besiegst, steigt dein Level an."; }
+        
         Powerbar.SetActive(true);
         freezplayer();
         Door3.SetActive(false);
     }
     void dreizehn()
     {
-        tutorialText.text = "Begib dich nun in den nächsten Raum, wo weitere Schneemänner auf dich warten. Achtung: Die Schneemänner werden auch Schneebälle zurück werfen, diese sind rot eingefärbt.";
+        if (FrenchInt == 1)
+        {
+            tutorialText.text = "Maintenant, tu peux te rendre dans l’espace suivant. Plusieurs bonshommes de neige t’y attendent. Attention : les bonshommes de neige t’enverront aussi des boules de neige, qui sont colorées en rouge.";
+        }
+        else { tutorialText.text = "Begib dich nun in den nächsten Raum, wo weitere Schneemänner auf dich warten. Achtung: Die Schneemänner werden auch Schneebälle zurück werfen, diese sind rot eingefärbt."; }
+        
     }
 
     void vierzehn()
@@ -301,7 +357,13 @@ public class TutorialHandler : MonoBehaviour
     {
       
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Großartig, du hast ein Level-Up erreicht! Wähle eine von drei Fähigkeiten aus, um deine Spielstärke zu verbessern.";
+        if (FrenchInt == 1)
+        {
+            tutorialText.text = "Bravo! Tu es passé à l’échelon supérieur! Choisis l’une des trois compétences pour améliorer ton niveau de jeu.";
+        }
+        else { tutorialText.text = "Großartig, du hast ein Level-Up erreicht! Wähle eine von drei Fähigkeiten aus, um deine Spielstärke zu verbessern."; }
+
+        
         freezplayer();
         Door4.SetActive(false);
     }
@@ -310,7 +372,12 @@ public class TutorialHandler : MonoBehaviour
         unfreezplayer();
         freezplayer();
         tutorialbuttong.SetActive(true);
-        tutorialText.text = "Mache dich nun auf den Weg in den nächsten Raum, wo Geschenke auf dich warten!";
+        if (FrenchInt == 1)
+        {
+            tutorialText.text = "Maintenant, tu peux te diriger vers l’espace suivant, où des cadeaux t’attendent.";
+        }
+        else { tutorialText.text = "Mache dich nun auf den Weg in den nächsten Raum, wo Geschenke auf dich warten!"; }
+        
     }
     void siebzehn()
     {
@@ -322,7 +389,12 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Oben rechts findest du deine Punkte-Anzeige. Jedes Mal, wenn du ein Geschenk einsammelst, steigt dein Punktestand.";
+        if (FrenchInt == 1)
+        {
+            tutorialText.text = "Ton score s’affiche en haut à droite. À chaque fois que tu ramasses un cadeau, ton nombre de points augmente.";
+        }
+        else { tutorialText.text = "Oben rechts findest du deine Punkte-Anzeige. Jedes Mal, wenn du ein Geschenk einsammelst, steigt dein Punktestand."; }
+       
         Score.SetActive(true);
 
 
@@ -338,7 +410,12 @@ public class TutorialHandler : MonoBehaviour
     {
         tutorialbuttong.SetActive(true);
         tutorialTextg.SetActive(true);
-        tutorialText.text = "Nun bist du für die eigentliche Herausforderung bereit – das Spiel erwartet dich. Du hast fünf Versuche. Der beste Durchgang zählt. Viel Glück";
+        if (FrenchInt == 1)
+        {
+            tutorialText.text = "Tu es maintenant prêt pour relever le véritable défi. Le jeu n’attend plus que toi. Tu as cinq essais. C’est le meilleur parcours qui compte. Bonne chance!";
+        }
+        else { tutorialText.text = "Nun bist du für die eigentliche Herausforderung bereit – das Spiel erwartet dich. Du hast fünf Versuche. Der beste Durchgang zählt. Viel Glück"; }
+       
         freezplayer();
     }
 

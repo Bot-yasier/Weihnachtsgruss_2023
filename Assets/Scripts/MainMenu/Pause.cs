@@ -10,6 +10,7 @@ public class Pause : MonoBehaviour
     public Rigidbody2D playerrigid;
     public GameObject PauseScreen;
     bool check = false;
+    bool doubleEscape = false;
 
     private void Start()
     {
@@ -20,17 +21,23 @@ public class Pause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            PauseScreen.SetActive(true);
-
-            if(playerMovementMouse.enabled == false)
+            if(doubleEscape == false)
             {
+                PauseScreen.SetActive(true);
 
-                check = true;
+                if (playerMovementMouse.enabled == false)
+                {
+
+                    check = true;
+                    
+                }
+                doubleEscape = true;
+                playerMovementMouse.enabled = false;
+                playerrigid.constraints = RigidbodyConstraints2D.FreezePosition;
+                playerrigid.constraints = RigidbodyConstraints2D.FreezeRotation;
 
             }
-            playerMovementMouse.enabled = false;
-            playerrigid.constraints = RigidbodyConstraints2D.FreezePosition;
-            playerrigid.constraints = RigidbodyConstraints2D.FreezeRotation;
+
 
         }
     }
@@ -45,6 +52,7 @@ public class Pause : MonoBehaviour
            
         }
         check = false;
+        doubleEscape = false;
         PauseScreen.SetActive(false);
 
 
