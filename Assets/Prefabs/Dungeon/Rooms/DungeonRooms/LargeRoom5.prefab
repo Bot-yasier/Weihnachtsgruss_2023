@@ -21582,7 +21582,7 @@ GameObject:
   m_Component:
   - component: {fileID: 337666758587125942}
   - component: {fileID: 9042598848258874019}
-  - component: {fileID: 6743158282757388063}
+  - component: {fileID: 9155527592807944545}
   m_Layer: 0
   m_Name: Enterence2
   m_TagString: Enterence
@@ -21612,7 +21612,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448303569443961107}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -21631,7 +21631,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.3850951, y: 6.34169}
   m_EdgeRadius: 0
---- !u!114 &6743158282757388063
+--- !u!114 &9155527592807944545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21640,13 +21640,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 448303569443961107}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fd75ff660720ce448d54a1e89d850cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ea9a413382703e48af2904b5f15d3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalroom: 1
-  Symbol: {fileID: 8478127754402542752}
   doorBlockerHandler: {fileID: 7847367931001015030}
-  Haufen: {fileID: 5599714513852421529}
 --- !u!1 &645935018833011947
 GameObject:
   m_ObjectHideFlags: 0
@@ -21709,6 +21706,81 @@ Transform:
   m_Father: {fileID: 266910668854787051}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &832364063809105781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1852730235985423737}
+  - component: {fileID: 4527059744402495410}
+  - component: {fileID: 1065162564972667312}
+  m_Layer: 0
+  m_Name: Trigger2
+  m_TagString: Enterence
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1852730235985423737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832364063809105781}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.8, y: 1.2, z: 0.18458031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8872600781789975841}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &4527059744402495410
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832364063809105781}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.7123077, y: 23.305195}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3850951, y: 6.34169}
+  m_EdgeRadius: 0
+--- !u!114 &1065162564972667312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832364063809105781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd75ff660720ce448d54a1e89d850cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalroom: 1
+  Symbol: {fileID: 8478127754402542752}
+  doorBlockerHandler: {fileID: 7847367931001015030}
+  Haufen: {fileID: 5599714513852421529}
 --- !u!1 &1353234260626948417
 GameObject:
   m_ObjectHideFlags: 0
@@ -43396,7 +43468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6407507904859391739}
   - component: {fileID: 7279198229225996613}
-  - component: {fileID: 5092519013653660735}
+  - component: {fileID: 1301287613074578407}
   m_Layer: 0
   m_Name: Enterence
   m_TagString: Enterence
@@ -43426,7 +43498,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2931609835193016732}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -43445,7 +43517,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2175503, y: 3.0330706}
   m_EdgeRadius: 0
---- !u!114 &5092519013653660735
+--- !u!114 &1301287613074578407
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43454,13 +43526,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2931609835193016732}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fd75ff660720ce448d54a1e89d850cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ea9a413382703e48af2904b5f15d3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalroom: 1
-  Symbol: {fileID: 8478127754402542752}
   doorBlockerHandler: {fileID: 7847367931001015030}
-  Haufen: {fileID: 7236847842816163611}
 --- !u!1 &3180518623854310052
 GameObject:
   m_ObjectHideFlags: 0
@@ -43511,6 +43580,8 @@ Transform:
   - {fileID: 7652502568252883266}
   - {fileID: 5599714513852421534}
   - {fileID: 7236847842816163612}
+  - {fileID: 8804141996469765698}
+  - {fileID: 1852730235985423737}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -43609,6 +43680,9 @@ MonoBehaviour:
   colliders:
   - {fileID: 7279198229225996613}
   - {fileID: 9042598848258874019}
+  triggers:
+  - {fileID: 8100934615118793073}
+  - {fileID: 4527059744402495410}
   enemySpawner: {fileID: 6312675205588416476}
   oneCollision: 0
   Astar: {fileID: 5459528771608859883}
@@ -57209,6 +57283,81 @@ Transform:
   m_Father: {fileID: 8872600781789975841}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5259204707655374342
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8804141996469765698}
+  - component: {fileID: 8100934615118793073}
+  - component: {fileID: 3220584132880604214}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Enterence
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8804141996469765698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259204707655374342}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.41, y: 36.9, z: 0.18458031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8872600781789975841}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &8100934615118793073
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259204707655374342}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -7.057561, y: 0.111376286}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.2175503, y: 3.0330706}
+  m_EdgeRadius: 0
+--- !u!114 &3220584132880604214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259204707655374342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd75ff660720ce448d54a1e89d850cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalroom: 1
+  Symbol: {fileID: 8478127754402542752}
+  doorBlockerHandler: {fileID: 7847367931001015030}
+  Haufen: {fileID: 7236847842816163611}
 --- !u!1 &5834913461363116338
 GameObject:
   m_ObjectHideFlags: 0

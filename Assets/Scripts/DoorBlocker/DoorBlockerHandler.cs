@@ -5,6 +5,7 @@ using Pathfinding;
 public class DoorBlockerHandler : MonoBehaviour
 {
     public Collider2D[] colliders; // Die Liste der Collider, die du überprüfen möchtest
+    public Collider2D[] triggers;
     public EnemySpawner enemySpawner;
     public bool oneCollision = false;
     public GameObject Astar;
@@ -37,7 +38,7 @@ public class DoorBlockerHandler : MonoBehaviour
 
     private IEnumerator wait()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0f);
         foreach (Collider2D collider in colliders)
         {
             collider.enabled = true;
@@ -47,7 +48,7 @@ public class DoorBlockerHandler : MonoBehaviour
 
     private IEnumerator enemyspawn()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0f);
         if(Bossroom == true)
         {
             ExtraEnemy1.SetActive(true);
@@ -100,6 +101,11 @@ public class DoorBlockerHandler : MonoBehaviour
             {
                 collider.enabled = false;
                 HaufenSpawn = false;
+            }
+
+            foreach (Collider2D trigger in triggers)
+            {
+                trigger.enabled = false;
             }
 
             hasEnteredRoom = true; // Set the flag to true indicating the player has entered the room

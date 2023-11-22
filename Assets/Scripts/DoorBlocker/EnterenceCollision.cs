@@ -53,7 +53,7 @@ public class EnterenceCollision : MonoBehaviour
 
     private IEnumerator wait()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(0f);
         Minimapsymbol = true;
     }
 }

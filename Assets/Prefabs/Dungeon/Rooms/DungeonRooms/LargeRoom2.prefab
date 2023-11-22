@@ -21570,6 +21570,81 @@ Transform:
   m_Father: {fileID: 2214465428344305296}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &770165872232736135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 921268817290929191}
+  - component: {fileID: 4472348610004959365}
+  - component: {fileID: 5119405470661196028}
+  m_Layer: 0
+  m_Name: Trigger2
+  m_TagString: Enterence
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &921268817290929191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770165872232736135}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 29.06, y: -25.3, z: 0.18458031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8872600781789975841}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &4472348610004959365
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770165872232736135}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.5124326, y: 21.059685}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.985345, y: 1.8506699}
+  m_EdgeRadius: 0
+--- !u!114 &5119405470661196028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770165872232736135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd75ff660720ce448d54a1e89d850cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalroom: 0
+  Symbol: {fileID: 0}
+  doorBlockerHandler: {fileID: 5295067256596604922}
+  Haufen: {fileID: 5038188603079139442}
 --- !u!1 &1187709829088528209
 GameObject:
   m_ObjectHideFlags: 0
@@ -43046,6 +43121,11 @@ MonoBehaviour:
   - {fileID: 915729432489494519}
   - {fileID: 5862755017563978820}
   - {fileID: 269408008275742232}
+  triggers:
+  - {fileID: 6467115480138744898}
+  - {fileID: 5400806860080426090}
+  - {fileID: 4472348610004959365}
+  - {fileID: 2988574303798878126}
   enemySpawner: {fileID: 4989631819035876215}
   oneCollision: 0
   Astar: {fileID: 5314581258925320104}
@@ -43069,7 +43149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1034348783770072200}
   - component: {fileID: 161374707442770366}
-  - component: {fileID: 6570497106960874263}
+  - component: {fileID: 5441355360869385698}
   m_Layer: 0
   m_Name: Enterence
   m_TagString: Enterence
@@ -43099,7 +43179,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3163768568135464156}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -43118,7 +43198,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.8191452, y: 5.138919}
   m_EdgeRadius: 0
---- !u!114 &6570497106960874263
+--- !u!114 &5441355360869385698
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43127,13 +43207,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3163768568135464156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fd75ff660720ce448d54a1e89d850cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ea9a413382703e48af2904b5f15d3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalroom: 0
-  Symbol: {fileID: 0}
   doorBlockerHandler: {fileID: 5295067256596604922}
-  Haufen: {fileID: 5521630238956301597}
 --- !u!1 &3180518623854310052
 GameObject:
   m_ObjectHideFlags: 0
@@ -43183,6 +43260,10 @@ Transform:
   - {fileID: 5521630238956301594}
   - {fileID: 5038188603079139445}
   - {fileID: 4137019679967784341}
+  - {fileID: 7491384997291147933}
+  - {fileID: 9052855853408934305}
+  - {fileID: 921268817290929191}
+  - {fileID: 1025737433159719841}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -43275,7 +43356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6684131715885547607}
   - component: {fileID: 269408008275742232}
-  - component: {fileID: 3643595315963403743}
+  - component: {fileID: 7549569960164963653}
   m_Layer: 0
   m_Name: Enterence4
   m_TagString: Enterence
@@ -43305,7 +43386,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3590460686707786394}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -43324,7 +43405,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.36841, y: 1.8744583}
   m_EdgeRadius: 0
---- !u!114 &3643595315963403743
+--- !u!114 &7549569960164963653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43333,13 +43414,85 @@ MonoBehaviour:
   m_GameObject: {fileID: 3590460686707786394}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ea9a413382703e48af2904b5f15d3af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorBlockerHandler: {fileID: 5295067256596604922}
+--- !u!1 &4005817580633931001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9052855853408934305}
+  - component: {fileID: 5400806860080426090}
+  - component: {fileID: 1692067288393228580}
+  m_Layer: 0
+  m_Name: Trigger3
+  m_TagString: Enterence
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9052855853408934305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005817580633931001}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.3, y: 17.77, z: 0.18458031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8872600781789975841}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &5400806860080426090
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005817580633931001}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 2.325142, y: -5.0106816}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.102501, y: 4.738909}
+  m_EdgeRadius: 0
+--- !u!114 &1692067288393228580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4005817580633931001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fd75ff660720ce448d54a1e89d850cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   finalroom: 0
   Symbol: {fileID: 0}
   doorBlockerHandler: {fileID: 5295067256596604922}
-  Haufen: {fileID: 4137019679967784338}
+  Haufen: {fileID: 7274639852078245667}
 --- !u!1 &4437564493454902749
 GameObject:
   m_ObjectHideFlags: 0
@@ -57024,6 +57177,81 @@ MonoBehaviour:
   - {fileID: 31876521398246683}
   - {fileID: 6954605403405223690}
   collisionCounter: {fileID: 0}
+--- !u!1 &5452370650516601946
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7491384997291147933}
+  - component: {fileID: 6467115480138744898}
+  - component: {fileID: 129075900811941207}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Enterence
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7491384997291147933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5452370650516601946}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 40.2, y: 2.74, z: 0.18458031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8872600781789975841}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &6467115480138744898
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5452370650516601946}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -7.1239605, y: -0.94154817}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.8191452, y: 5.138919}
+  m_EdgeRadius: 0
+--- !u!114 &129075900811941207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5452370650516601946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd75ff660720ce448d54a1e89d850cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalroom: 0
+  Symbol: {fileID: 0}
+  doorBlockerHandler: {fileID: 5295067256596604922}
+  Haufen: {fileID: 5521630238956301597}
 --- !u!1 &5767514917654757759
 GameObject:
   m_ObjectHideFlags: 0
@@ -59566,6 +59794,81 @@ Transform:
   m_Father: {fileID: 8872600781789975841}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7102291848876492529
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1025737433159719841}
+  - component: {fileID: 2988574303798878126}
+  - component: {fileID: 3292125843329265220}
+  m_Layer: 0
+  m_Name: Trigger4
+  m_TagString: Enterence
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1025737433159719841
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7102291848876492529}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 25.58, y: 46.6, z: 0.18458031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8872600781789975841}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2988574303798878126
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7102291848876492529}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.0997944, y: -19.610832}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.36841, y: 1.8744583}
+  m_EdgeRadius: 0
+--- !u!114 &3292125843329265220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7102291848876492529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd75ff660720ce448d54a1e89d850cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalroom: 0
+  Symbol: {fileID: 0}
+  doorBlockerHandler: {fileID: 5295067256596604922}
+  Haufen: {fileID: 4137019679967784338}
 --- !u!1 &7133220354632166337
 GameObject:
   m_ObjectHideFlags: 0
@@ -59607,7 +59910,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2904894730840186969}
   - component: {fileID: 5862755017563978820}
-  - component: {fileID: 8746798422066895183}
+  - component: {fileID: 2431369387313332947}
   m_Layer: 0
   m_Name: Enterence2
   m_TagString: Enterence
@@ -59637,7 +59940,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7942765357222079117}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -59656,7 +59959,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.985345, y: 1.8506699}
   m_EdgeRadius: 0
---- !u!114 &8746798422066895183
+--- !u!114 &2431369387313332947
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59665,13 +59968,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7942765357222079117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fd75ff660720ce448d54a1e89d850cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ea9a413382703e48af2904b5f15d3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalroom: 0
-  Symbol: {fileID: 0}
   doorBlockerHandler: {fileID: 5295067256596604922}
-  Haufen: {fileID: 5038188603079139442}
 --- !u!1 &7985019961446953417
 GameObject:
   m_ObjectHideFlags: 0
@@ -59682,7 +59982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1932326990218707137}
   - component: {fileID: 915729432489494519}
-  - component: {fileID: 4549369151582482638}
+  - component: {fileID: 6844281270096596473}
   m_Layer: 0
   m_Name: Enterence3
   m_TagString: Enterence
@@ -59712,7 +60012,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7985019961446953417}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -59731,7 +60031,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.102501, y: 4.738909}
   m_EdgeRadius: 0
---- !u!114 &4549369151582482638
+--- !u!114 &6844281270096596473
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -59740,13 +60040,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7985019961446953417}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fd75ff660720ce448d54a1e89d850cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ea9a413382703e48af2904b5f15d3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalroom: 0
-  Symbol: {fileID: 0}
   doorBlockerHandler: {fileID: 5295067256596604922}
-  Haufen: {fileID: 7274639852078245667}
 --- !u!1 &7999836351693397448
 GameObject:
   m_ObjectHideFlags: 0
