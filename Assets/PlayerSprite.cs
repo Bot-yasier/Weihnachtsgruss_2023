@@ -8,6 +8,7 @@ public class PlayerSprite : MonoBehaviour
     private Animator animator;
     public ProjectileSpawnerMouse ProjectileSpawnerMouse;
     public bool FlipToEnemy = false;
+    public UpgradeHandler upgradeHandler;
 
     private Transform nullObject;
     private Vector3 previousPosition;
@@ -80,6 +81,9 @@ public class PlayerSprite : MonoBehaviour
     {
         FlipToEnemy = true;
         ProjectileSpawnerMouse.Shoot();
+
+        StartCoroutine(wait());
+
     }
 
     public void FlipToMouse()
@@ -105,5 +109,71 @@ public class PlayerSprite : MonoBehaviour
         }
 
         return closestEnemy;
+    }
+
+
+    private IEnumerator wait()
+    {
+        if(upgradeHandler.NumBullets == 1)
+        {
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+        }
+        if (upgradeHandler.NumBullets == 2)
+        {
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+        }
+
+        if (upgradeHandler.NumBullets == 3)
+        {
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+        }
+        if (upgradeHandler.NumBullets == 4)
+        {
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+        }
+        if (upgradeHandler.NumBullets == 5)
+        {
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+            yield return new WaitForSeconds(0.05f);
+            FlipToEnemy = true;
+            ProjectileSpawnerMouse.Shoot();
+        }
     }
 }

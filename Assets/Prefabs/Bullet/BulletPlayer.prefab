@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1520880642496056549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.93, y: 0.24, z: 0}
-  m_LocalScale: {x: 0.49524248, y: 0.49524248, z: 0.49524248}
+  m_LocalScale: {x: 0.4952425, y: 0.4952425, z: 0.4952425}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7720006487437573464}
@@ -137,8 +137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db71209ad2415b4b8fb9984fefbb893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStats: {fileID: 0}
+  upgradeHandler: {fileID: 0}
   damage: 1
   maxWallBounces: 3
+  bulletPlayer: {fileID: 7124918417242321659}
   elasticWalls: 0
   PiercingBullets: 0
   test: 0
@@ -214,7 +217,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -653709415
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: b9f11a0e27f9e104b86b4e9aeb9b430d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -21997,9 +21997,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   finalroom: 0
-  Symbol: {fileID: 0}
+  Symbol: {fileID: 8478127754402542752}
   doorBlockerHandler: {fileID: 7847367931001015030}
-  Haufen: {fileID: 0}
+  Haufen: {fileID: 2931609835193016732}
 --- !u!1 &1801500862289532510
 GameObject:
   m_ObjectHideFlags: 0

@@ -3004,7 +3004,7 @@ MonoBehaviour:
   movementSpeed: 13
   dashCooldown: 0
   RoomLuck: 0.2
-  tackle: 1
+  tackle: 0
   tackleDamage: 1
 --- !u!114 &526802422
 MonoBehaviour:
@@ -3292,6 +3292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ProjectileSpawnerMouse: {fileID: 526802416}
   FlipToEnemy: 0
+  upgradeHandler: {fileID: 1982190944}
 --- !u!114 &569564756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8526,7 +8527,7 @@ GameObject:
   - component: {fileID: 1982190949}
   m_Layer: 5
   m_Name: ModifireManager
-  m_TagString: Untagged
+  m_TagString: ModifireManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8582,6 +8583,9 @@ MonoBehaviour:
   qtext1: {fileID: 881104262}
   qtext2: {fileID: 1888614600}
   qtext3: {fileID: 335593020}
+  BigShot: 1
+  NumBullets: 0
+  playerstats: {fileID: 526802421}
   Modifire1: {fileID: 690264874}
   Modifire2: {fileID: 2072858305}
   Modifire3: {fileID: 620898572}
@@ -8615,6 +8619,10 @@ MonoBehaviour:
   - {fileID: 1061339777, guid: 327fdec40f93143499987f2d036ddcbd, type: 3}
   - {fileID: 2070724270, guid: 327fdec40f93143499987f2d036ddcbd, type: 3}
   - {fileID: 2027085901, guid: 327fdec40f93143499987f2d036ddcbd, type: 3}
+  - {fileID: 441636364, guid: 935a9efcd183e5b40bc87b8fc2e38007, type: 3}
+  - {fileID: -1897407182, guid: 935a9efcd183e5b40bc87b8fc2e38007, type: 3}
+  - {fileID: -10887700, guid: 935a9efcd183e5b40bc87b8fc2e38007, type: 3}
+  - {fileID: 2099591002, guid: 935a9efcd183e5b40bc87b8fc2e38007, type: 3}
 --- !u!114 &1982190946
 MonoBehaviour:
   m_ObjectHideFlags: 0

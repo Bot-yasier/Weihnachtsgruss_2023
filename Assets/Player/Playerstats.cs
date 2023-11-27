@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Playerstats : MonoBehaviour
 {
-    public int bulletDamage = 1;
+    public float bulletDamage = 1;
     public int movementSpeed = 13;
     public float dashCooldown = 1;
     public float RoomLuck = 0.2f;

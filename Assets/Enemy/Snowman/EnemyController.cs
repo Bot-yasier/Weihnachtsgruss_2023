@@ -17,7 +17,7 @@ public class EnemyController : MonoBehaviour
     public delegate void EnemyDeathEventHandler(EnemyController enemy);
     public static event EnemyDeathEventHandler EnemyDeathEvent;
 
-    public int maxHealth;
+    public float maxHealth;
     public float moveSpeed = 3f;
     public GameObject bulletPrefab;
     public float bulletSpeed = 10f;
@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour
     //private Vector2 moveDirection;
     private Vector2 randomPosition;
     private float timeUntilNextShot;
-    public int currentHealth; // current health of the enemy
+    public float currentHealth; // current health of the enemy
     private bool hasCollided = false;
 
 
@@ -290,7 +290,7 @@ public class EnemyController : MonoBehaviour
     }
 
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage; // subtract the damage from the current health
 

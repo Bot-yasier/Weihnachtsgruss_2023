@@ -21,7 +21,10 @@ public class UpgradeHandler : MonoBehaviour
     public TextMeshProUGUI qtext1;
     public TextMeshProUGUI qtext2;
     public TextMeshProUGUI qtext3;
+    public int BigShot = 1;
+    public int NumBullets;
 
+    public Playerstats playerstats;
 
     public GameObject Modifire1;
     public GameObject Modifire2;
@@ -58,6 +61,7 @@ public class UpgradeHandler : MonoBehaviour
 
     private void Update()
     {
+        
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -142,6 +146,38 @@ public class UpgradeHandler : MonoBehaviour
                 else { qtext1.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen"; }
                
                 break;
+            case "Powerups2_0":
+                if (FrenchInt == 1)
+                {
+                    qtext1.text = "Boule de neige plus grosse: grâce à ce powerup, ta boule de neige est plus grosse, ce qui te permet de toucher plus facilement les bonshommes de neige avec précision.";
+                }
+                else { qtext1.text = "Grösserer Schneeball: Durch dieses Powerup wird dein Schneeball vergrössert, was es dir erleichtert, präzise Treffer auf Schneemänner zu landen."; }
+
+                break;
+            case "Powerups2_1":
+                if (FrenchInt == 1)
+                {
+                    qtext1.text = "Plus de dégâts: La boule de neige inflige désormais plus de dégâts.";
+                }
+                else { qtext1.text = "Mehr Schaden: Der Schneeball verursacht mehr Schaden."; }
+
+                break;
+            case "Powerups2_2":
+                if (FrenchInt == 1)
+                {
+                    qtext1.text = "Délai de récupération du sauteur: réduit le temps d'attente entre les sauts successifs.";
+                }
+                else { qtext1.text = "Hüpfer Abklingzeit: Verkürzt die Wartezeit zwischen aufeinanderfolgenden Sprüngen."; }
+
+                break;
+            case "Powerups2_3":
+                if (FrenchInt == 1)
+                {
+                    qtext1.text = "Tir double: plusieurs boules de neige sont lancées l'une après l'autre.";
+                }
+                else { qtext1.text = "Doppelschuss: Es werden mehrere Schneebälle hintereinander abgeworfen."; }
+
+                break;
             default:
                 Debug.Log(Button1value);
                 break;
@@ -191,6 +227,38 @@ public class UpgradeHandler : MonoBehaviour
                     qtext2.text = "Chance: le joueur est plus chanceux dans sa quête de paquets. ";
                 }
                 else { qtext2.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen"; }
+
+                break;
+            case "Powerups2_0":
+                if (FrenchInt == 1)
+                {
+                    qtext2.text = "Boule de neige plus grosse: grâce à ce powerup, ta boule de neige est plus grosse, ce qui te permet de toucher plus facilement les bonshommes de neige avec précision.";
+                }
+                else { qtext2.text = "Grösserer Schneeball: Durch dieses Powerup wird dein Schneeball vergrössert, was es dir erleichtert, präzise Treffer auf Schneemänner zu landen."; }
+
+                break;
+            case "Powerups2_1":
+                if (FrenchInt == 1)
+                {
+                    qtext2.text = "Plus de dégâts: La boule de neige inflige désormais plus de dégâts.";
+                }
+                else { qtext2.text = "Mehr Schaden: Der Schneeball verursacht mehr Schaden."; }
+
+                break;
+            case "Powerups2_2":
+                if (FrenchInt == 1)
+                {
+                    qtext2.text = "Délai de récupération du sauteur: réduit le temps d'attente entre les sauts successifs.";
+                }
+                else { qtext2.text = "Hüpfer Abklingzeit: Verkürzt die Wartezeit zwischen aufeinanderfolgenden Sprüngen."; }
+
+                break;
+            case "Powerups2_3":
+                if (FrenchInt == 1)
+                {
+                    qtext2.text = "Tir double: plusieurs boules de neige sont lancées l'une après l'autre.";
+                }
+                else { qtext2.text = "Doppelschuss: Es werden mehrere Schneebälle hintereinander abgeworfen."; }
 
                 break;
             default:
@@ -245,6 +313,38 @@ public class UpgradeHandler : MonoBehaviour
                 else { qtext3.text = "Glück: Erhöht die Glückschance des Spielers beim Finden von Paketen"; }
 
                 break;
+            case "Powerups2_0":
+                if (FrenchInt == 1)
+                {
+                    qtext3.text = "Boule de neige plus grosse: grâce à ce powerup, ta boule de neige est plus grosse, ce qui te permet de toucher plus facilement les bonshommes de neige avec précision.";
+                }
+                else { qtext3.text = "Grösserer Schneeball: Durch dieses Powerup wird dein Schneeball vergrössert, was es dir erleichtert, präzise Treffer auf Schneemänner zu landen."; }
+
+                break;
+            case "Powerups2_1":
+                if (FrenchInt == 1)
+                {
+                    qtext3.text = "Plus de dégâts: La boule de neige inflige désormais plus de dégâts.";
+                }
+                else { qtext3.text = "Mehr Schaden: Der Schneeball verursacht mehr Schaden."; }
+
+                break;
+            case "Powerups2_2":
+                if (FrenchInt == 1)
+                {
+                    qtext3.text = "Délai de récupération du sauteur: réduit le temps d'attente entre les sauts successifs.";
+                }
+                else { qtext3.text = "Hüpfer Abklingzeit: Verkürzt die Wartezeit zwischen aufeinanderfolgenden Sprüngen."; }
+
+                break;
+            case "Powerups2_3":
+                if (FrenchInt == 1)
+                {
+                    qtext3.text = "Tir double: plusieurs boules de neige sont lancées l'une après l'autre.";
+                }
+                else { qtext3.text = "Doppelschuss: Es werden mehrere Schneebälle hintereinander abgeworfen."; }
+
+                break;
             default:
                 Debug.Log(Button2value);
                 break;
@@ -286,6 +386,18 @@ public class UpgradeHandler : MonoBehaviour
             case "PowerupIcons-Sheet_0":
                 LuckUp();
                 break;
+            case "Powerups2_0":
+                BigBabaShot();
+                break;
+            case "Powerups2_1":
+                DamageUp();
+                break;
+            case "Powerups2_2":
+                Dashcooldown();
+                break;
+            case "Powerups2_3":
+                MehrSchüsse();
+                break;
             default:
                 Debug.Log(Button1value);
                 break;
@@ -318,6 +430,18 @@ public class UpgradeHandler : MonoBehaviour
                 break;
             case "PowerupIcons-Sheet_0":
                 LuckUp();
+                break;
+            case "Powerups2_0":
+                BigBabaShot();
+                break;
+            case "Powerups2_1":
+                DamageUp();
+                break;
+            case "Powerups2_2":
+                Dashcooldown();
+                break;
+            case "Powerups2_3":
+                MehrSchüsse();
                 break;
             default:
                 Debug.Log(Button2value);
@@ -352,12 +476,29 @@ public class UpgradeHandler : MonoBehaviour
             case "PowerupIcons-Sheet_0":
                 LuckUp();
                 break;
+            case "Powerups2_0":
+                BigBabaShot();
+                break;
+            case "Powerups2_1":
+                DamageUp();
+                break;
+            case "Powerups2_2":
+                Dashcooldown();
+                break;
+            case "Powerups2_3":
+                MehrSchüsse();
+                break;
             default:
                 Debug.Log(Button3value);
                 break;
         }
     }
-
+    public void Dashcooldown()
+    {
+        playerMovementMouse.dashCooldown = playerMovementMouse.dashCooldown - 0.2f;
+        Debug.Log(playerMovementMouse.dashCooldown);
+        DeactivateUpgrades();
+    }
     public void ElasticWalls()
     {
         projectileSpawnerMouse.enableElasticWalls = true;
@@ -372,6 +513,23 @@ public class UpgradeHandler : MonoBehaviour
 
         // Raise the LuckUpEvent
         OnLuckUp?.Invoke();
+    }
+
+    public void BigBabaShot()
+    {
+        BigShot++;
+        DeactivateUpgrades();
+    }
+    public void DamageUp()
+    {
+        playerstats.bulletDamage = playerstats.bulletDamage + 0.5f;
+        DeactivateUpgrades();
+
+    }
+    public void MehrSchüsse()
+    {
+        NumBullets++;
+        DeactivateUpgrades();
     }
 
     public void SpeedUp()
