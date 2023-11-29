@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using Pathfinding;
+using TMPro;
 
 public class EnemyController : MonoBehaviour
 {
@@ -66,6 +67,18 @@ public class EnemyController : MonoBehaviour
         if (levelCounter.Levelint == 5)
         {
             maxHealth = 13;
+        }
+        if (levelCounter.Levelint == 6)
+        {
+            maxHealth = 18;
+        }
+        if (levelCounter.Levelint == 7)
+        {
+            maxHealth = 25;
+        }
+        if (levelCounter.Levelint == 8)
+        {
+            maxHealth = 30;
         }
 
         currentHealth = maxHealth;
@@ -309,6 +322,16 @@ public class EnemyController : MonoBehaviour
         {
             EnemyDeathEvent(this);
         }
+        TextMeshProUGUI scoreTextMesh = GameObject.FindGameObjectWithTag("Zahl").GetComponent<TextMeshProUGUI>();
+        int score = 10;
+        int currentScore = 0;
+        if (!string.IsNullOrEmpty(scoreTextMesh.text))
+        {
+            currentScore = int.Parse(scoreTextMesh.text);
+        }
+
+        currentScore += score;
+        scoreTextMesh.text = currentScore.ToString();
 
         Destroy(gameObject);
     }
