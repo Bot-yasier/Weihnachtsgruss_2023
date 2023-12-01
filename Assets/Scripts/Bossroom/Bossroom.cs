@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class Bossroom : MonoBehaviour
 {
@@ -35,16 +34,6 @@ public class Bossroom : MonoBehaviour
                 i++;
                 if(i == 1)
                 {
-                    TextMeshProUGUI scoreTextMesh = GameObject.FindGameObjectWithTag("Zahl").GetComponent<TextMeshProUGUI>();
-                    int score = 500;
-                    int currentScore = 0;
-                    if (!string.IsNullOrEmpty(scoreTextMesh.text))
-                    {
-                        currentScore = int.Parse(scoreTextMesh.text);
-                    }
-
-                    currentScore += score;
-                    scoreTextMesh.text = currentScore.ToString();
                     gameManager.newDungeon = true;
                 }
                 GameObject playerObject = GameObject.Find("Player");

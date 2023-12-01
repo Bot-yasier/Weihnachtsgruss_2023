@@ -107,8 +107,6 @@ public class PowerUpBar : MonoBehaviour
         }
 
         UpdateLevelText(); // Aktualisiere den Text mit dem neuen Level-Wert
-
-      
     }
 
     // Diese Methode verringert die Steigerung des Fill Amount Increases

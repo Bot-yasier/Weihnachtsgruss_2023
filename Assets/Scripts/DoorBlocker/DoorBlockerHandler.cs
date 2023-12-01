@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using Pathfinding;
-using TMPro;
 
 public class DoorBlockerHandler : MonoBehaviour
 {
@@ -76,18 +75,6 @@ public class DoorBlockerHandler : MonoBehaviour
 
     private void OpenDoors()
     {
-        TextMeshProUGUI scoreTextMesh = GameObject.FindGameObjectWithTag("Zahl").GetComponent<TextMeshProUGUI>();
-        int score = 20;
-        int currentScore = 0;
-        if (!string.IsNullOrEmpty(scoreTextMesh.text))
-        {
-            currentScore = int.Parse(scoreTextMesh.text);
-        }
-
-        currentScore += score;
-        scoreTextMesh.text = currentScore.ToString();
-
-
         foreach (Collider2D collider in colliders)
         {
             collider.enabled = false;

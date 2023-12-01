@@ -361,16 +361,6 @@ public class UpgradeHandler : MonoBehaviour
 
     public void Button1Clicked()
     {
-        TextMeshProUGUI scoreTextMesh = GameObject.FindGameObjectWithTag("Zahl").GetComponent<TextMeshProUGUI>();
-        int score = 50;
-        int currentScore = 0;
-        if (!string.IsNullOrEmpty(scoreTextMesh.text))
-        {
-            currentScore = int.Parse(scoreTextMesh.text);
-        }
-
-        currentScore += score;
-        scoreTextMesh.text = currentScore.ToString();
         if (audioClips.Count > 0)
         {
             int randomIndex = Random.Range(0, audioClips.Count);
@@ -416,16 +406,6 @@ public class UpgradeHandler : MonoBehaviour
 
     public void Button2Clicked()
     {
-        TextMeshProUGUI scoreTextMesh = GameObject.FindGameObjectWithTag("Zahl").GetComponent<TextMeshProUGUI>();
-        int score = 50;
-        int currentScore = 0;
-        if (!string.IsNullOrEmpty(scoreTextMesh.text))
-        {
-            currentScore = int.Parse(scoreTextMesh.text);
-        }
-
-        currentScore += score;
-        scoreTextMesh.text = currentScore.ToString();
         if (audioClips.Count > 0)
         {
             int randomIndex = Random.Range(0, audioClips.Count);
@@ -471,16 +451,6 @@ public class UpgradeHandler : MonoBehaviour
 
     public void Button3Clicked()
     {
-        TextMeshProUGUI scoreTextMesh = GameObject.FindGameObjectWithTag("Zahl").GetComponent<TextMeshProUGUI>();
-        int score = 50;
-        int currentScore = 0;
-        if (!string.IsNullOrEmpty(scoreTextMesh.text))
-        {
-            currentScore = int.Parse(scoreTextMesh.text);
-        }
-
-        currentScore += score;
-        scoreTextMesh.text = currentScore.ToString();
         if (audioClips.Count > 0)
         {
             int randomIndex = Random.Range(0, audioClips.Count);
