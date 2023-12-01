@@ -16,7 +16,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"C:/Users/Yannick Brunner/Desktop/Built;C:/Users/Yannick Brunner/Desktop/Built_Weihnachtsgame;C:/Users/Yannick Brunner/Desktop/Build_Weihnachtsgame;C:/Users/Fritz/Desktop/Data/Weihnachtsgruss/Build/V4;C:/Users/Fritz/Desktop/Data/Weihnachtsgruss/Build/V3;C:/Users/Fritz/Desktop/Data/Weihnachtsgruss/Build/V2;C:/Users/Fritz/Desktop/Build_weihnachtsgruss;H:/Built_Weihnachtsgruss;C:/Users/Fritz/Desktop/Data/Weihnachtsgruss/Weihnachtsgruss_2023/Builds/V3;C:/Users/Fritz/Desktop/Data/Weihnachtsgruss/Weihnachtsgruss_2023/Builds/V2\"}"
+                "value": "{\"m_Value\":\"C:/Users/Fritz/Desktop/Data/Weihnachtsgruss/Build/V21;C:/Users/Yannick Brunner/Desktop/Built;C:/Users/Yannick Brunner/Desktop/Built_Weihnachtsgame;C:/Users/Yannick Brunner/Desktop/Build_Weihnachtsgame;C:/Users/Fritz/Desktop/Data/Weihnachtsgruss/Build/V4;C:/Users/Fritz/Desktop/Data/Weihnachtsgruss/Build/V3;C:/Users/Fritz/Desktop/Data/Weihnachtsgruss/Build/V2;C:/Users/Fritz/Desktop/Build_weihnachtsgruss;H:/Built_Weihnachtsgruss;C:/Users/Fritz/Desktop/Data/Weihnachtsgruss/Weihnachtsgruss_2023/Builds/V3\"}"
             }
         ]
     }
