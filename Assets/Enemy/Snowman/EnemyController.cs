@@ -15,6 +15,8 @@ public class EnemyController : MonoBehaviour
     public float shootDelay = 2.0f;
     public LevelCounter levelCounter;
 
+    public bool tutorial = false;
+
     public delegate void EnemyDeathEventHandler(EnemyController enemy);
     public static event EnemyDeathEventHandler EnemyDeathEvent;
 
@@ -322,16 +324,22 @@ public class EnemyController : MonoBehaviour
         {
             EnemyDeathEvent(this);
         }
-        TextMeshProUGUI scoreTextMesh = GameObject.FindGameObjectWithTag("Zahl").GetComponent<TextMeshProUGUI>();
-        int score = 10;
-        int currentScore = 0;
-        if (!string.IsNullOrEmpty(scoreTextMesh.text))
+
+        if(tutorial == false)
         {
-            currentScore = int.Parse(scoreTextMesh.text);
+            TextMeshProUGUI scoreTextMesh = GameObject.FindGameObjectWithTag("Zahl").GetComponent<TextMeshProUGUI>();
+            int score = 10;
+            int currentScore = 0;
+            if (!string.IsNullOrEmpty(scoreTextMesh.text))
+            {
+                currentScore = int.Parse(scoreTextMesh.text);
+            }
+
+            currentScore += score;
+            scoreTextMesh.text = currentScore.ToString();
         }
 
-        currentScore += score;
-        scoreTextMesh.text = currentScore.ToString();
+
 
         Destroy(gameObject);
     }
