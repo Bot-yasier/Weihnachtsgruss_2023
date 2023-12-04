@@ -22,9 +22,6 @@ public class PlayerMovementMouse : MonoBehaviour
     private bool tackling = false;
     private bool canPlaySound = true; // Eine Variable, um die Wiedergabe von Klängen zu steuern
 
-
-
-
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -37,7 +34,6 @@ public class PlayerMovementMouse : MonoBehaviour
         if (!isDashing) targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0) && playerStats.dashCooldown <= 0f && isMoving)
         {
-
             StartCoroutine(Dash());
             animator.SetTrigger("Roll"); // Set the animation trigger here
         }
@@ -52,7 +48,6 @@ public class PlayerMovementMouse : MonoBehaviour
                 StartCoroutine(PlayRandomSoundWithDelay());
             }
         }
-        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -64,11 +59,6 @@ public class PlayerMovementMouse : MonoBehaviour
             {
                 enemy.TakeDamage(playerStats.tackleDamage);
             }
-            else
-            {
-
-            }
-            
         }
     }
 
@@ -114,8 +104,6 @@ public class PlayerMovementMouse : MonoBehaviour
         playerStats.dashCooldown -= playerStats.dashCooldown > 0f ? Time.deltaTime : 0f;
     }
 
-
-
     IEnumerator Dash()
     {
         if (dash.Count > 0)
@@ -130,24 +118,10 @@ public class PlayerMovementMouse : MonoBehaviour
         isDashing = true;
         tackling = true;
         dashTimer = dashDuration;
-        dashDirection = rb.velocity.normalized;
-
-        // Disable collision detection during the dash
-        rb.velocity = Vector2.zero;
-        rb.isKinematic = true;
-        rb.collisionDetectionMode = CollisionDetectionMode2D.Discrete;
-
-        if (playerStats.tackle == true)
-        {
-
-        }
+        dashDirection = (targetPosition - rb.position).normalized;
 
         // Wait for the dash to finish
         yield return new WaitForSeconds(dashDuration);
-
-        // Enable collision detection after the dash
-        rb.isKinematic = false;
-        rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
         // Finish the dash
         tackling = false;
