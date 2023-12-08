@@ -56,23 +56,23 @@ public class EnemyController : MonoBehaviour
         }
         if (levelCounter.Levelint == 2)
         {
-            maxHealth = 6;
+            maxHealth = 7;
         }
         if (levelCounter.Levelint == 3)
         {
-            maxHealth = 8;
+            maxHealth = 9;
         }
         if (levelCounter.Levelint == 4)
         {
-            maxHealth = 10;
+            maxHealth = 12;
         }
         if (levelCounter.Levelint == 5)
         {
-            maxHealth = 13;
+            maxHealth = 15;
         }
         if (levelCounter.Levelint == 6)
         {
-            maxHealth = 18;
+            maxHealth = 20;
         }
         if (levelCounter.Levelint == 7)
         {
@@ -81,6 +81,30 @@ public class EnemyController : MonoBehaviour
         if (levelCounter.Levelint == 8)
         {
             maxHealth = 30;
+        }
+        if (levelCounter.Levelint == 9)
+        {
+            maxHealth = 60;
+        }
+        if (levelCounter.Levelint == 10)
+        {
+            maxHealth = 90;
+        }
+        if (levelCounter.Levelint == 11)
+        {
+            maxHealth = 120;
+        }
+        if (levelCounter.Levelint == 12)
+        {
+            maxHealth = 150;
+        }
+        if (levelCounter.Levelint == 13)
+        {
+            maxHealth = 200;
+        }
+        if (levelCounter.Levelint == 14)
+        {
+            maxHealth = 500;
         }
 
         currentHealth = maxHealth;

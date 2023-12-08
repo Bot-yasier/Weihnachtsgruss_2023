@@ -10,6 +10,7 @@ public class FPSHandler : MonoBehaviour
     public float targetFramerate = 15f;
     public Button Shut;
     bool Start1 = false;
+    int anzeige = 0;
 
 
 
@@ -30,7 +31,12 @@ public class FPSHandler : MonoBehaviour
 
             if (currentFramerate < targetFramerate)
             {
-                FPSobj.SetActive(true);
+                if(anzeige < 2)
+                {
+                    FPSobj.SetActive(true);
+                    anzeige++;
+                }
+
 
             }
         }
@@ -40,12 +46,13 @@ public class FPSHandler : MonoBehaviour
 
     void Shut1()
     {
+        
         FPSobj.SetActive(false);
     }
 
     private IEnumerator wait()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(20f);
         Start1 = true;
 
     }
